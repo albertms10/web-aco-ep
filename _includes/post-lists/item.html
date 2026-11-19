@@ -1,0 +1,9 @@
+{% assign post = include.post %}
+
+<span class="text-secondary post-list-item-date">
+  {{ post.date | data_en_catala_mitja }}
+</span><span>
+  <a href="{{ post.url }}">
+    {{ post.title | escape | truncatewords: 10 }}
+  </a>
+</span>

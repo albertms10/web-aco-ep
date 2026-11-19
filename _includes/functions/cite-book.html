@@ -1,0 +1,8 @@
+{%- if include.prefix -%}
+<span>{{include.prefix}}</span>
+{%- endif -%}
+{%- if include.cognom and include.nom -%}
+<span class="small-caps">{{include.cognom}}</span>, {{include.nom}}. ({{include.any}}). <i>{{include.titol}}</i>{% if include.pagines %} ({{include.pagines}}){% endif %}. {{include.ciutat}}: {{include.editorial}}
+{%- elsif include.noms -%}
+{{include.noms}}. ({{include.any}}). <i>{{include.titol}}</i>{% if include.pagines %} ({{include.pagines}}){% endif %}. {{include.ciutat}}: {{include.editorial}}
+{%- endif -%}

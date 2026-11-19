@@ -1,0 +1,95 @@
+---
+layout: base
+scripts:
+- leafletMapGeneric.js
+---
+
+<div class="container ps-3 pe-3 mt-3">
+
+    {% include functions/get-info-from-url.html %}
+    {% assign nom_provincia = site.data.orgues.provincies | where: 'link',provincia | first | map: "nom" %}
+    {% assign comarca = site.data.orgues.comarques | where: 'link', comarca | first %}
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% link pages/orgues.md %}">Orgues</a></li>
+            <li class="breadcrumb-item"><a href="{% link orgues/{{provincia}}.md %}">{{nom_provincia}}</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{comarca.nom}}</li>
+        </ol>
+    </nav>
+
+    <!-- TODO Candidat a text autogenerat -->
+    {% if comarca.de contains "’" %}
+    <h1 class="pb-0 mb-4">Orgues de la comarca {{comarca.de}}{{ comarca.nom }}</h1>
+    {% else %}
+    <h1 class="pb-0 mb-4">Orgues de la comarca {{comarca.de}} {{ comarca.nom }}</h1>
+    {% endif %}
+
+    <div class="row gx-6">
+        <div class="col-12 col-lg-6 mt-2 js-toc-content text-body">
+            {% assign pobles = site.data.orgues.orgues | where: "link", provincia | first %}
+            {% assign pobles = pobles.comarques | where: 'link', comarca.link | first %}
+
+            {% unless pobles.poblacions %}
+                <span>No hi ha orgues o no estan a l’inventari.</span>
+            {% else %}
+
+                {% assign pobles = pobles.poblacions %}
+
+                <div class="orgues-ul">
+                {% for poble in pobles %}
+                    <p>
+                    <!-- TODO Majusculització del municipi? -->
+                    <b>{{poble.nom}}</b>
+                        <ul>
+                        {% for edifici in poble.edificis %}
+                            <li>
+                                <!-- TODO Majusculització de l'edifici? -->
+                                {% if edifici.wip %}
+                                    <span
+                                       data-latitud="{{edifici.geolocalitzacio.latitud}}"
+                                       data-longitud="{{edifici.geolocalitzacio.longitud}}"
+                                       data-adreca="{{edifici.adreca}}"
+                                       data-html="<b>{{poble.nom}}</b><br><span>{{edifici.nom}}</span>">
+                                        {{edifici.nom}}
+                                    </span>
+                                {% else %}
+                                    <a href="{% link orgues/{{comarca.provincia}}/{{comarca.link}}/{{poble.link}}/{{edifici.link}}.md %}"
+                                       data-latitud="{{edifici.geolocalitzacio.latitud}}"
+                                       data-longitud="{{edifici.geolocalitzacio.longitud}}"
+                                       data-adreca="{{edifici.adreca}}"
+                                       data-html="<b>{{poble.nom}}</b><br><span>{{edifici.nom}}</span>">
+                                        {{edifici.nom}}
+                                    </a>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                        </ul>
+                    </p>
+                {% endfor %}
+                </div>
+
+            {% endunless %}
+        </div>
+
+        <!-- Per la Cerdanya: si una comarca té una relation que no es correspon amb el nom de la comarca, utilitza la que s'especifica -->
+        {% if comarca.relation_link %}
+            {% assign geojson = "/assets/geojson/comarques/" | append: comarca.relation_link | append: ".geojson" %}
+        {% else %}
+            {% assign geojson = "/assets/geojson/comarques/" | append: comarca.link | append: ".geojson" %}
+        {% endif %}
+        {% assign limits = site.data.limits-geografics.comarques | where: 'link', comarca.link | first | map: "limits" | first%}
+
+        <div class="col-12 col-lg-6 mt-6 mt-lg-2">
+            <section class="sticky-top pt-4">
+                <div id="map" class="mapa-generic"
+                     data-top-right-lat="{{limits[0]}}"
+                     data-top-right-long="{{limits[1]}}"
+                     data-bottom-left-lat="{{limits[2]}}"
+                     data-bottom-left-long="{{limits[3]}}"
+                     data-geojson="{{geojson | relative_url}}"
+                ></div>
+            </section>
+        </div>
+    </div>
+</div>

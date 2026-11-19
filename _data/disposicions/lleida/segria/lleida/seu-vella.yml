@@ -1,0 +1,69 @@
+# TODO actuacions!
+
+constructor:
+  nom: Cabezas, Cándido
+  any: 1833
+
+# actuacions
+
+# diapaso
+
+# temperament
+
+estat:
+  - any: 2004
+    nota: 1
+    detalls: Necessita una restauració. Boi que no funciona
+
+# emplacament
+
+# transmissio
+
+composicio: 13, I
+
+teclats:
+  - nom: I. Manual
+    extensio: "51 notes: C-d'''"
+    registres:
+      - nom: Flautado mayor
+        peus: 8'
+        partit: c'/cs'
+      - nom: Octava
+        peus: 4'
+        partit: c'/cs'
+      - nom: Biolón
+        # TODO nota original: [4']
+        peus: 4'
+      - nom: Docena
+        peus: 2 2/3'
+      - nom: Quinzena y decinovena
+        peus: 2' i 1 1/3'
+        partit: C-c'
+      - nom: Quinzena
+        peus: 2'
+        partit: cs'-d'''
+      - nom: Decinovena
+        peus: 1 1/3'
+        partit: cs'-d'''
+      - nom: Corneta magna [IV]
+        partit: cs'-d'''
+      - nom: Clarín de eco (caixa d’ecos)
+        # TODO nota original: [4']
+        peus: 4'
+        partit: C-c'
+        llengueta: true
+      - nom: Bajete
+        # TODO nota original: [8']
+        peus: 8'
+        partit: cs'-d'''
+        llengueta: true
+      - nom: Clarín claro
+        # TODO nota original: [4']
+        peus: 4'
+        partit: C-c', en batalla
+        llengueta: true
+      - nom: Bajoncillo
+        # TODO nota original: [8']
+        peus: 8'
+        partit: cs'-d''', en batalla
+        llengueta: true

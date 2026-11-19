@@ -1,0 +1,12 @@
+{% include functions/get-info-from-url.html %}
+{% assign title = page.title %}
+{% assign title_downcase = title | downcase_first_letter %}
+{% assign description = "Informació del " | append: title_downcase | append: " dins el " | append: url_partida[2] | append: "è cicle «Els Orgues de Catalunya»" %}
+{% assign concert = site.data.ceoc.concerts | where: "concert", page.path | first %}
+{% assign pageID = "/" | append: concert.orgue | replace: ".md", "/" %}
+{% assign image = site.data.imatges | where: "page_id", pageID | where: "nom", concert.foto | first %}
+{% assign link = image.thumbs[1024] %}
+
+<title>{{title}}</title>
+<meta name="description" content="{{description}}">
+{% include head/open-graph.html title=page.title description=description image=concert.foto-interpret image-alt=concert.interpret %}

@@ -1,0 +1,232 @@
+---
+layout: base
+---
+
+<!-- Breaking for mobile: md -->
+
+<div class="container overflow-hidden">
+    {% include ceoc/navigate-ceoc.html %}
+    <div class="row mt-2 mt-md-5 gx-6">
+        <!-- Aconsegueix les dades del concert -->
+        {% assign concert = site.data.ceoc.concerts | where: "concert", page.path | first %}
+        {% assign edicio = page.path | split: "/" %}
+        {% assign municipi = edicio[2] | split: "." | first %}
+        {% assign edicio = edicio[1] %}
+        {% assign material_grafic = site.data.ceoc.material_grafic | where: 'edicio', edicio | first %}
+        {% assign propostes = site.data.ceoc.propostes_turisme[municipi]  %}
+
+        {% if concert.orgue-fora-catalunya %}
+            {% assign image = concert.foto-src %}
+            {% assign image-alt = concert.foto-alt %}
+            {% assign adreca = concert.adreca %}
+            {% assign municipi = concert.municipi %}
+            {% assign edifici = concert.edifici %}
+            {% assign lloc = concert.adreca %}
+            {% assign detall-orgue = concert.detall-orgue %}
+
+        {% else %}
+            <!-- Aconsegueix la localització del concert a través de l'orgue -->
+            {% assign orgue_url = "/" | append: concert.orgue %}
+            {% include functions/get-info-from-url.html url=orgue_url %}
+
+            {% assign esglesia = site.data.orgues.orgues | where: "link",provincia | first %}
+            {% assign esglesia = esglesia.comarques | where: "link",comarca | first %}
+            {% assign esglesia = esglesia.poblacions | where: "link",poble | first%}
+            {% assign esglesia = esglesia.edificis | where: "link",edifici | first %}
+            {% assign lloc = esglesia.adreca %}
+
+            {% assign pageID = "/" | append: concert.orgue | replace: ".md", "/" %}
+
+            {% if concert.foto-src %}
+                {% assign image = concert.foto-src %}
+                {% assign image-alt = concert.foto-alt %}
+            {% else %}
+                {% assign image = site.data.imatges | where: "page_id", pageID | where: "nom", concert.foto | first %}
+                {% assign image = image.thumbs[640] %}
+                {% assign image-alt = image.alt %}
+            {% endif %}
+
+            {% capture detall-orgue %}
+                {% link {{concert.orgue}} %}
+            {% endcapture %}
+
+        {% endif %}
+        {% if concert.object-position %} {% assign object-position = concert.object-position %} {% endif %}
+
+        <!------------------------------------------------------------------------------------------------------------->
+        <!-- panell esquerre amb la foto i altres informacions -->
+        <div class="col-12 col-md-4 mb-4">
+
+            <!-- aconsegueix la imatge -->
+
+            <div class="d-none d-md-block">
+                <a href="{{detall-orgue}}">
+                    <img class="position-relative overflow-hidden p-0"
+                         style="width: 100%;
+                                border-radius: 4px;
+                                object-fit: cover;
+                                object-position: {{ object-position | default: '50% 50%' }};
+                                aspect-ratio: 1;"
+                         src="{{image}}"
+                         alt="{{image-alt}}">
+                </a>
+            </div>
+
+            <div class="pt-3 d-none d-lg-block"> <!-- lg expressament -->
+                {% include posts/activitat.html lloc=lloc data=concert.data hora=concert.hora preu="Gratuït" persona=concert.interpret%}
+            </div>
+
+            <p class="mb-0 pt-2 text-center d-none d-md-block">
+                <a href="{{detall-orgue}}" class="btn btn-primary btn-sm" tabindex="-1" role="button">L’orgue en detall</a>
+            </p>
+        </div>
+
+
+        <!------------------------------------------------------------------------------------------------------------->
+        <!-- panell dret, amb tot el contingut -->
+        <div class="col-12 col-md-8">
+
+            <!-- Títol ordinador -->
+            <div class="d-none d-md-block">
+                <p class="h6 mb-1"><span class="text-uppercase">{{ concert.data | data_en_catala_llarg }}</span> a les {{concert.hora}}</p>
+                <h1 class="pt-0 mt-0 pb-0 h2">{{page.title}}</h1>
+                <h2 class="h5 fw-light pt-0"><span class="text-uppercase">{{concert.interpret}}</span></h2>
+            </div>
+
+            <!-- Títol mòbil -->
+            <div class="d-block d-md-none position-relative bg-img overflow-hidden pt-0 pb-5 mb-3"
+                 style="background-image: url('{{image}}');
+                        background-repeat: no-repeat;
+                        background-size:cover;
+                        background-position:center;
+                        background-color: rgba(255, 255, 255, 0.82);
+                        background-blend-mode: lighten;
+                        border-radius: 10px;
+                 ">
+                <div class="p-4" style="">
+                    <p class="h6 mb-1"><span class="text-uppercase">{{ concert.data | data_en_catala_llarg }}</span> a les {{concert.hora}}</p>
+                    <h1 class="pt-0 mt-0 pb-0 h2">{{page.title}}</h1>
+                    <h2 class="h5 fw-light pt-0"><span class="text-uppercase">{{concert.interpret}}</span></h2>
+                </div>
+            </div>
+
+<!--            <div class="d-block d-md-none">-->
+<!--                <img class="position-relative overflow-hidden p-0 mb-4"-->
+<!--                     style="width: 100%; border-radius: 10px;"-->
+<!--                     src="{{image}}"-->
+<!--                     alt="{{image_alt}}">-->
+<!--            </div>-->
+
+            {% assign contingut = content | markdownify | split: site.ceoc-content-separator %}
+            {% assign programa = contingut[0] %}
+            {% assign comentaris = contingut[1] %}
+            {% assign biografia = contingut[2] %}
+
+            {% if page.turisme %}
+            <div class="alert mb-0" role="alert" style="background-color: {{material_grafic.color_clar}}; color: {{material_grafic.color}}">
+               <a href="#propostes-culturals-i-turístiques" class="alert-link">
+                   <table>
+                       <tbody>
+                       <tr style="vertical-align: top;">
+                           <td>
+                               <i class="bi bi-info-circle pe-2"></i>
+                           </td>
+                           <td>
+                               Consulta les propostes culturals i turístiques {{page.turisme}}
+                           </td>
+                       </tr>
+                       </tbody>
+                   </table>
+                </a>
+            </div>
+            {% endif %}
+
+            {% if page.abans_programa %}
+                {{page.abans_programa}}
+            {% endif %}
+
+            <p class="d-none d-lg-block"></p>
+
+            <!-- PROGRAMA --------------------------------------------------------------------------------------------->
+            <div class="row gx-3">
+                <h3>Programa del concert</h3>
+                <div class="col-12 col-md-8 programa-ceoc">
+                    {{ programa }}
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="text-center pb-2">
+                    <a href="{{material_grafic.programa}}" tabindex="-1" role="button"
+                       class="d-none d-md-block">
+                        <img src="{{material_grafic.portada_programa}}"
+                             alt="{{material_grafic.alt_portada_programa}}"
+                             style="max-width: 100%; max-height: 18rem; border-radius: 4px;">
+                    </a>
+                    <p class="mb-0 mt-2 text-center">
+                        <a href="{{material_grafic.programa}}"
+                           class="btn btn-sm" tabindex="-1" role="button"
+                           style="background-color: {{material_grafic.color}};
+                                  border-color: {{material_grafic.color}};
+                                  color: white;">
+                           Programa en PDF
+                        </a>
+                    </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COMENTARIS ------------------------------------------------------------------------------------------->
+            {% unless page.sense_comentaris %}
+            <div>
+                <h3>Comentaris al programa</h3>
+                {% assign autor_comentaris = page.autor_comentaris | default: "Marcel Martínez" %}
+                {% include autor.html autor=autor_comentaris %}
+                <div style="-webkit-user-select: none; user-select: none;">
+                    {{ comentaris }}
+                </div>
+            </div>
+            {% endunless %}
+
+            <!-- BIOGRAFIA -------------------------------------------------------------------------------------------->
+            <div>
+                <h3>{{concert.interpret}}</h3>
+                <div class="row">
+                    <div class="col-12 col-lg-4 col-xl-3 pb-3 text-center"> <!-- escriptori -->
+                        <img src="{{concert.foto-interpret}}"
+                             alt="{{concert.interpret}}"
+                             style="object-fit: cover; width: 100%; border-radius: 100%; aspect-ratio: 1; max-width: 14rem;
+                             {% if concert.foto-interpret-posicio %}object-position: {{concert.foto-interpret-posicio}}{%endif%};">
+                    </div>
+                    <div class="col-12 col-lg-8 col-xl-9">
+                        {{ biografia }}
+                    </div>
+                </div>
+            </div>
+
+            <!-- ORGUE (si és per mòbils) ----------------------------------------------------------------------------->
+            <div class="mt-4 d-block d-md-none">
+                <h3>L’orgue</h3>
+                <a href="{{detall-orgue}}">
+                    <img class="position-relative overflow-hidden px-5 py-2"
+                         style="width: 100%;
+                            border-radius: 4px;
+                            object-fit: cover;
+                            object-position: {{ object-position | default: '50% 50%' }};
+                            //aspect-ratio: 1;"
+                         src="{{image}}"
+                         alt="{{image-alt}}">
+                </a>
+                <p class="mb-0 pt-1 pb-4 text-center">
+                    <a href="{{detall-orgue}}" class="btn btn-primary btn-sm" tabindex="-1" role="button">L’orgue en detall</a>
+                </p>
+            </div>
+
+            {% if page.turisme %}
+            <div>
+                <h3 id="propostes-culturals-i-turístiques">Propostes culturals i turístiques</h3>
+                {% include ceoc/propostes-turisme.html propostes=propostes %}
+            </div>
+            {% endif %}
+
+        </div>
+    </div>
+</div>

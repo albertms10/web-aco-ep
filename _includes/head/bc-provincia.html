@@ -1,0 +1,8 @@
+{% include functions/get-info-from-url.html %}
+{% assign provincia = site.data.orgues.provincies | where: 'link', provincia | first %}
+
+<title>Orgues de la província de {{provincia.nom}}</title>
+<meta name="description" content="Llista dels orgues de la província de {{provincia.nom}}.">
+{% include head/open-graph.html title=title description=description image="" image-alt="" %}
+
+<link rel="stylesheet" href="{% link assets/node_modules/leaflet/dist/leaflet.css %}">

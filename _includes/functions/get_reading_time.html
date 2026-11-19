@@ -1,0 +1,12 @@
+{% assign speed = 250 %}
+{% assign words = include.content | strip_html | split: " " | size %}
+
+{% assign mins = words | divided_by: speed | at_least: 1 %}
+
+{% assign unit = "minut" %}
+{% if mins > 1 %}
+    {% assign unit = unit | append: "s" %}
+{% endif %}
+
+{% assign return = "Aproximadament " | append: mins | append: " " | append: unit %}
+

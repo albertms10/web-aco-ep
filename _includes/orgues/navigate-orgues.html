@@ -1,0 +1,51 @@
+<!-- TODO vull fer notar nomPoble i nomEdifici, que venen del yml i que s'haurien de revisar -->
+<div class="mt-3 pt-2 post-nav">
+
+    {% assign edificis = site.data.edificis | where_exp: "e", "e.wip != true" %}
+
+    {% for edifici in edificis %}
+        {% if edifici.pageID == page.url %}
+            {% assign prev_index = forloop.index0 | minus: 1 %}
+            {% assign next_index = forloop.index0 | plus: 1 %}
+
+            {% if prev_index >= 0 %}
+                {% assign instrument = edificis[prev_index] %}
+                {% assign prev_url = instrument.pageID %}
+                {% if instrument.nomOrgue %}
+                    <!-- TODO candidat de text pre-generat -->
+                    {% assign prev_name = instrument.nomPoble | append: ". " | append: instrument.nomEdifici | append: " (" | append: instrument.nomOrgue | append: ")" %}
+                {% else %}
+                    {% assign prev_name = instrument.nomPoble | append: ". " | append: instrument.nomEdifici %}
+                {% endif %}
+            {% endif %}
+
+            {% if next_index < edificis.size %}
+                {% assign instrument = edificis[next_index] %}
+                {% assign next_url = instrument.pageID %}
+                {% if instrument.nomOrgue %}
+                    {% assign next_name = instrument.nomPoble | append: ". " | append: instrument.nomEdifici | append: " (" | append: instrument.nomOrgue | append: ")" %}
+                {% else %}
+                    {% assign next_name = instrument.nomPoble | append: ". " | append: instrument.nomEdifici %}
+                {% endif %}
+            {% endif %}
+
+            {% break %}
+        {% endif %}
+    {% endfor %}
+
+    {%- if prev_url -%}
+    <a class="post-previous pe-2"
+       href="{{ prev_url }}"
+       title="{{ prev_name | escape }}">{{ prev_name | escape }}</a>
+    {%- else -%}
+    <span></span>
+    {%- endif -%}
+
+    {%- if next_url -%}
+    <a class="post-next ps-2"
+       href="{{ next_url }}"
+       title="{{ next_name | escape }}">{{ next_name | escape }}</a>
+    {%- else -%}
+    <span></span>
+    {%- endif -%}
+</div>

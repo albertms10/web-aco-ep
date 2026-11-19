@@ -1,0 +1,307 @@
+llibres:
+  - titol: Els orgues de les comarques de Lleida i del Principat d'Andorra
+    any: 2006
+    ciutat: Lleida
+    editorial: Pagès editors
+    autors:
+      - nom: Miquel
+        cognoms: González
+
+  - titol: L'orgue a Catalunya. Història i actualitat
+    any: 2000
+    ciutat: Barcelona
+    editorial: Generalitat de Catalunya
+    autors:
+      - nom: Josep Maria
+        cognoms: Escalona i Canyet
+
+  - titol: Orgues del Camp de Tarragona i les Terres de l'Ebre
+    any: 2013
+    ciutat: Tarragona
+    editorial: Diputació de Tarragona
+    autors:
+      - nom: Jordi
+        cognoms: Vergés Riart
+      - nom: Fina
+        cognoms: Anglès Soronellas
+
+  - titol: Aragonès. Els orgueners que van viure a Girona
+    any: 2012
+    ciutat: Girona
+    editorial: Diputació de Girona
+    autors:
+      - nom: Josep Maria
+        cognoms: Escalona i Canyet
+
+  - titol: Orgues, orgueners i organistes de Gràcia
+    any: 2012
+    ciutat: Maçanet de la Selva
+    editorial: Gregal
+    autors:
+      - nom: Germán
+        cognoms: Lázaro
+
+llibrets:
+  - titol: L'orgue de Collbató
+    any: 1996
+    ciutat: Barcelona
+    editorial: Firotip, S. L.
+    autors:
+      - nom: Albert
+        cognoms: Blancafort Engerfield
+      - nom: Gabriel
+        cognoms: Blancafort Paris
+      - nom: R
+        cognoms: Giner Montané
+      - nom: A
+        cognoms: Muset
+      - nom: G
+        cognoms: Pérez Arienza
+      - nom: Jordi
+        cognoms: Sacasas Segura
+
+  - titol: El nou orgue de la parròquia dels Sants Just i Pastor de Sant Just Desvern. L'orgue per a un poble
+    any: 2005
+    ciutat: Barcelona
+    editorial: Griselda Bonet Girabet
+    autors:
+      - nom: Joan Carles
+        cognoms: Castro
+
+  - titol: L'orgue de Santa Maria del Mar
+    any: 2012
+    ciutat: Barcelona
+    editorial: Parròquia de Santa Maria del Mar
+    autors:
+      - nom: Bernat
+        cognoms: Cabré
+      - nom: Gerhard
+        cognoms: Grenzing
+
+  - titol: L'orgue de Tremp
+    any: 2007
+    ciutat: Tremp
+    editorial: Parròquia de la Mare de Déu de Valldeflors
+    autors:
+      - nom: JA
+        cognoms: Mateo García
+
+  - titol: L'orgue romàntic-simfònic de la parròquia de Santa Maria d'Olesa de Montserrat
+    any: 2008
+    ciutat: Olesa de Montserrat
+    editorial: Amics de l'Orgue i de les Arts d'Olesa de Montserrat
+    autors:
+      - nom: Joan Carles
+        cognoms: Castro
+
+  - titol: El nou orgue de Montserrat. Concert inaugural 25 d'abril de 2010
+    any: 2010
+    ciutat: Barcelona
+    editorial: Publicacions de l'Abadia de Montserrat
+    autors:
+      - nom: Francesc Xavier
+        cognoms: Altés Aguiló
+      - nom: Albert
+        cognoms: Blancafort
+      - nom: J
+        cognoms: Colomer Ràfols
+      - nom: O
+        cognoms: Ponsatí-Murlà
+      - nom: JM
+        cognoms: Soler
+      - nom: J
+        cognoms: Vives
+
+  - titol: La llum del so. El nou orgue de Montserrat
+    any: 2010
+    ciutat: Barcelona
+    editorial: Publicacions de l'Abadia de Montserrat
+    autors:
+      - nom: Jordi-Agustí
+        cognoms: Piqué Collado
+
+  - titol: El Claviorgue Hauslaib del Museu de la Música de Barcelona
+    any: 2013
+    ciutat: Barcelona
+    editorial: Museu de la Música de Barcelona. L'Auditori
+    autors:
+      - nom: Jaume
+        cognoms: Ayats Abeyà
+
+general:
+  - titol: El órgano
+    any: 1998
+    ciutat: Lleida
+    editorial: Milenio
+    autors:
+      - nom: Jordi
+        cognoms: Alcaraz
+
+  - titol: Diccionari de l'orgue
+    any: 2000
+    ciutat: Nieuwkerken
+    editorial: Ed. CEOS v.z.w.
+    autors:
+      - nom: Wilfried
+        cognoms: Praet
+
+  - titol: Diccionario Técnico-Histórico del Órgano en España
+    any: 2001
+    ciutat: Barcelona
+    editorial: Consejo Superior de Investigaciones Científicas
+    autors:
+      - nom: Joaquín
+        cognoms: Saura Buil
+
+cd:
+  - titol: Música per la catedral. Bach i la Catedral de Barcelona
+    any: 1993
+    productora: Catalunya Música
+    altres: Enregistraments en directe per Catalunya Música
+    autors:
+      - nom: Domènec
+        cognoms: Cols
+      - nom: Miquel
+        cognoms: González
+      - nom: Miquel
+        cognoms: González
+      - nom: MT
+        cognoms: Martínez
+      - nom: Francesc
+        cognoms: Pi
+      - nom: Montserrat
+        cognoms: Torrent
+      - nom: Jordi
+        cognoms: Vergés
+
+  - titol: Música catalana del segle XX per a orgue
+    any: 2004
+    productora: Ars Harmonica
+    altres: Gravat a l'orgue de l'església parroquial de Berga
+    autors:
+      - nom: Joan
+        cognoms: Casals
+
+  - titol: L'orgue de Santa Maria
+    any: 2007
+    productora: Vinseum
+    altres: Gravat a l'orgue de la basílica parroquial de Santa Maria de Vilafranca del Penedès
+    autors:
+      - nom: Jonatan
+        cognoms: Carbó
+      - nom: Josep
+        cognoms: Soler
+
+  - titol: Bach al centre del barroc europeu
+    any: 2010
+    productora: Discant
+    altres: Gravat a l'orgue de l'església parroquial de Sant Feliu de Cabrea de Mar
+    autors:
+      - nom: Guido
+        cognoms: Iotti
+
+  - titol: El nou orgue de Montserrat
+    any: 2010
+    productora: Discos de l'Abadia de Montserrat
+    altres: Gravat a l'orgue de la Basílica de l'Abadia de Montserrat
+    autors:
+      - nom: Miquel
+        cognoms: González
+
+  - titol: L'orgue del Vendrell
+    any: 2011
+    productora: Anacrusi produccions, S. L.
+    altres: Gravat a l'orgue del Vendrell
+    autors:
+      - nom: Maria
+        cognoms: Nacy
+
+  - titol: L'obra d'orgue de Francesc Civil
+    any: 2016
+    productora: Anacrusi produccions, S. L.
+    altres: Gravat a l'orgue Aragonès de la catedral de Girona
+    autors:
+      - nom: Josep Maria
+        cognoms: Escalona i Canyet
+
+  - titol: Cornucòpia
+    any: 2016
+    productora: Audiovisuals de Sarrià
+    altres: Gravat a l'orgue la Selva del Camp
+    autors:
+      - nom: Jonatan
+        cognoms: Carbó
+      - nom: Jordi
+        cognoms: Mestres
+
+  - titol: bach
+    any: 2016
+    productora: 82Records
+    altres: Gravat a l'orgue de tribuna del Monestir de Poblet
+    autors:
+      - nom: Juan de la
+        cognoms: Rúbia
+
+  - titol: Música d'orgue a Catalunya, s. XX-XXI
+    any: 2017
+    productora: Tritó edicions
+    altres: Gravat a l'orgue de la Basílica de l'Abadia de Montserrat
+    autors:
+      - nom: Juan de la
+        cognoms: Rúbia
+
+  - titol: Antonio de Cabezón
+    any: 2017
+    productora: Audiovisuals de Sarrià
+    altres: Gravat al claviorgue Hauslaib del Museu de la Música de Barcelona
+    autors:
+      - nom: Juan de la
+        cognoms: Rúbia
+
+  - titol: Música sacra de la Diòcesi de Vic, ss. XX-XXI
+    any: 2018
+    productora: Albert Moraleda, S. L.
+    altres: Gravat a l'orgue de l'església de Sant Esteve de Granollers
+    autors:
+      - nom: Vicenç
+        cognoms: Prunés
+
+  - titol: Nova et Vetera. Antologia organística de compositors Antics Escolans de Montserrat (ss. XIX-XXI)
+    any: 2019
+    productora: Discos de l'Abadia de Montserrat
+    altres: Gravat a l'orgue de la Basílica de l'Abadia de Montserrat
+    autors:
+      - nom: Vicenç
+        cognoms: Prunés
+
+  - titol: Bach Ground
+    any: 2020
+    productora: Ficta edicions i produccions, S. L.
+    altres: Gravat a l'orgue de tribuna del Monestir de Poblet
+    autors:
+      - nom: Joan
+        cognoms: Seguí Mercadal
+
+  - titol: Clàssics d'ahir
+    any: 2010
+    productora: Associació Amics de l'Orgue de Collbató
+    altres: Gravat a l'orgue A&K de la Parròquia de Santa Maria del Remei de les Corts
+    autors:
+      - nom: Josep Maria
+        cognoms: Mas Bonet
+
+  - titol: Les figures del pessebre
+    any: 2010
+    productora: Associació Amics de l'Orgue de Collbató
+    altres: Gravat a l'orgue A&K de la Parròquia de Santa Maria del Remei de les Corts
+    autors:
+      - nom: Bernat
+        cognoms: Bailbé
+
+  - titol: Concert número 50
+    any: 2019
+    productora: Associació Amics de l'Orgue de Collbató
+    altres: Gravat a l'orgue A&K de la Parròquia de Santa Maria del Remei de les Corts
+    autors:
+      - nom: Pau
+        cognoms: Riuró

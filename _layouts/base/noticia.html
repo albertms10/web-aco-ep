@@ -1,0 +1,43 @@
+---
+layout: base
+---
+
+<!-- Es requereix title, description al frontmatter. La foto és opcional (header[src])-->
+<div class="container ps-3 pe-3 mt-5">
+
+    <h1>{{page.title}}</h1>
+    {% if page.header %}
+        {% include image.html
+        source=page.header.src
+        alt-source=page.header.alt-src
+        alt=page.header.alt
+        img-width="100%"
+        caption=page.header.caption
+        %}
+    {% endif %}
+
+{% include posts/inline-information.html date=page.date content=page.content author=page.author %}
+{% include posts/tags.html %}
+{% include posts/activitat.html %}
+
+<hr>
+<div class="pt-2"></div>
+
+    {% if page.columnes %}
+    <div class="columns">
+    {% endif %}
+
+        {% if page.subtitle %}
+        <div class="p-0 mb-4 subtitol">{{page.subtitle | markdownify}}</div>
+        {% endif %}
+
+        {% include posts/content.html %}
+
+    {% if page.columnes %}
+    </div>
+    {% endif %}
+
+    {% include posts/navigate.html %}
+{% include posts/related.html %}
+
+</div>

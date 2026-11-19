@@ -1,0 +1,145 @@
+<div class="alert alert-primary alert-dismissible fade show d-flex align-items-center" role="alert">
+  <div>
+    <i class="bi bi-info-circle-fill flex-shrink-0 me-2" style="top: -0.1rem; position: relative"></i>
+    <strong>
+      Estem treballant activament per completar aquesta llista d’orgues.
+    </strong>
+    Us podeu adreçar a <a href="mailto:web@acorgue.cat">web@acorgue.cat</a> si
+    voleu contribuir en aquest projecte.
+  </div>
+  <button
+    type="button"
+    class="btn-close"
+    data-bs-dismiss="alert"
+    aria-label="Close"
+  ></button>
+</div>
+
+{% assign orgues_inventariats = site.data.comptadors.orgues-inventariats %}
+{% assign orgues_restants = site.data.comptadors.orgues-coneguts %}
+{% assign total_orgues = site.data.comptadors.total-orgues %}
+
+<section class="orgues-stats container py-4" aria-labelledby="orgues-title">
+  <div class="d-flex justify-content-between align-items-end gap-2 mb-2">
+    <span>
+        <span class="os-coverage-number">{{orgues_inventariats}}</span>
+      <span class="fs-5 text-body-secondary">orgues inventariats</span>
+    </span>
+    <span class="text-body-secondary text-end small">
+      Falten, aproximadament, <strong>{{orgues_restants}}</strong><br /> orgues
+      per inventariar arreu del territori
+    </span>
+  </div>
+  <div
+    class="progress"
+    role="progressbar"
+    aria-label="Orgues inventariats sobre el total estimat"
+    aria-valuenow="{{orgues_inventariats}}"
+    aria-valuemin="0"
+    aria-valuemax="{{total_orgues}}"
+  >
+    <div
+      class="progress-bar os-bg-main"
+      style="width: {{orgues_inventariats | times: 100.0 | divided_by: total_orgues}}%"
+    ></div>
+  </div>
+  <p class="mt-2 mb-1">
+    <span class="fw-semibold">{{site.data.comptadors.altres.fotos}}</span>
+    <span class="text-body-secondary"
+      >fotografies que acompanyen els articles</span
+    >
+  </p>
+
+  <div class="mt-4 mb-2">
+    <div class="d-flex justify-content-between align-items-end mb-2">
+      <span>
+        <span class="os-number fs-4">
+          ~{{site.data.comptadors.altres.registres.total}}
+        </span>
+        <span class="text-body-secondary">registres en total</span></span
+      >
+      <span class="text-body-secondary small"></span>
+    </div>
+    <div
+      class="progress-stacked"
+      role="group"
+      aria-label="Registres: manuals i pedaler"
+    >
+      <div
+        class="progress"
+        role="progressbar"
+        aria-label="Registres als manuals"
+        aria-valuenow="{{site.data.comptadors.altres.registres.manual}}"
+        aria-valuemin="0"
+        aria-valuemax="{{site.data.comptadors.altres.registres.total}}"
+        style="width: {{site.data.comptadors.altres.registres.manual | times: 100.0 | divided_by: site.data.comptadors.altres.registres.total}}%"
+      >
+        <div class="progress-bar os-bg-manual"></div>
+      </div>
+      <div
+        class="progress"
+        role="progressbar"
+        aria-label="Registres al pedaler"
+        aria-valuenow="{{site.data.comptadors.altres.registres.pedal}}"
+        aria-valuemin="0"
+        aria-valuemax="{{site.data.comptadors.altres.registres.total}}"
+        style="width: {{site.data.comptadors.altres.registres.pedal | times: 100.0 | divided_by: site.data.comptadors.altres.registres.total}}%"
+      >
+        <div class="progress-bar os-bg-pedal"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-3">
+    <div class="col-md-6">
+      <div class="h-100">
+        <div class="h5 mt-2 mb-1 text-dark">
+          <span
+            class="align-bottom d-inline-block mb-2 os-bg-manual p-1 rounded-circle"
+          ></span>
+          Manuals
+        </div>
+        <p class="small text-body-secondary mb-3">&nbsp;</p>
+        <div class="row">
+          <div class="col-6">
+            <div class="os-number">{{site.data.comptadors.altres.manuals}}</div>
+            <div class="text-body-secondary">teclats</div>
+          </div>
+          <div class="col-6">
+            <div class="os-number">
+              {{site.data.comptadors.altres.registres.manual}}
+            </div>
+            <div class="text-body-secondary">registres</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="h-100">
+        <div class="h5 mt-2 mb-1 text-dark">
+          <span
+            class="align-bottom d-inline-block mb-2 os-bg-pedal p-1 rounded-circle"
+          ></span>
+          Pedalers
+        </div>
+        <p class="small text-body-secondary mb-3">
+          De tradició ibèrica, francesa i alemanya
+        </p>
+        <div class="row">
+          <div class="col-6">
+            <div class="os-number">
+              {{site.data.comptadors.altres.pedalers}}
+            </div>
+            <div class="text-body-secondary">pedalers</div>
+          </div>
+          <div class="col-6">
+            <div class="os-number">
+              {{site.data.comptadors.altres.registres.pedal}}
+            </div>
+            <div class="text-body-secondary">registres</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

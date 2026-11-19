@@ -1,0 +1,13 @@
+{% include functions/get-info-from-url.html %}
+{% assign poble = site.data.pobles | where: 'link',poble | first %}
+{% assign edifici = poble.edificis | where: 'link',edifici | first %}
+
+<!-- TODO de l'església, de la basílica, del convent, etc. Millorar el text del títol? -->
+{% assign title = "Orgues " | append: edifici.de | append: edifici.nom | append: " " | append: poble.de_nom %}
+{% assign description = title | replace: "Orgues", "Llista dels orgues" %}
+
+<title>{{title}}</title>
+<meta name="description" content="{{description}}">
+{% include head/open-graph.html title=title description=description image="" image-alt="" %}
+
+<link rel="stylesheet" href="{% link assets/node_modules/leaflet/dist/leaflet.css %}">

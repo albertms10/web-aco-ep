@@ -1,0 +1,14 @@
+body a.toc-link {
+  color: #888;
+  text-decoration: none;
+}
+body a.is-active-link {
+  color: $primary !important;
+}
+body a.is-active-link:before {
+  // color de la línia del costat
+  background-color: $primary !important;
+}
+body a.toc-link:hover {
+  text-decoration: underline;
+}

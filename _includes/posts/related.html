@@ -1,0 +1,9 @@
+<div class="post-related">
+    <h3>Articles relacionats</h3>
+    <ul>
+        {% assign posts = site[page.collection] | sample:4 %}
+        {%- for post in posts -%}
+        <li><a class="post-link" href="{{post.url }}" title="{{ page.next.title | escape }}">{{ post.title | escape | truncatewords: 12 }}</a></li>
+        {%- endfor -%}
+    </ul>
+</div>

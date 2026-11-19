@@ -1,0 +1,105 @@
+---
+layout: base
+scripts:
+- leafletMapGeneric.js
+---
+
+<!-- TODO generèic i general. Majusculització de municipis i edificis i orgues -->
+
+<div class="container ps-3 pe-3 mt-3">
+
+    {% include functions/get-info-from-url.html %}
+    {% assign provincia = site.data.orgues.provincies | where: 'link', provincia | first %}
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% link pages/orgues.md %}">Orgues</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{provincia.nom}}</li>
+        </ol>
+    </nav>
+
+    <h1 class="pb-0 mb-4">Orgues de la província de {{ provincia.nom }}</h1>
+
+    <div class="row gx-6">
+        <div class="col-12 col-lg-6 mt-2 js-toc-content text-body">
+
+            {% assign comarques = site.data.orgues.comarques | where: "provincia",provincia.link %}
+
+            <div class="orgues-ul">
+            {% for comarca in comarques %}
+                <b>{{comarca.nom}}</b>
+                    {% assign pobles = site.data.pobles | where: "comarca",comarca.link %}
+                    {% if pobles.size == 0 %}
+                        <ul><li>No hi ha orgues o no estan a l’inventari.</li></ul>
+                    {% else %}
+                    <ul>
+                    {% for poble in pobles %}
+                        <li>{{poble.nom}}
+                            {% if poble.edificis.size == 1 %}
+                                · <!-- separador d'un element -->
+                                <!-- skip list of 1 element -->
+                                {% assign edifici = poble.edificis | first %}
+                                {% if edifici.wip %}
+                                    <span
+                                        data-latitud="{{edifici.geolocalitzacio.latitud}}"
+                                        data-longitud="{{edifici.geolocalitzacio.longitud}}"
+                                        data-adreca="{{edifici.adreca}}"
+                                        data-html="<b>{{poble.nom}}</b><br><span>{{edifici.nom}}</span>"
+                                    >{{edifici.nom}}</a>
+                                {% else %}
+                                    <a href="{% link orgues/{{poble.provincia}}/{{poble.comarca}}/{{poble.link}}/{{edifici.link}}.md %}"
+                                        data-latitud="{{edifici.geolocalitzacio.latitud}}"
+                                        data-longitud="{{edifici.geolocalitzacio.longitud}}"
+                                        data-adreca="{{edifici.adreca}}"
+                                        data-html="<b>{{poble.nom}}</b><br><a href=&quot;{% link orgues/{{poble.provincia}}/{{poble.comarca}}/{{poble.link}}/{{edifici.link}}.md %}&quot;>{{edifici.nom}}</a>"
+                                    >{{edifici.nom}}</a>
+                                {% endif %}
+                            {% else %}
+                                <ul>
+                                {% for edifici in poble.edificis %}
+                                    <li>
+                                        {% if edifici.wip %}
+                                        <span
+                                           data-latitud="{{edifici.geolocalitzacio.latitud}}"
+                                           data-longitud="{{edifici.geolocalitzacio.longitud}}"
+                                           data-adreca="{{edifici.adreca}}"
+                                           data-html="<b>{{poble.nom}}</b><br><span>{{edifici.nom}}</span>"
+                                        >{{edifici.nom}}</span>
+                                        {% else %}
+                                        <a href="{% link orgues/{{poble.provincia}}/{{poble.comarca}}/{{poble.link}}/{{edifici.link}}.md %}"
+                                           data-latitud="{{edifici.geolocalitzacio.latitud}}"
+                                           data-longitud="{{edifici.geolocalitzacio.longitud}}"
+                                           data-adreca="{{edifici.adreca}}"
+                                           data-html="<b>{{poble.nom}}</b><br><a href=&quot;{% link orgues/{{poble.provincia}}/{{poble.comarca}}/{{poble.link}}/{{edifici.link}}.md %}&quot;>{{edifici.nom}}</a>"
+                                        >{{edifici.nom}}</a>
+                                        {% endif %}
+                                    </li>
+                                {% endfor %}
+                                </ul>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                    </ul>
+                    {% endif %}
+                </li>
+            {% endfor %}
+            </div>
+
+        </div>
+
+        {% assign geojson = "/assets/geojson/provincies/" | append: provincia.link | append: ".geojson" %}
+        {% assign limits = site.data.limits-geografics.provincies | where: 'link', provincia.link | first | map: "limits" | first %}
+
+        <div class="col-12 col-lg-6 mt-6 mt-lg-2">
+            <section class="sticky-top pt-4">
+                <div id="map" class="mapa-generic"
+                     data-top-right-lat="{{limits[0]}}"
+                     data-top-right-long="{{limits[1]}}"
+                     data-bottom-left-lat="{{limits[2]}}"
+                     data-bottom-left-long="{{limits[3]}}"
+                     data-geojson="{{geojson | relative_url}}"
+                ></div>
+            </section>
+        </div>
+    </div>
+</div>

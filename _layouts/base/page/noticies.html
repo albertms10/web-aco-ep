@@ -1,0 +1,9 @@
+---
+layout: base/page
+---
+
+{% include functions/get_unique_post_datetime.html %}
+{% assign years = return %}
+{% assign keys = years | reverse %}
+<!-- Ordenem per anys, seleccionem una categoria en concret -->
+{% include post-lists/list.html keys=keys field="date" %}

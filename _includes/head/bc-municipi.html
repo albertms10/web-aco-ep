@@ -1,0 +1,10 @@
+{% include functions/get-info-from-url.html %}
+{% assign municipi = site.data.pobles | where: 'provincia', provincia | where: 'comarca', comarca | where: 'link', poble | first %}
+{% assign comarca = site.data.orgues.comarques | where: 'link',comarca | first %}
+
+<!-- TODO Millorar el títol? -->
+<title>Orgues {{municipi.de_nom}} ({{comarca.nom}})</title>
+<meta name="description" content="Llista dels orgues {{municipi.de_nom}}.">
+{% include head/open-graph.html title=title description=description image="" image-alt="" %}
+
+<link rel="stylesheet" href="{% link assets/node_modules/leaflet/dist/leaflet.css %}">

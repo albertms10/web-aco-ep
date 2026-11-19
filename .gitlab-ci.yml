@@ -1,0 +1,54 @@
+cache:
+  paths:
+    - assets/node_modules/
+    - assets/geojson/
+    - vendor/
+
+workflow:
+  rules:
+    - if: $CI_COMMIT_BRANCH == "production"
+
+node:
+  image: node:16.17.0
+  stage: build
+  script:
+    - npm install --prefix assets
+  artifacts:
+    paths:
+      - assets/node_modules/
+
+python:
+  image: python:3.14
+  stage: build
+  before_script:
+    - pip install -r requirements.txt
+  script:
+    - python scripts/create-comptadors.py
+    - python scripts/create-geo-limits.py
+    - python scripts/create-orgues-per-orgueners.py
+    - python scripts/create-pobles.py
+    - python scripts/sort-bibliografia.py
+    - python scripts/manage-nuvol.py -d
+  artifacts:
+    paths:
+      - _data/bibliografia.yml
+      - _data/comptadors.yml
+      - _data/edificis.yml
+      - _data/imatges.yml
+      - _data/orgueners.yml
+      - _data/pobles.yml
+      - _data/limits-geografics.yml
+      - assets/geojson/
+
+pages:
+  image: ruby:3.0
+  stage: deploy
+  before_script:
+    - gem install bundler
+    - bundle config set --local path 'vendor'
+    - bundle install
+  script:
+    - JEKYLL_ENV=production bundle exec jekyll build -d public
+  artifacts:
+    paths:
+      - public

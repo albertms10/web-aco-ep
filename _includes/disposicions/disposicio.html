@@ -1,0 +1,87 @@
+{% include functions/get-info-from-url.html %}
+{% if include.orgue %}
+    {% assign data = site.data.disposicions.[provincia].[comarca].[poble].[edifici].[include.orgue] %}
+{% elsif orgue %}
+    {% assign data = site.data.disposicions.[provincia].[comarca].[poble].[edifici].[orgue] %}
+{% elsif include.edifici %}
+    {% assign data = site.data.disposicions.[provincia].[comarca].[poble].[include.edifici] %}
+{% else %}
+    {% assign data = site.data.disposicions.[provincia].[comarca].[poble].[edifici] %}
+{% endif %}
+
+<div class="py-2 px-0">
+    <div class="row pb-2">
+        {% for teclat in data.teclats %}
+            <div class="col-xxl-6 col-lg-6 col-12">
+                {% include disposicions/taula.html head=teclat.nom extensio=teclat.extensio registres=teclat.registres %}
+            </div>
+        {% endfor %}
+
+        {% if data.pedal %}
+        <div class=" col-xxl-6 col-lg-6 col-12">
+            {% if data.pedal.nom %}
+                {% assign npedal = data.pedal.nom %}
+            {% else %}
+                {% assign npedal = "Pedal" %}
+            {% endif %}
+            {% include disposicions/taula.html head=npedal extensio=data.pedal.extensio registres=data.pedal.registres %}
+        </div>
+        {% endif %}
+
+        {% if data.acoblaments %}
+        <div class=" col-xxl-6 col-lg-6 col-12">
+            {% include disposicions/taula.html head="Acoblaments" acoblaments=data.acoblaments %}
+        </div>
+        {% endif %}
+
+        {% if data.efectes %}
+        <div class="col-xxl-6 col-lg-6 col-12">
+            {% include disposicions/taula.html head="Miscel·lània" efectes=data.efectes %}
+        </div>
+        {% endif %}
+
+        {% if data.diapaso or data.temperament %}
+        <div style="font-size:0"><p class="m-0">
+
+            {% if data.diapaso %}
+                {% if data.diapaso.frequencia and data.diapaso.temperatura %}
+                    {% assign delta = 20 | minus: data.diapaso.temperatura | times: 0.6 %}
+                    {% assign frequencia_normalitzada = data.diapaso.frequencia | plus: delta %}
+                    <span style="font-size:0.9rem;">Diapasó: {{data.diapaso.nota}} {{frequencia_normalitzada}}&nbsp;Hz a 20&nbsp;°C</span>
+                {% else %}
+                    <span style="font-size:0.9rem;">Diapasó: {{data.diapaso.nota}} {{data.diapaso.frequencia}}&nbsp;Hz</span>
+                {% endif %}
+
+                {% if data.diapaso.registre %}
+                    <span style="font-size:0.9rem;">&nbsp;({{data.diapaso.registre | replace: "'", "′"}})</span>
+                {% endif %}
+
+                <span style="font-size:0.9rem;">. </span>
+            {% endif %}
+
+            {% if data.temperament %}
+                <span style="font-size:0.9rem;">Temperament: {{data.temperament}}.</span>
+            {% endif %}
+
+        </p></div>
+        {% endif %}
+    </div>
+
+    <hr class="my-0 pb-1">
+
+    <p class="d-inline-flex pt-2 pb-2 mb-0">
+        <a class="btn btn-outline-primary btn-sm" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Llegenda
+        </a>
+    </p>
+    <div class="collapse" id="collapseExample">
+        <div class="card card-body small p-2 ps-3">
+            <span class="llengueta">En vermell, els jocs de llengüeta. </span><br>
+            <span class="no-present">En gris, els jocs que no hi són. </span><br>
+            S'indica la partició de jocs amb dos tiradors amb «/».<br>
+            S'indica la partició interna del joc amb un tirador amb «|».
+        </div>
+    </div>
+
+</div>
+

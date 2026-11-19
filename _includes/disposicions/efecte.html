@@ -1,0 +1,6 @@
+{% assign modifiers = "" %}
+    {% if efecte.falta %}
+    {% assign modifiers = modifiers | append: " no-present " %}
+{% endif %}
+
+<span class="registre-in-taula {{ modifiers }}">{{efecte.nom | replace: "'", "′"}}</span>

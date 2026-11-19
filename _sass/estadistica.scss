@@ -1,0 +1,37 @@
+.orgues-stats {
+  --os-main: #6c1430;
+  --os-manual: #2f6f8f;
+  --os-pedal: #b8863b;
+}
+.orgues-stats .os-coverage-number {
+  font-size: clamp(3rem, 8vw, 4rem);
+  line-height: 1;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+.orgues-stats .os-number {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  line-height: 1.1;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.orgues-stats .os-bg-main {
+  background-color: var(--os-main);
+}
+.orgues-stats .os-bg-manual {
+  background-color: var(--os-manual);
+}
+.orgues-stats .os-bg-pedal {
+  background-color: var(--os-pedal);
+}
+.orgues-stats .progress,
+.orgues-stats .progress-stacked {
+  height: 0.4rem;
+}
+.bi {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+  fill: currentcolor;
+}

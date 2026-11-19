@@ -1,0 +1,66 @@
+<div class="embed-container maps">
+    <ul id="markers" hidden>
+        {% for poble in site.data.pobles %}
+            {% for edifici in poble.edificis %}
+                {% if edifici.adreca %}
+                    <!-- 0 -->
+                    <li>{{edifici.adreca}}</li>
+                    <!-- 1 -->
+                    <li>{{edifici.geolocalitzacio.latitud}}</li>
+                    <!-- 2 -->
+                    <li>{{edifici.geolocalitzacio.longitud}}</li>
+
+                    <!-- 3 Enllaç a l'edifici i als diferents orgues -->
+                    {% if edifici.orgues %}
+                        <li>
+                            <!-- TODO Majusculització de l'edifici i municipi? -->
+                            {% if edifici.wip %}
+                                {{edifici.nom}}. {{poble.nom}}
+                            {% else %}
+                                <a href="{% link orgues/{{poble.provincia}}/{{poble.comarca}}/{{poble.link}}/{{edifici.link}}.md %}">{{edifici.nom}}. {{poble.nom}}</a>
+                            {% endif %}<br>
+                            {% for orgue in edifici.orgues %}
+                                ▸ {% if orgue.wip %}
+                                    {{orgue.nom}}
+                                  {% else %}
+                                    <a href="{% link orgues/{{poble.provincia}}/{{poble.comarca}}/{{poble.link}}/{{edifici.link}}/{{orgue.link}}.md %}">{{orgue.nom}}</a>
+                                  {% endif %}<br>
+                            {% endfor %}
+                        </li>
+                    <!-- 3 Enllaç a l'orgue -->
+                    {% else %}
+                        <li>
+                            <!-- TODO Majusculització de l'edifici i municipi? -->
+                            {% if edifici.wip %}
+                                {{edifici.nom}}. {{poble.nom}}
+                            {% else %}
+                                <a href="{% link orgues/{{poble.provincia}}/{{poble.comarca}}/{{poble.link}}/{{edifici.link}}.md %}">{{edifici.nom}}. {{poble.nom}}</a>
+                            {% endif %}
+                        </li>
+                    {% endif %}
+
+                    <!-- 4 Bisbat -->
+                    {% if edifici.civil %}
+                        <li>civil</li>
+                    {% else %}
+                        <li>{{poble.bisbat}}</li>
+                    {% endif %}
+
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </ul>
+    <div id="map" class="mapa-general"></div>
+    <div class="maps-click-text-container">
+        <p class="px-5 py-4 mb-5 me-2 maps-click-text prevent-select">Pitgeu el mapa per moure'l</p>
+    </div>
+</div>
+<div>
+    <p class="h6 pt-3">Llegenda (bisbats):</p>
+    <div class="row">
+        {% for bisbat in site.data.orgues.bisbats %}
+        {%- assign iconUrl = "/assets/img/markers/" | append: bisbat.marker | append: ".png" -%}
+        <div class="col col-auto"><nobr><img src="{{iconUrl}}" style="display:inline; height:1rem; width: auto;">&nbsp;{{bisbat.nom}}</nobr></div>
+        {% endfor %}
+    </div>
+</div>

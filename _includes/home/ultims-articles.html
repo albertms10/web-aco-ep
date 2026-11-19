@@ -1,0 +1,7 @@
+<div class="container ps-3 pe-3 mt-3">
+    <h2 class="h1">Últimes publicacions</h2>
+    {% assign posts = site.posts | slice: 0, site.home-articles %}
+    {% for post in posts %}
+    {% include posts/incipit.html post=post %}
+    {% endfor %}
+</div>

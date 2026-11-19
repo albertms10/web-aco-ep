@@ -1,0 +1,10 @@
+<meta property="og:title" content="{{include.title}}"/>
+<meta property="og:type" content="website"/>
+<meta property="og:description" content="{{include.description}}"/>
+{% if include.image != "" %}
+<meta property="og:image" content="{{include.image}}"/>
+<meta property="og:image:alt" content="{{include.image-alt}}"/>
+{% endif %}
+<meta property="og:url" content="{{site.url}}{{page.url}}"/>
+<meta property="og:locale" content="ca_ES"/>
+<meta property="og:site_name" content="Associació Catalana de l’Orgue"/>

@@ -1,0 +1,30 @@
+- name: Inici
+  link: /
+- name: Qui som
+  link: /about/
+- name: Publicacions
+  sublist:
+    - name: Full informatiu
+      link: /full/
+    - name: Notícies i articles
+      link: /noticies/
+    - name: Categories
+      link: /categories/
+    - name: Etiquetes
+      link: /etiquetes/
+- name: Orgues
+  link: /orgues/
+- name: Bibliografia
+  link: /bibliografia/
+- name: Associacions
+  link: /associacions/
+- name: Formació
+  link: /formacio/
+- name: Cicle «Els Orgues de Catalunya»
+  link: /ceoc/
+#- name: Amb dropdown
+#  sublist:
+#    - name: bbb1
+#      link: /bbb1
+#    - name: bbb2
+#      link: /bbb2

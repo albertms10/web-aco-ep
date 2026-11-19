@@ -1,0 +1,922 @@
+material_grafic:
+  - edicio: 44
+    portada_programa: https://nextcloud.acorgue.cat/public.php/dav/files/w2SMoD95Baggt57
+    alt_portada_programa: Portada del programa del cicle de 2024
+    color: "#6c1430"
+    color_clar: "#f7d4df"
+    programa: https://nextcloud.acorgue.cat/public.php/dav/files/Jg38HkY4eFfmpEK
+  - edicio: 45
+    portada_programa: https://nextcloud.acorgue.cat/public.php/dav/files/6ByKWsaRzx44HoM
+    alt_portada_programa: Portada del programa del cicle de 2025
+    color: "#db613c"
+    color_clar: "#f7dcd4"
+    programa: https://nextcloud.acorgue.cat/public.php/dav/files/DdtTXesC6YjLZmx
+  - edicio: 46
+    portada_programa: https://nextcloud.acorgue.cat/public.php/dav/files/Hd46eN6tjSHSP35
+    alt_portada_programa: Portada del programa del cicle de 2026
+    color: "#0d596e"
+    color_clar: "#d8e3ee"
+    programa: https://nextcloud.acorgue.cat/public.php/dav/files/tLJFAByw9QTc9X7
+
+# el nom del municipi hauria de coincidir amb el nom del fitxer dins de ceoc/45/municipi.md
+propostes_turisme:
+  girona:
+    - titol: La ciutat històrica
+      descripcio: >-
+        Una de les més interessants de Catalunya, la ciutat històrica de Girona permet resseguir més de 2.000 anys d'història a partir de dos recintes fortificats, la Força Vella i l'Eixample Medieval. L'atracció de Girona es completa amb el suggestiu barri jueu del Call, amb els bellíssims carrers i places porticades, i amb els exultants espais barrocs i construccions noucentistes de Rafael Masó.
+      url: https://www.girona.cat/turisme/cat/monuments.php
+      foto: https://www.girona.cat/turisme/img/visor_act/12.jpg
+    - titol: Turisme actiu i de natura
+      descripcio: >-
+        Girona és una ciutat privilegiada pel que fa al patrimoni natural. Hi trobareu rius que penetren dins la trama urbana, boscos mediterranis i de ribera, massissos muntanyosos com les Gavarres, la vall de Sant Daniel, camps, hortes i conreus, i, en general, un paisatge que ha sabut entrelligar el creixement urbà amb la preservació de l'entorn natural. A poques passes del centre de la ciutat podreu gaudir de tot això i molt més.
+      url: https://www.girona.cat/turisme/cat/turisme_actiu.php
+      foto: https://www.girona.cat/turisme/img/foto_natura.jpg
+    - titol: Més cultura i turisme
+      descripcio: >-
+        Girona és una ciutat a escala humana que té, però, l'atractiu de les grans ciutats. Es pot passejar tranquil·lament per la ciutat històrica i visitar-ne els monuments i museus, i es pot badar còmodament pels carrers i places gaudint de tot el que ofereix.
+      url: https://www.girona.cat/turisme/cat/index.php
+      foto: https://www.girona.cat/turisme/img/foto_cases.jpg
+  montbrio-del-camp:
+    - titol: Patrimoni arquitectònic
+      descripcio: >-
+        Montbrió del Camp té una llarga història que ha deixat el seu testimoni ben visible en els carrers que conformen el Nucli Antic de la vila.
+        Conserva intacta l’estructura medieval amb la plaça de la Vila en el cor, i els carrerons que l’envolten. Trobem edificis de diverses tipologies constructives i diferents estils que ens parlen de l’evolució urbanística i arquitectònica de la vila.
+      url: https://www.montbriodelcamp.cat/el-municipi/turisme/llocs-dinteres/index.html
+      foto: https://www.montbriodelcamp.cat/images/gi-m-t-1.jpg
+    - titol: Ruta rellotges de sol
+      descripcio: >-
+        Montbrió del Camp és un poble amb molts rellotges de sol, més d’una dotzena de peces històriques i contemporànies, que demostren que el patrimoni gnomònic és viu des del segle XVII fins a l’actualitat.
+      url: https://www.montbriodelcamp.cat/el-municipi/turisme/ruta-rellotges-sol/index.html
+      foto: https://www.montbriodelcamp.cat/images/ga-t-rss-rellotge-esglesia.jpg
+    - titol: Més cultura i turisme
+      descripcio: >-
+        La vila de Montbrió del Camp pertany a la comarca del Baix Camp, situada al bell mig de la plana del Camp de Tarragona, entre la Mar Mediterrània i la Serralada Prelitoral. Una situació privilegiada que li dona un caràcter singular. Davant les noves tendències turístiques, visitar la vila i el seu territori és una alternativa al turisme de sol i platja tradicional.
+      url: https://www.montbriodelcamp.cat/el-municipi/turisme/index.html
+      foto: https://www.montbriodelcamp.cat/images/foto1.jpg
+  ager:
+    - titol: Col·legiata de Sant Pere d'Àger
+      descripcio: >-
+        El conjunt del Castell Col·legiata de Sant Pere d’Àger està format per una sèrie d’edificis romànics i gòtics de gran interès i caràcter monumental, construïts entre els segles XI i XVI.
+      url: https://turismeager.cat/collegiata-de-sant-pere-dager/
+      foto: https://nextcloud.acorgue.cat/public.php/dav/files/ytKHAqLwpxyw5tf
+    - titol: Parc Astronòmic del Montsec
+      descripcio: >-
+        El Parc Astronòmic del Montsec (PAM) aprofita la zona del Montsec per a la realització de recerca, formació i divulgació de l’astronomia. Reuneix unes característiques úniques: el millor cel de Catalunya, nits sense núvols, poca pluja i baixa contaminació lumínica.
+      url: https://turismeager.cat/parc-astronomic-del-montsec/
+      foto: https://nextcloud.acorgue.cat/public.php/dav/files/7yJpo2JKHqxQPQf
+    - titol: Activitats a l'aire lliure
+      descripcio: >-
+        Les valls d'Àger ofereixen multituds d'activitats a l'aire lliure, des de la famosa ruta del Congost de Mont-rebei fins a rutes en en caiac i en parapent. Aquesta i més informació la trobareu a la pàgina de turisme d'Àger.
+      url: https://turismeager.cat/
+      foto: https://nextcloud.acorgue.cat/public.php/dav/files/knPqoNTBE3AdJ3H
+  castello-d-empuries:
+    - titol: Museus
+      descripcio: >-
+        Castelló d'Empúries allotja quatre museus ben variats, com l'Ecomuseu Farinera, el de la basílica de Santa Maria i
+        el d'Història Medieval de la Cúria-Presó del s. XIV. També s'ofereix, de manera privada, una visita a la Sinagoga
+        del Puig Mercadal.
+      url: https://castelloempuriabrava.com/?taxonomy=categoria-que-visitar&term=museus
+      foto: https://castelloempuriabrava.com/wp-content/uploads/2019/03/CASTELLO-EMPURIES-021.jpg
+    - titol: Butterfly Park
+      descripcio: >-
+        Passeja pels camins del jardí tropical i descobreix el fascinant món de les papallones, lloros i altres animals exòtics.
+      url: https://castelloempuriabrava.com/que-visitar/butterfly-park/
+      foto: https://castelloempuriabrava.com/wp-content/uploads/2018/07/Butterfly-1024x768.jpg
+    - titol: Altres punts d'interès
+      descripcio: >-
+        Castelló d'Empúries té diferents espais d'interès històric i cultural, a més d'estar molt a prop del
+        Parc Natural dels Aiguamolls de l'Empordà. Això i molt més es pot trobar a la pàgina de turisme de Castelló d'Empúries
+      url: https://castelloempuriabrava.com/
+      foto: https://castelloempuriabrava.com/wp-content/uploads/2019/03/que-visitar-monuments-1.jpg
+  el-pla-de-santa-maria:
+    - titol: La Fàbrica
+      descripcio: >-
+        Entre 1916 i 1917 l’empresa tèxtil Martí, Llopart i Trenchs decideix instal·lar-se al municipi, tot i no ésser el més idoni degut a la manca d’aigua, i construeix una fàbrica, que  esdevé motor econòmic, social, cultural i esportiu del poble.
+        El Centre d’Interpretació del Tèxtil (CIT) es troba, juntament amb el Museu Agrícola, dins d’una de les naus de l’antiga fàbrica tèxtil del Pla.
+      url: http://www.pla.altanet.org/centre-dinterpretacio-del-textil
+      foto: https://nextcloud.acorgue.cat/public.php/dav/files/6pYn5zzYBfN8r7j
+    - titol: La ruta de la pedra seca
+      descripcio: >-
+        El terme del Pla, i concretament la zona de les Planes, concentra moltes construccions de pedra seca, edificacions que desafien el pas del temps.
+        Són el testimoni d’una època passada: La pedra com a únic material per separar finques, per traçar camins, per proporcionar recer, per aprofitar l’aigua, per fer el màxim amb el mínim.
+      url: http://www.pla.altanet.org/la-ruta-de-la-pedra-seca
+      foto: https://nextcloud.acorgue.cat/public.php/dav/files/ZWjeSxqsGaRCJAH
+    - titol: Més cultura i turisme
+      descripcio: >-
+        Altres activitats culturals, rutes per la natura i molt més es pot trobar a la pàgina de turisme del Pla de Santa Maria.
+      url: http://www.pla.altanet.org/coneixer-el-pla
+      foto: https://nextcloud.acorgue.cat/public.php/dav/files/JeyPqPNAoff6sjs
+  la-pobla-de-cervoles:
+    - titol: Ajuntament i Ecomuseu
+      descripcio: >-
+        L'edifici on ara hi trobem l'Ajuntament era l'antic molí de la Societat, que fou construït l'any 1870, i que fins al 1930 s'hi produïa oli amb dos molins i quatre premeses de biga, de les quals una encara es conserva.
+      url: https://www.poblacervoles.cat/turisme/visites-guiades-al-municipi-i-els-seus-voltants/ecomuseu-de-loli
+      foto: https://www.poblacervoles.cat/la_pobla_de_cervoles_-_ecomuseu_de_loli.jpeg/@@images/c708c21d-ccd2-49b8-9c91-82d71e0e7e7f.jpeg
+    - titol: La Vinya del Artistes
+      descripcio: >-
+        La Vinya dels Artistes és una idea del Guinovart. Es va fer realitat gràcies a la bogeria d'una família que s'ha permès somniar i apostar per Les Garrigues com a escenari pintoresc i privilegiat d'un projecte únic, un museu a l'aire lliure.
+      url: https://www.poblacervoles.cat/turisme/visites-guiades-al-municipi-i-els-seus-voltants/la-vinya-del-artistes
+      foto: https://www.poblacervoles.cat/turisme/visites-guiades-al-municipi-i-els-seus-voltants/la-vinya-del-artistes/@@images/a570f1b4-39c2-47a0-a596-678aaa3867cd.jpeg
+    - titol: Més cultura i turisme
+      descripcio: Altres activitats culturals, rutes per la natura i molt més es pot trobar a la pàgina de turisme de La Pobla de Cérvoles.
+      url: https://www.poblacervoles.cat/turisme/visites-guiades-al-municipi-i-els-seus-voltants
+      foto: https://www.poblacervoles.cat/header/@@images/c9916ad2-ddb4-4c2b-9ea1-1f2f69ffab0d.jpeg
+  manresa:
+    - titol: Viatja a l'Edat Mitjana
+      descripcio: >-
+        Visita el Museu Comarcal de Manresa, el centre d'interpretació del Carrer del Balç i la basílica de la Seu per viatjar a l'Edat Mitjana.
+      url: http://www.manresaturisme.cat/cat/article/5801-viatja-a-l-edat-mitjana
+      foto: https://web.manresa.cat/media/docs/docsArticle/5856/museu-comarcal_interior.jpg
+    - titol: Museu del Barroc de Catalunya
+      descripcio: >-
+        El nou Museu del Barroc de Catalunya és un museu d’abast nacional que situa Manresa com l’epicentre de la interpretació de l’art barroc català, i permet redescobrir i valorar el patrimoni d’aquest període al país.
+      url: http://www.manresaturisme.cat/cat/menu/16962-museu-del-barroc-de-catalunya
+      foto: https://web.manresa.cat/media/docs/fons/imatge_16962.png
+    - titol: Més cultura i turisme
+      descripcio: >-
+        Altres activitats culturals, rutes per la natura, la Manresa ignasiana, enoturisme i molt més es pot trobar a la pàgina de turisme de Manresa.
+      url: http://www.manresaturisme.cat
+      foto: https://web.manresa.cat/media/docs/docsArticle/5536/seuweb5.jpg
+  masies-de-voltrega:
+    - titol: Museu del Coure
+      descripcio: >-
+        El Museu del Coure és una oportunitat per presentar a la societat la història d’aquest metall noble i de La Farga. Dues històries explicades en un espai cultural i formatiu que ens permet comprendre una indústria i un model d’innovació que ha transformat la societat al llarg dels anys.
+      url: https://lafarga.es/coure/#museu-coures
+      foto: https://lafarga.es/wp-content/uploads/2024/02/2.jpg
+    - titol: Conjunt Troglodític de Quintanes
+      descripcio: >-
+        La llegenda dels Sants màrtirs explica que dos homes que havien sigut bruixots però que es van convertir al cristianisme, Llucià i Marcià van anar a aquest lloc a amagar-se dels romans. Anys més tard van baixar a Vic i molta gent els hi demanava serveis de bruixots, ells en negar-se, van ser presos i cremats a la plaça de Vic.
+      url: https://www.lesmasiesdevoltrega.cat/el-municipi/turisme/llocs-dinteres/conjunt-trogloditic-de-quintanes.html
+      foto: https://www.lesmasiesdevoltrega.cat/media/repository/3-municipi/turisme/llocs_d_interes/Trogloditic_Quintanes_1.jpg
+    - titol: Més cultura i turisme
+      descripcio: >-
+        Altres activitats culturals, rutes per la natura i molt més es pot trobar a la pàgina de turisme de Les Masies de Voltregà i a de
+        [turisme d'Osona](https://osonaturisme.cat/descobreix-osona/les-masies-de-voltrega/).
+      url: https://www.lesmasiesdevoltrega.cat/el-municipi/turisme
+      foto: https://www.lesmasiesdevoltrega.cat/media/repository/3-municipi/turisme/llocs_d_interes/esglesia_romanica_de_vinyoles.jpg
+  prats-de-mollo:
+    - titol: La ciutat fortificada
+      descripcio: >-
+        La ciutat fortificada es pot visitar lliurement durant tot l'any: les muralles, les portes d'accés, els carrers empedrats, la capella de les Santes Justes i Ruffine, la creu dels ultratges, les obres d'art, els safareigs, les fonts són tresors per descobrir al vostre ritme.
+      url: https://www.pratsdemollolapreste.com/patrimoine/la-cite-fortifiee/
+      foto: https://www.pratsdemollolapreste.com/wp-content/uploads/2018/09/437B4918.jpg
+    - titol: La ciutat de la natura
+      descripcio: >-
+        La Reserva Natural dels Prats de Molló La Preste es troba a l'extrem oriental de la serralada dels Pirineus, a la regió de l'Alt Vallespir, a 60 km al sud-oest de Perpinyà. S'hi celebra la 20a edició del Festival de la Natura, amb activitats diverses.
+      url: https://www.pratsdemollolapreste.com/nature/reserve-naturelle/
+      foto: https://www.pratsdemollolapreste.com/wp-content/uploads/2018/09/costabonne.jpg?id=5127
+    - titol: Més cultura i turisme
+      descripcio: >-
+        Altres activitats culturals, rutes per la natura i molt més es pot trobar a la pàgina de turisme de l'Ajuntament de Prats de Molló.
+      url: https://www.pratsdemollolapreste.com/
+      foto: https://www.pratsdemollolapreste.com/wp-content/uploads/2020/05/1.jpg
+  sant-boi-de-llobregat:
+    - titol: Patrimoni natural
+      descripcio: >-
+        La Muntanya de Sant Ramon, el Parc Fluvial, el Parc de La Muntanyeta o les Valls de Santa Bàrbara són espais naturals dels que podràs gaudir a Sant Boi. Tot de propostes per fer itineraris a l'entorn natural a 10 km de Barcelona.
+      url: https://www.santboi.cat/ciutat/patrimoni-natural
+      foto: https://www.santboi.cat/sites/default/files/2024-03/ermita_santramon.jpg
+    - titol: Museu i història
+      descripcio: >-
+        La història de Sant Boi ens ha deixat un llegat cultural enorme, que a dia d'avui encara podem apreciar en una gran quantitat d'edificis històrics que es conserven  fins als nostres dies. Les Termes Romanes, Can Barraquer, Can Torrents i la Torre Benviure constitueixen la zona museística de la ciutat; edificis com Can Massallera o Can Castells es conserven avui per explicar-nos la història de l' ahir i construir la del demà.
+      url: https://www.santboi.cat/ciutadania/cultura/museu-i-historia
+      foto: https://www.santboi.cat/sites/default/files/2024-03/termes_romanes_interior.jpg
+    - titol: Més cultura i turisme
+      descripcio: >-
+        Altres activitats culturals, rutes per la natura i molt més es pot trobar a la pàgina de turisme de l'Ajuntament de Sant Boi de Llobregat.
+      url: https://www.santboi.cat/ciutat/visita-sant-boi
+      foto: https://www.santboi.cat/sites/default/files/2024-03/sant_boi_generica.jpg
+  santa-coloma-de-farners:
+    - titol: Seguir la petjada del bandoler Serrallonga
+      descripcio: >-
+        Aquest ruta (GR-178) és un itinerari que uneix Santa Coloma de Farners amb Sau passant per Osor, i dóna a conèixer els llocs més importants de la biografia del mític bandoler: encreuaments de camins on realitzava els atracaments, colls on l'esperaven batalles i sometents, indrets on es va casar i viure, masos i coves on s’amagava i també el lloc on va ésser capturat.
+      url: https://www.turismescf.cat/ca/propostes/20-seguir-la-petjada-del-bandoler-serrallonga.html
+      foto: https://www.turismescf.cat/img/image/fotos/serrallonga20174_1.jpg?&w=870&h=580&zc=1&aoe=1&q=80
+    - titol: Museu Trias de les galetes
+      descripcio: >-
+        A la fàbrica de galetes Trias, a més de poder comprar-hi aquests exquisits productes, podreu fer-hi també una visita al seu museu. En aquest espai s'hi pot observar l'evolució d'una empresa de més de cent anys, veient com ha anat canviant el sector i, de retruc, la societat en general.
+      url: https://www.turismescf.cat/ca/punts-dinteres/l/1108-museu-trias-de-les-galetes.html
+      foto: https://www.turismescf.cat/img/image/fotos/triasmuseu.jpg?&w=870&h=580&zc=1&aoe=1&q=80
+    - titol: Més cultura i turisme
+      descripcio: >-
+        Altres activitats culturals, rutes per la natura i molt més es pot trobar a la pàgina de turisme de l'Ajuntament de Santa Coloma de Farners.
+      url: https://www.turismescf.cat/
+      foto: https://www.turismescf.cat/img/image/fotos/rasclosa-1_1_1.jpg?&w=1800&h=600&zc=1&aoe=1&q=80
+  torredembarra:
+    - titol: El Castell
+      descripcio: És l'únic edifici de nova planta del Renaixement català que es conserva a Catalunya.
+      url: https://www.turismetorredembarra.cat/el-castell-gid-40
+      foto: https://www.turismetorredembarra.cat/common/menues/encabezado-menu-CA-27.jpg
+    - titol: El Far
+      descripcio: És el darrer far construït a l'estat Espanyol durant el segle XX.
+      url: https://www.turismetorredembarra.cat/el-far-gid-46
+      foto: https://www.turismetorredembarra.cat/common/contenidos/fotos/original/torredembarra-907.jpg
+    - titol: Més cultura i turisme
+      descripcio: >-
+        Horaris, preus, més activitats, gastronomia, rutes, allotjament i molt més es pot trobar a la pàgina de turisme de Torredembarra.
+      url: https://www.turismetorredembarra.cat/
+      foto: https://www.turismetorredembarra.cat/common/contenidos/contenidos-45.jpg
+  torroja-del-priorat:
+    - titol: Espai Mas Alsera
+      descripcio: >-
+        A l’Espai Mas Alsera s’hi respiren les sensacions viscudes de sis generacions des del 1865 quan es va construir el Mas. Es tracta d'un espai museístic on es poden observar les característiques originals del Mas i contemplar molts objectes, estris i eines antigues a les diferents estances.
+      url: https://www.turismepriorat.org/ca/que-fer/punts-interes/espai-mas-alsera
+      foto: https://www.turismepriorat.org/sites/default/files/styles/node_main_image/public/attraction/image/AB0A2243.jpg
+    - titol: El llegat dels cartoixans. Saviesa i amor pel vi
+      descripcio: >-
+        La Cartoixa de Scala Dei, fundada al segle XII, és el punt de referència i visita obligada de la comarca. Els seus dominis ocupen actualment bona part del territori de la DOQ Priorat, que es caracteritza pels pendents de llicorella. Els seus vins són un reflex de les dures condicions climàtiques i de la peculiar orografia. La presència dels monjos fins a mitjans del segle XIX va afavorir decisivament el conreu de la vinya i la qualitat d’un producte que avui dia gaudeix de prestigi internacional.
+      url: https://www.turismepriorat.org/ca/que-fer/ruta/el-llegat-dels-cartoixans-saviesa-i-amor-pel-vi
+      foto: https://www.turismepriorat.org/sites/default/files/styles/node_main_image/public/route/image/PanormicadEscaladei0_5.jpg?h=1c841f78&itok=gJCqahUz
+    - titol: Més cultura i turisme
+      descripcio: >-
+        Horaris, preus, més activitats, gastronomia, rutes, allotjament i molt més es pot trobar a la pàgina de turisme de Torroja del Priorat.
+      url: https://www.turismepriorat.org/ca/comarca/municipis/torroja-del-priorat
+      foto: https://www.turismepriorat.org/sites/default/files/styles/block_slideshow/public/town/gallery-image/T29_RLM4230BX0_2.jpg?h=f7d9296c&itok=ArO5dnXH
+  ulldemolins:
+    - titol: Parc Natural de la Serra de Montsant
+      descripcio: >-
+        El Montsant és tot un símbol pel Priorat i les comarques tarragonines. No es tracta de la muntanya més alta ni tampoc és la més extensa, tanmateix, la força de la seva orografia és inqüestionable. És tracta d'un massís compacte, amb la major part del seu perímetre emmurallat per cingleres i roquissars de conglomerats oligocènics.
+      url: https://www.turismepriorat.org/ca/que-fer/punts-interes/parc-natural-de-la-serra-de-montsant
+      foto: https://www.turismepriorat.org/sites/default/files/styles/node_main_image/public/attraction/image/Montsant11_0.jpg?h=6c2c5197&itok=RTxADZ_v
+    - titol: Les ermites de la Serra de Montsant
+      descripcio: >-
+        El 17 d'agost, el dia del concert, s'escau en la festivitat de la Mare de Déu de Montsant, que es lloa a l’ermita del mateix nom. L’ermita està situada a 1027 metres d’altitud, al peu de la Roca Corbatera, essent l’ermita més alta de la serra de Montsant. Té el seu origen en les construccions eremítiques del segle XII i és també coneguda històricament com Santa Maria de Montsant. Tradicionalment sempre hi han hagut dues festes a l’ermita: una per Sant Jordi i l’altra el 17 d’agost quan s’hi celebra l’Aplec de la Mare de Déu. S’hi pot accedir seguint l’itinerari 11 del Parc Natural.
+      url: https://www.turismepriorat.org/ca/que-fer/punts-interes/les-ermites-de-la-serra-de-montsant
+      foto: https://www.turismepriorat.org/sites/default/files/styles/node_main_image/public/attraction/image/T2912408BX0.jpg?h=40d6a7d7&itok=lrzj-CHJ
+    - titol: Més cultura i turisme
+      descripcio: >-
+        Horaris, preus, més activitats, gastronomia, rutes, allotjament i molt més es pot trobar a la pàgina de turisme d'Ulldemolins.
+      url: https://www.turismepriorat.org/ca/comarca/municipis/ulldemolins
+      foto: https://www.turismepriorat.org/sites/default/files/styles/block_slideshow/public/town/gallery-image/T29_RLM4854BX.jpg?h=2a4a254e&itok=ejzchvWQ
+  vallmoll:
+    - titol: Castell de Vallmoll
+      descripcio: >-
+        El Castell és un edifici documentat al segle XI ubicat estratègicament a la part més alta del municipi. Amb la restauració plantejada es possibilita conèixer la història i la vàlua patrimonial d’un bé d’interès nacional de dimensions i característiques espectaculars.
+      url: https://www.turismealtcamp.cat/patrimoni/castell-de-vallmoll/
+      foto: https://www.turismealtcamp.cat/wp-content/uploads/2024/11/Castell-de-Vallmoll.jpg
+    - titol: Ermita del Roser
+      descripcio: >-
+        L’Ermita de la Mare de Déu del Roser és un edifici del segle XVI i acull un retaule renaixentista del pintor francès Jean Bas del 1580. L’ermita la va rehabilitar al segle XX Josep M. Jujol. Visiteu-la i busqueu-hi els elements característics d’aquest arquitecte modernista: les roses, els dibuixos, les frases a la Mare de Déu. Recentment s’ha urbanitzat l’entorn i s’hi ha creat un espai molt agradable.
+      url: https://www.turismealtcamp.cat/patrimoni/ermita-del-roser/
+      foto: https://www.turismealtcamp.cat/wp-content/uploads/2024/11/Ermita-del-Roser-II.jpg
+    - titol: Més cultura i turisme
+      descripcio: >-
+        Horaris, preus, més activitats, gastronomia, rutes, allotjament i molt més es pot trobar a la pàgina de turisme de Vallmoll.
+      url: https://www.turismealtcamp.cat/alt-camp/vallmoll/
+      foto: https://www.turismealtcamp.cat/wp-content/uploads/2024/09/castell_-_maig_2017_1.jpg
+  vilafranca-del-penedes:
+    - titol: VINSEUM. Museu de les Cultures del Vi de Catalunya
+      descripcio: >-
+        El nou VINSEUM de Vilafranca és un espai pensat perquè els visitants visquin i experimentin la cultura del vi i tot allò que l'envolta. Al VINSEUM es descobreix el caràcter d'un territori, el Penedès, que des de fa segles ha centrat la seva activitat en la viticultura. Aquesta relació amb el vi ha influït la història, la cultura i les tradicions de la comarca. El VINSEUM no és tan sols un museu del vi, és un espai d'intensa activitat cultural i turística per a tots els públics.
+      url: https://www.turismevilafranca.com/coneix-vilafranca/historia-i-patrimoni/vinseum-museu-de-les-cultures-del-vi-de-catalunya
+      foto: https://www.turismevilafranca.com/sites/default/files/styles/image_wysiwyg/public/2025-04/Vinseum%2009_24.%200171.webp?itok=lynEuVLC
+    - titol: Ruta medieval
+      descripcio: >-
+        Durant la segona meitat del segle XII, la situació de Vilafranca com a via que enllaçava les terres cristianes amb les musulmanes va ser decisiva per al seu desenvolupament. Una època on la coincidència de les celebracions religioses amb les fires i els mercats com a activitats inseparables i la concessió reial dels drets de notaria van fer que l'Església de Vilafranca exercís un notable poder econòmic i jurídic.
+      url: https://www.turismevilafranca.com/que-fer/visites-patrimonials/ruta-medieval
+      foto: https://www.turismevilafranca.com/sites/default/files/styles/image_wysiwyg/public/2023-10/santfrancesc.jpg?itok=4X1Fo45L
+    - titol: Més cultura i turisme
+      descripcio: >-
+        Horaris, preus, més activitats, gastronomia, rutes, allotjament i molt més es pot trobar a la pàgina de turisme de Vilafranca del Penedès.
+      url: https://www.turismevilafranca.com/
+      foto: https://www.turismevilafranca.com/sites/default/files/styles/structure/public/2023-10/1_0.png?h=35d00c9f&itok=nOJtrtjv
+  vinyols-i-els-arcs:
+    - titol: La Fontcoberta (Castell dels Arcs)
+      descripcio: >-
+        Les restes del que hauria estat el castell dels arcs es troben al nord de la nova carretera que uneix els municipis de Salou i Cambrils dins del terme municipal de Vinyols i els Arcs. A l'indret s'han trobat restes de murs d'un mas recent abandonat. A l'oest d'aquest mas hi ha un camí que duu a la Font coberta, d'època medieval, que possiblement és l'únic vestigi físic del castell dels Arcs.
+      url: https://vinyols.altanet.org/llocs-i-espais-dinteres/la-fontcoberta-castell-dels-arcs
+      foto: https://vinyols.altanet.org/sites/vinyols/files/styles/medium_notis__240x160_/public/recursos/1b7b46b5-0d8b-4738-8924-3e645d77a7b6.jpg
+    - titol: Església de Santa Caterina
+      descripcio: >-
+        L’actual església parroquial de Vinyols i els Arcs, dedicada a Santa Caterina, va ser edificada entre els anys 1770 i 1778 sobre l’anterior i primitiu temple. L’edifici és d’estil barroc, no massa carregat, i amb planta de creu grega. Presenta tres espaioses naus.
+      url: https://vinyols.altanet.org/llocs-i-espais-dinteres/esglesia-de-santa-caterina
+      foto: https://vinyols.altanet.org/sites/vinyols/files/styles/medium_notis__240x160_/public/recursos/municipi/esglesaih2.jpg
+    - titol: Més cultura i turisme
+      descripcio: >-
+        Horaris, preus, més activitats, gastronomia, rutes, allotjament i molt més es pot trobar a la pàgina de turisme de Vinyols i els Arcs.
+      url: https://vinyols.altanet.org/llocs-i-espais-dinteres
+      foto: https://vinyols.altanet.org/sites/vinyols/files/styles/medium_notis__240x160_/public/recursos/municipi/ajuntament_2.jpg
+
+concerts:
+  # ORDENATS PER DATA I HORA! La web assumeix que la llista que rep és ordenada
+
+  #### 2023 ##############################################################################################################
+
+  - orgue: "orgues/barcelona/barcelones/barcelona/santa-maria-del-mar.md"
+    interpret: Montserrat Torrent
+    data: "2023-07-27"
+    hora: "20:00"
+    foto: santa-maria-del-mar-1.jpg
+
+  - orgue: "orgues/barcelona/bages/manresa/seu.md"
+    interpret: Bernat Bailbé
+    data: "2023-08-04"
+    hora: "20:30"
+    foto: IMG_20220815_222619318.jpg
+
+  - orgue: "orgues/tarragona/alt-camp/el-pla-de-santa-maria/sant-ramon.md"
+    interpret: Óscar Candendo
+    data: "2023-08-04"
+    hora: "20:00"
+    foto: sant-ramon-2.jpg
+
+  - orgue: "orgues/barcelona/barcelones/barcelona/sagrada-familia/cripta.md"
+    interpret: Daniel Parache
+    data: "2023-08-04"
+    hora: "21:00"
+    foto: IMG_0304.jpg
+    esglesia: Cripta de la Sagrada Família
+
+  - orgue: "orgues/lleida/noguera/ager/sant-vicenc.md"
+    interpret: Jonatan Carbó
+    data: "2023-08-05"
+    hora: "22:00"
+    foto: SIMG4014-edit.jpg
+    object-position: 0% 14%
+
+  - orgue: "orgues/tarragona/priorat/torroja-del-priorat/sant-miquel-arcangel.md"
+    interpret: David Malet
+    data: "2023-08-06"
+    hora: "21:00"
+    foto: IMG_20210808_220135927-edit.jpg
+
+  - orgue: "orgues/tarragona/tarragones/torredembarra/sant-pere-apostol.md"
+    interpret: Jordi Pajares
+    data: "2023-08-11"
+    hora: "22:00"
+    foto: IMG_2264.JPG
+
+  - orgue: "orgues/tarragona/priorat/ulldemolins/sant-jaume.md"
+    interpret: Maria Nacy
+    data: "2023-08-13"
+    hora: "19:00"
+    foto: IMG_20210812_185801229-edit.jpg
+
+  - orgue: "orgues/girona/alt-emporda/cadaques/santa-maria.md"
+    interpret: Josep M. Escalona i Canyet
+    data: "2023-08-18"
+    hora: "20:00"
+    foto: santa-maria1.jpg
+
+  - orgue: "orgues/barcelona/alt-penedes/vilafranca-del-penedes/santa-maria.md"
+    interpret: Loreto F. Imaz
+    data: "2023-08-20"
+    hora: "19:30"
+    foto: santa-maria-1.jpg
+
+  - orgue: "orgues/girona/alt-emporda/castello-d-empuries/santa-maria.md"
+    interpret: Jaime González-Sierra
+    data: "2023-08-27"
+    hora: "18:00"
+    foto: IMG_1626.jpg
+
+  - orgue: "orgues/barcelona/barcelones/barcelona/mare-de-deu-de-nuria.md"
+    interpret: Juan de la Rubia
+    data: "2023-09-07"
+    hora: "20:30"
+    foto: IMG_20230203_111422123.jpg
+
+  - orgue: "orgues/barcelona/osona/les-masies-de-voltrega/la-gleva.md"
+    interpret: Valentí Miserachs
+    data: "2023-09-09"
+    hora: "20:00"
+    foto: "2018-09-08 19.37.41.jpg"
+    object-position: 25% 0%
+
+  #### 2024 ##############################################################################################################
+
+  - orgue: "orgues/barcelona/barcelones/barcelona/catedral/capella-lepant.md"
+    concert: "ceoc/44/capella-de-lepant.md"
+    interpret: Guido Iotti
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/tEQ2ibkp5ZPgmMw
+    data: 2024-07-12
+    hora: "20:00"
+    foto: 2024-06-14_5160.jpg
+
+  - orgue: "orgues/tarragona/tarragones/torredembarra/sant-pere-apostol.md"
+    concert: "ceoc/44/torredembarra.md"
+    interpret: Berenguer Montserrat i Robert
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/PgdjG5s2gFnyX8o
+    data: 2024-07-19
+    hora: "22:00"
+    foto: IMG_1468.webp
+
+  - orgue: "orgues/tarragona/alt-camp/el-pla-de-santa-maria/sant-ramon.md"
+    concert: "ceoc/44/el-pla-de-santa-maria.md"
+    interpret: Modest Moreno i Morera
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/eaAFPHmH7r4dD68
+    data: 2024-08-02
+    hora: "19:00"
+    foto: IMG_1205.webp
+
+  - orgue: "orgues/tarragona/priorat/torroja-del-priorat/sant-miquel-arcangel.md"
+    concert: "ceoc/44/torroja-del-priorat.md"
+    interpret: Josep Maria Mas i Bonet
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/k52x5mZo9AQ4jHS
+    data: 2024-08-03
+    hora: "21:00"
+    foto: IMG_20210808_220135927-edit.jpg
+
+  - orgue: "orgues/lleida/noguera/ager/sant-vicenc.md"
+    concert: "ceoc/44/ager.md"
+    interpret: Salvador Pérez Descals i Hèctor París Casadellà
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/GkAaMt37jmEki47
+    data: 2024-08-04
+    hora: "22:00"
+    foto: SIMG4014-edit.jpg
+    object-position: 0% 14%
+
+  - orgue: "orgues/girona/alt-emporda/castello-d-empuries/santa-maria.md"
+    concert: "ceoc/44/castello-d-empuries.md"
+    interpret: Ana Aguado Rojo
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/yCEgonD7c2ziMGL
+    data: 2024-08-11
+    hora: "18:00"
+    foto: IMG_1626.jpg
+
+  - orgue: "orgues/lleida/garrigues/la-pobla-de-cervoles/mare-de-deu-de-la-jonquera.md"
+    concert: "ceoc/44/la-pobla-de-cervoles.md"
+    interpret: Montserrat Torrent i Serra
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/6WSfXS5BZy7qbqG
+    data: 2024-08-14
+    hora: "18:00"
+    foto: IMG_0227.webp
+
+  - orgue: "orgues/tarragona/priorat/ulldemolins/sant-jaume.md"
+    concert: "ceoc/44/ulldemolins.md"
+    interpret: Jordi-Agustí Piqué i Collado
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/oLeFgrG7xAakPQ9
+    data: 2024-08-16
+    hora: "19:00"
+    foto: IMG_20210812_185801229-edit.jpg
+
+  - orgue: "orgues/barcelona/bages/manresa/seu.md"
+    concert: "ceoc/44/manresa.md"
+    interpret: Josep Solé i Coll
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/XEtfWNjCex4H4yQ
+    data: 2024-09-06
+    hora: "20:30"
+    foto: IMG_0040-hdr.webp
+
+  - orgue: "orgues/tarragona/alt-camp/vallmoll/santa-maria.md"
+    concert: "ceoc/44/vallmoll.md"
+    interpret: Ignacio Ribas i Taléns
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/z2bH4daNZ3doMZk
+    data: 2024-09-07
+    hora: "22:00"
+    foto: IMG_8768.webp
+
+  - orgue: "orgues/girona/selva/santa-coloma-de-farners/santa-coloma-de-farners.md"
+    concert: "ceoc/44/santa-coloma-de-farners.md"
+    interpret: Joan Paradell i Solé
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/FSXRPfK9o2eHP5R
+    data: 2024-09-14
+    hora: "18:00"
+    foto: IMG_0104-hdr.webp
+
+  - orgue: "orgues/barcelona/alt-penedes/vilafranca-del-penedes/santa-maria.md"
+    concert: "ceoc/44/vilafranca-del-penedes.md"
+    interpret: Joan Castillo i Martínez
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/7SF3sz9BLTqGwtt
+    data: 2024-09-15
+    hora: "19:30"
+    foto: IMG_0105.webp
+
+  - orgue: "orgues/girona/girones/girona/catedral.md"
+    concert: "ceoc/44/girona.md"
+    interpret: Coral Cantiga
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/ZxrnjWp9pDwmGdY
+    data: 2024-09-21
+    hora: "19:30"
+    foto: IMG_6523.webp
+
+  ########################################################################################################################
+  #  2 0 2 5  ############################################################################################################
+  ########################################################################################################################
+
+  - orgue: "orgues/tarragona/tarragones/torredembarra/sant-pere-apostol.md"
+    concert: "ceoc/45/torredembarra.md"
+    interpret: Izumi Kando
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/wtaNP6Ra347L76G
+    foto-interpret-posicio: 64% 0%
+    data: 2025-07-10
+    hora: "22:00"
+    foto: IMG_1468.webp
+
+  - orgue: "orgues/barcelona/bages/manresa/seu.md"
+    concert: "ceoc/45/manresa.md"
+    interpret: Mercè Sanchís i Bros
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/KpfPwAq7fwd2wy2
+    data: 2025-07-12
+    hora: "20:00"
+    foto: IMG_0040-hdr.webp
+
+  - orgue: "orgues/tarragona/alt-camp/vallmoll/santa-maria.md"
+    concert: "ceoc/45/vallmoll.md"
+    interpret: Francesc Pi i Tolrà
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/f9mLR5YPw65cQSK
+    data: 2025-07-19
+    hora: "22:00"
+    foto: IMG_8768.webp
+
+  - orgue: "orgues/barcelona/baix-llobregat/sant-boi-de-llobregat/parc-sanitari.md"
+    concert: "ceoc/45/sant-boi-de-llobregat.md"
+    interpret: Miquel González i Ruiz
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/DoPstNN7fqB9R5F
+    data: 2025-07-20
+    hora: "18:00"
+    foto: IMG_7193-hdr.jpg
+
+  - orgue: "orgues/tarragona/alt-camp/el-pla-de-santa-maria/sant-ramon.md"
+    concert: "ceoc/45/el-pla-de-santa-maria.md"
+    interpret: Jaime González-Sierra Moreno
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/GikAMSFamccabmN
+    data: 2025-08-01
+    hora: "19:30"
+    foto: IMG_1205.webp
+
+  - orgue: "orgues/tarragona/priorat/torroja-del-priorat/sant-miquel-arcangel.md"
+    concert: "ceoc/45/torroja-del-priorat.md"
+    interpret: Carme Godall i Castell
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/epSmLMwnFYLJk7j
+    data: 2025-08-03
+    hora: "21:00"
+    foto: IMG_20210808_220135927-edit.jpg # TODO Canviar la foto!
+
+  - orgue: "orgues/lleida/noguera/ager/sant-vicenc.md"
+    concert: "ceoc/45/ager.md"
+    interpret: Jordi Vergés i Riart
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/KRe6x7agzZFXsyc
+    data: 2025-08-09
+    hora: "22:00"
+    foto: SIMG4014-edit.jpg
+    object-position: 0% 14%
+
+  - orgue: "orgues/girona/alt-emporda/castello-d-empuries/santa-maria.md"
+    concert: "ceoc/45/castello-d-empuries.md"
+    interpret: Óscar Candendo Zabala
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/p6BTCsmbNpyffD8
+    data: 2025-08-10
+    hora: "18:00"
+    foto: IMG_1626.jpg
+
+  - orgue: "orgues/tarragona/baix-camp/vinyols-i-els-arcs/casa-sant-josep.md"
+    concert: "ceoc/45/vinyols-i-els-arcs.md"
+    interpret: Pau Riuró i Bofill
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/ng4aCC6Qne8X22P
+    data: 2025-08-10
+    hora: "19:30"
+    foto: IMG_1457.webp
+
+  - orgue: "orgues/lleida/garrigues/la-pobla-de-cervoles/mare-de-deu-de-la-jonquera.md"
+    concert: "ceoc/45/la-pobla-de-cervoles.md"
+    interpret: Javier Artigas Pina
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/NqFEfMMKPQEwrJJ
+    data: 2025-08-15
+    hora: "18:00"
+    foto: IMG_0227.webp
+
+  - orgue: "orgues/tarragona/priorat/ulldemolins/sant-jaume.md"
+    concert: "ceoc/45/ulldemolins.md"
+    interpret: Nofre Morey i Moreno
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/CmS2SLsrxai5KBD
+    data: 2025-08-17
+    hora: "19:00"
+    foto: IMG_20210812_185801229-edit.jpg # TODO actualitzar fotos
+
+  - concert: "ceoc/45/prats-de-mollo.md"
+    interpret: Josep Maria Escalona i Canyet
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/e5MX3C3jBgEWMFq
+    data: 2025-08-22
+    hora: "16:00"
+    orgue-fora-catalunya: true
+    municipi: Prats de Molló
+    edifici: Església parroquial de Santa Justa i Santa Rufina
+    adreca: Place Josep de la Trinxeria, 66230, Prats-de-Mollo-la-Preste, França
+    detall-orgue: https://inventaire-des-orgues.fr/detail/orgue-prats-de-mollo-la-preste-eglise-sainte-juste-sainte-ruffine-fr-66150-p_pre-stjust1-t/
+    foto-src: https://nextcloud.acorgue.cat/public.php/dav/files/ekppQPRtar3FXkg
+    foto-alt: Orgue de Prats de Molló
+
+  - orgue: "orgues/barcelona/osona/les-masies-de-voltrega/la-gleva.md"
+    concert: "ceoc/45/masies-de-voltrega.md"
+    interpret: Joan Seguí i Mercadal
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/ZDdy6pJ5wc9QTf5
+    data: 2025-09-08
+    hora: "20:00"
+    foto: IMG_3200.webp
+
+  - orgue: "orgues/barcelona/alt-penedes/vilafranca-del-penedes/santa-maria.md"
+    concert: "ceoc/45/vilafranca-del-penedes.md"
+    interpret: Loreto Aramendi Inchauspe
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/xe67bdFAEGMTHXi
+    data: 2025-09-14
+    hora: "19:30"
+    foto: IMG_0105.webp
+
+  - orgue: "orgues/girona/selva/santa-coloma-de-farners/santa-coloma-de-farners.md"
+    concert: "ceoc/45/santa-coloma-de-farners.md"
+    interpret: Jordi Figueras i Carreras
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/aAr2GCoDLQYzL7C
+    data: 2025-09-20
+    hora: "18:00"
+    foto: IMG_0104-hdr.webp
+
+  ########################################################################################################################
+  #  2 0 2 6  ############################################################################################################
+  ########################################################################################################################
+
+  - orgue: "orgues/barcelona/barcelones/barcelona/sant-felip-neri/orgue-major.md"
+    concert: "ceoc/46/barcelona.md"
+    interpret: Guy Bovet
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/KoiDLcDi878969t/
+    data: 2026-07-06
+    hora: "19:00"
+    # Si poso la foto de la galeria, surt amb la meva signatura, a baix. He creat aquesta altra sense la signatura
+    foto-src: https://nextcloud.acorgue.cat/public.php/dav/files/XotX8iA8CJcCmy2
+    foto-alt: Orgue de l'oratori de Sant Felip Neri de Barcelona
+
+  - orgue: "orgues/tarragona/alt-camp/vallmoll/santa-maria.md"
+    concert: "ceoc/46/vallmoll.md"
+    interpret: Bernat Bailbé i Cristau
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/8H6rZgoPkT9DTdH/
+    data: 2026-07-18
+    hora: "22:00"
+    foto: IMG_8768.webp
+
+  - orgue: "orgues/tarragona/tarragones/torredembarra/sant-pere-apostol.md"
+    concert: "ceoc/46/torredembarra.md"
+    interpret: Roberto Fresco
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/39HTJDE7KHrqkqy/
+    data: 2026-07-30
+    hora: "22:00"
+    foto: IMG_1468.webp
+
+  - orgue: "orgues/tarragona/alt-camp/el-pla-de-santa-maria/sant-ramon.md"
+    concert: "ceoc/46/el-pla-de-santa-maria.md"
+    interpret: Berenguer Montserrat i Robert
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/ymSCMgy26JF53oQ/
+    data: 2026-07-31
+    hora: "19:30"
+    foto: IMG_1205.webp
+
+  - orgue: "orgues/tarragona/priorat/torroja-del-priorat/sant-miquel-arcangel.md"
+    concert: "ceoc/46/torroja-del-priorat.md"
+    interpret: Joan Castillo
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/Xf55ejw3tRy6xno/
+    data: 2026-08-02
+    hora: "21:00"
+    foto: IMG_20210808_220135927-edit.jpg # TODO Canviar la foto!
+
+  - orgue: "orgues/barcelona/bages/manresa/seu.md"
+    concert: "ceoc/46/manresa.md"
+    interpret: Joan Paradell
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/3mNmSG4a4ycAPab/
+    data: 2026-08-05
+    hora: "20:00"
+    foto: IMG_0040-hdr.webp
+
+  - orgue: "orgues/tarragona/baix-camp/montbrio-del-camp/sant-pere-apostol.md"
+    concert: "ceoc/46/montbrio-del-camp.md"
+    interpret: Ana Aguado Rojo
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/iS9rtEncbEHqCAi/
+    data: 2026-08-07
+    hora: "20:00"
+    foto: IMG_1539.webp
+
+  - orgue: "orgues/lleida/noguera/ager/sant-vicenc.md"
+    concert: "ceoc/46/ager.md"
+    interpret: David Malet
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/t3WctwyBPxaK9Lt/
+    data: 2026-08-09
+    hora: "19:00"
+    foto: SIMG4014-edit.jpg
+    object-position: 0% 14%
+
+  - orgue: "orgues/girona/alt-emporda/castello-d-empuries/santa-maria.md"
+    concert: "ceoc/46/castello-d-empuries.md"
+    interpret: Marcel Martínez i Bonifacio
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/biCQHnjMpSqp2Po/
+    data: 2026-08-10
+    hora: "19:00"
+    foto: IMG_1626.jpg
+
+  - orgue: "orgues/lleida/garrigues/la-pobla-de-cervoles/mare-de-deu-de-la-jonquera.md"
+    concert: "ceoc/46/la-pobla-de-cervoles.md"
+    interpret: Guido Iotti
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/FyBnDgLH6BPnzaM/
+    data: 2026-08-15
+    hora: "19:00"
+    foto: IMG_0227.webp
+
+  - orgue: "orgues/girona/girones/girona/catedral.md"
+    concert: "ceoc/46/girona.md"
+    interpret: Lucía Castellanos
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/eFBiBDJ7P8zXeLL/
+    data: 2026-08-15
+    hora: "19:30"
+    foto: IMG_6523.webp
+
+  - orgue: "orgues/tarragona/priorat/ulldemolins/sant-jaume.md"
+    concert: "ceoc/46/ulldemolins.md"
+    interpret: Nadal Roig
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/pJJyEW9MtCi9Jw6/
+    data: 2026-08-19
+    hora: "19:00"
+    foto: IMG_20210812_185801229-edit.jpg # TODO actualitzar fotos
+
+  - orgue: "orgues/barcelona/osona/les-masies-de-voltrega/la-gleva.md"
+    concert: "ceoc/46/les-masies-de-voltrega.md"
+    interpret: Daniel Parache
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/N4Y62pfnJZZHLtC/
+    data: 2026-09-06
+    hora: "19:00"
+    foto: IMG_3200.webp
+
+  - orgue: "orgues/barcelona/alt-penedes/vilafranca-del-penedes/santa-maria.md"
+    concert: "ceoc/46/vilafranca-del-penedes.md"
+    interpret: Christian Canut
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/fXmGdie3WRHo7oH/
+    data: 2026-09-19
+    hora: "21:00"
+    foto: IMG_0105.webp
+
+  - orgue: "orgues/girona/selva/santa-coloma-de-farners/santa-coloma-de-farners.md"
+    concert: "ceoc/46/santa-coloma-de-farners.md"
+    interpret: Jordi Pajares
+    foto-interpret: https://nextcloud.acorgue.cat/public.php/dav/files/A5bsC6rwbb8n5oC/
+    data: 2026-09-20
+    hora: "18:00"
+    foto: IMG_0104-hdr.webp
+
+cicles:
+  # ordenats de manera descendent
+  - edicio: 45
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/6ByKWsaRzx44HoM
+    programa: https://nextcloud.acorgue.cat/public.php/dav/files/DdtTXesC6YjLZmx
+    web: ceoc/45.md
+  - edicio: 44
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/8CQ7zCTymJfMDXX
+    programa: https://nextcloud.acorgue.cat/public.php/dav/files/Jg38HkY4eFfmpEK
+    web: ceoc/44.md
+  - edicio: 43
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/KZx85KYcwr49SZp
+    programa: https://nextcloud.acorgue.cat/public.php/dav/files/yyjieookceGD6t8
+  - edicio: 42
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/gPAGGAyZZ8kt5nF
+    programa: https://nextcloud.acorgue.cat/public.php/dav/files/7NQTBwjB6eyiRzm
+  - edicio: 41
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/yxiC8PciRqPnq8x
+    programa: https://nextcloud.acorgue.cat/public.php/dav/files/sSoDstfXyeFpBJm
+    # 2020
+  - edicio: 40
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/QTciG4XgJAyti5r
+    programa: https://nextcloud.acorgue.cat/public.php/dav/files/Et9CtCMp4j7m2DS
+    text: La situació sanitària del moment impedí imprimir programes.
+  - edicio: 39
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/dod6s38Kb6DPfmD
+    programa: https://nextcloud.acorgue.cat/public.php/dav/files/itRRHb7GY6q4ww4
+  - edicio: 38
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/DmCRc3Wj4Ps7Fx8
+    programa: https://nextcloud.acorgue.cat/public.php/dav/files/7dDKTaA8qGRfJwo
+  - edicio: 37
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/ARaKAaprbajGF4K
+    programa: https://nextcloud.acorgue.cat/public.php/dav/files/a7WDc56yPBDWX8b
+  - edicio: 36
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/7H2MbNdBNzKkDGf
+    programa: https://nextcloud.acorgue.cat/public.php/dav/files/oepPHEEKFkeWj4P
+  - edicio: 35
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/ttf4SDJaRCWN5bJ
+    programa: https://nextcloud.acorgue.cat/public.php/dav/files/yqgJ5R77s2DfPgg
+  - edicio: 34
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/ffw7eMnsiprwQHr
+    programa: https://nextcloud.acorgue.cat/public.php/dav/files/8HcTJ3QXJT3b8Pp
+  - edicio: 33
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/giF7rENGyfTXDEL
+    programa: https://nextcloud.acorgue.cat/public.php/dav/files/TQt4Z4LnAXWeN6B
+  - edicio: 32
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/5Ddsn6XXABMoNSE
+    programa: https://nextcloud.acorgue.cat/public.php/dav/files/tGCEwoci8Jm6gSL
+  - edicio: 31
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/27S4dn4k75KEzjz
+    programa: https://nextcloud.acorgue.cat/public.php/dav/files/DDdpYHMmWFsksPg
+    # 2010
+  - edicio: 30
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/fPDXj9FA5mb9NLf
+    programa: https://nextcloud.acorgue.cat/public.php/dav/files/dCW5MxfRM66ATMR
+  - edicio: 29
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/qxJEj5BN3HG2AaE
+    programa: https://nextcloud.acorgue.cat/public.php/dav/files/MSCPiMKWeLxZ5RF
+    # TODO 2008 escanejar
+  - edicio: 28
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/SHxoAsjBaBwqkPT
+    programa:
+    text: De moment, no està disponible.
+  - edicio: 27
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/HJd9KwgfApY92qG
+    programa: https://nextcloud.acorgue.cat/public.php/dav/files/qxDKQZTiBSjSg89
+    text: De moment, no està disponible.
+  - edicio: 26
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/9XBFW3DPFE4rGz6
+    programa: https://nextcloud.acorgue.cat/public.php/dav/files/LN5Q9CAfBxPKeX8
+  - edicio: 25
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/96SHoXCTyrcFRiy
+    programa: https://nextcloud.acorgue.cat/public.php/dav/files/jMEKT93ngaLCBfW
+  - edicio: 24
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/EHNZDETr8BWWYR3
+    programa: https://nextcloud.acorgue.cat/public.php/dav/files/7TtRQzK37FrxFLb
+  - edicio: 23
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/rdE8XoHT7ctieGg
+    programa: https://nextcloud.acorgue.cat/public.php/dav/files/SGFXGMYM7wnz3jS
+  - edicio: 22
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/RdyonXMw6wSJN5H
+    # TODO 2002
+    programa:
+    text: De moment, no està disponible.
+  - edicio: 21
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/L82MtWtnGXWeBqf
+    # TODO 2001
+    programa:
+    text: De moment, no està disponible.
+    # 2000
+  - edicio: 20
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/92jYgbA7roRKkZw
+    # TODO 2000
+    programa:
+    text: De moment, no està disponible.
+  - edicio: 19
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/qS2Honofbwfjzbn
+    # TODO 1999
+    programa:
+    text: De moment, no està disponible.
+  - edicio: 18
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/mbLso7TeJNG2oXT
+    # TODO 1998
+    programa:
+    text: De moment, no està disponible.
+  - edicio: 17
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/7HC86XizNyQYT3B
+    # TODO 1997
+    programa:
+    text: De moment, no està disponible.
+  - edicio: 16
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/76p9JL2bnnbak2r
+    # TODO 1996
+    programa:
+    text: De moment, no està disponible.
+  - edicio: 15
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/mBiZ9tKDm39jHAq
+    programa: https://nextcloud.acorgue.cat/public.php/dav/files/3GJD6wWAqxKc27Q
+  - edicio: 14
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/bQbQe8nqYgDn9zC
+    programa: https://nextcloud.acorgue.cat/public.php/dav/files/ep5c4H7ZmME6WWL
+  - edicio: 13
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/QcjXYJoWAJEyTMB
+    programa:
+    text: De moment, no està disponible.
+  - edicio: 12
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/RZtXRxyMZHq6SYP
+    programa: https://nextcloud.acorgue.cat/public.php/dav/files/tkgeJaLXpQrk5qN
+    text: >-
+      Document recuperat a través de la
+      Generalitat de Catalunya (DRAC). [Més informació](http://hdl.handle.net/20.500.12368/169).
+  - edicio: 11
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/7p7Q8YgQgaxiYcf
+    programa: https://nextcloud.acorgue.cat/public.php/dav/files/DRZ6JfrQGwSRMGz
+  - edicio: 10
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/kQTL3EPxEw25Dos
+    programa: https://nextcloud.acorgue.cat/public.php/dav/files/RsGtc7RDmEF8ePt
+  - edicio: 9
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/N9EaesakWcZj3Ww
+    programa: https://nextcloud.acorgue.cat/public.php/dav/files/ZxStwtLDYt73Wq6
+  - edicio: 8
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/pQLzjiYJBpf6875
+    programa:
+    text: De moment, no està disponible.
+  - edicio: 7
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/aPQByC7N6AbBxwX
+    programa: https://nextcloud.acorgue.cat/public.php/dav/files/iXo8f3T2yK2dGGH
+  - edicio: 6
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/5Ker2MsFoEpmqyR
+    programa: https://nextcloud.acorgue.cat/public.php/dav/files/eezaEcjBC56ZJ9W
+    text: >-
+      Document recuperat a través de la
+      Generalitat de Catalunya (DRAC). [Més informació](http://hdl.handle.net/20.500.12368/163).
+  - edicio: 5
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/SMXb9rc5iaSXTer
+    programa: https://nextcloud.acorgue.cat/public.php/dav/files/FXcFGXdsKyYFqrP
+  - edicio: 4
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/CgFbAtSoAmcrZom
+    programa:
+    text: De moment, no està disponible.
+  - edicio: 3
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/CbRzJRmraJn6JtY
+    programa: https://nextcloud.acorgue.cat/public.php/dav/files/CycGTYNaCJfxA5f
+  - edicio: 2
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/ik6Mf94anjzMfpG
+    programa: https://nextcloud.acorgue.cat/public.php/dav/files/GXPZiJXSdWpKmxb
+    text: >-
+      Document recuperat a través de la
+      Generalitat de Catalunya (DRAC). [Més informació](http://hdl.handle.net/20.500.12368/161).
+  - edicio: 1
+    portada: https://nextcloud.acorgue.cat/public.php/dav/files/6QcDPA8ZQgxDoYb
+    programa: https://nextcloud.acorgue.cat/public.php/dav/files/knoBfJqewR9dYBQ

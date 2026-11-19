@@ -1,0 +1,43 @@
+<!--
+    Post list.  Totes les publicacions, Categories i Etiquetes. Genera una llista per cada 'key' i al costat surt una
+                llista de keys
+-->
+<!-- responsive layout:
+    col-12 and order 2,1 by default
+    if larger than xl, col 8,4 and order 1,2
+-->
+
+<div class="row">
+    <div class="col-xl-8 col-12 order-xl-1 order-2">
+        {% for key in include.keys %}
+            <h2 class="h3 pb-1 mb-1 pt-4" id="{{ key }}">{{ key }}</h2>
+            {% assign items = site.posts | where: include.field, key %}
+            {% for item in items %}
+                <ul class="m-0 p-0" style="list-style: none;">
+                    {% if item != nil %}
+                    <li>
+                        {% include post-lists/item.html post=item %}
+                    </li>
+                    {% endif %}
+                </ul>
+            {% endfor %}
+        {% endfor %}
+    </div>
+    <div class="col-xl-4 col-12 order-xl-2 order-1 pt-4">
+        <table class="table table-sm">
+            <tbody>
+            {% for key in include.keys %}
+            {% assign size = site.posts | where: include.field, key | size %}
+            <tr>
+                <td>
+                    <a href="{{ page.url }}#{{key}}">{{key}}</a>
+                </td>
+                <td style="text-align: right;">
+                    <span class="post-list-counter">{{size}}</span>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>

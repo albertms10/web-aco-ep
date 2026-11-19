@@ -1,0 +1,61 @@
+<div class="pb-4 mb-2 table-responsive-md no_underline" style="margin-top: 0rem;">
+<table id="taula-orgues" class="taula-orgues">
+    <thead>
+    <tr>
+        <th data-sortable="false">Edifici</th>
+        <th data-sortable="true" data-sorter="composicioSorter">Composició</th>
+        <th data-sortable="true">Municipi</th>
+        <th class="d-none d-lg-table-cell" data-sortable="false">Comarca</th>
+        <th class="d-none d-md-table-cell" data-sortable="true">Província</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for poble in site.data.pobles %}
+    {% for edifici in poble.edificis %}
+        {% if edifici.orgues %}
+
+            {% for orgue in edifici.orgues %}
+                <!-- TODO Majusculització de l'edifici? -->
+                <!-- TODO Majusculització del municipi? -->
+                <tr id="{{poble.provincia}}/{{poble.comarca}}/{{poble.link}}/{{edifici.link}}/{{orgue.link}}"
+                    {% if orgue.wip %}
+                        style="cursor: default;"
+                    {% else %}
+                        data-href="{% link orgues/{{poble.provincia}}/{{poble.comarca}}/{{poble.link}}/{{edifici.link}}/{{orgue.link}}.md %}"
+                    {% endif %}>
+                    <td {% if orgue.wip %}style="font-style: italic; color: var(--bs-tertiary-color);"{% endif %}>{{edifici.nom}} ({{orgue.nom}})</td>
+                    <td {% if orgue.wip %}style="font-style: italic; color: var(--bs-tertiary-color);"{% endif %}>{{site.data.disposicions[poble.provincia][poble.comarca][poble.link][edifici.link][orgue.link].composicio}}</td>
+                    <td {% if orgue.wip %}style="font-style: italic; color: var(--bs-tertiary-color);"{% endif %}>{{poble.nom}}</td>
+                    {% assign comarca = site.data.orgues.comarques | where: "link",poble.comarca %}
+                    <td {% if orgue.wip %}style="font-style: italic; color: var(--bs-tertiary-color);"{% endif %}>{{comarca[0].nom}}</td>
+                    {% assign provincia = site.data.orgues.provincies | where: "link",poble.provincia %}
+                    <td {% if orgue.wip %}style="font-style: italic; color: var(--bs-tertiary-color);"{% endif %}>{{provincia[0].nom}}</td>
+                </tr>
+            {% endfor %}
+
+        {% else %}
+
+            <!-- TODO Majusculització de l'edifici? -->
+            <!-- TODO Majusculització del municipi? -->
+            <tr id="{{poble.provincia}}/{{poble.comarca}}/{{poble.link}}/{{edifici.link}}"
+                {% if edifici.wip %}
+                    style="cursor: default;"
+                {% else %}
+                    data-href="{% link orgues/{{poble.provincia}}/{{poble.comarca}}/{{poble.link}}/{{edifici.link}}.md %}"
+                {% endif %}>
+                <td {% if edifici.wip %}style="font-style: italic; color: var(--bs-tertiary-color);"{% endif %}>{{edifici.nom}}</td>
+                <td {% if edifici.wip %}style="font-style: italic; color: var(--bs-tertiary-color);"{% endif %}>{{site.data.disposicions[poble.provincia][poble.comarca][poble.link][edifici.link].composicio}}</td>
+                <td {% if edifici.wip %}style="font-style: italic; color: var(--bs-tertiary-color);"{% endif %}>{{poble.nom}}</td>
+                {% assign comarca = site.data.orgues.comarques | where: "link",poble.comarca %}
+                <td {% if edifici.wip %}style="font-style: italic; color: var(--bs-tertiary-color);"{% endif %}>{{comarca[0].nom}}</td>
+                {% assign provincia = site.data.orgues.provincies | where: "link",poble.provincia %}
+                <td {% if edifici.wip %}style="font-style: italic; color: var(--bs-tertiary-color);"{% endif %}>{{provincia[0].nom}}</td>
+            </tr>
+
+        {% endif %}
+
+    {% endfor %}
+    {% endfor %}
+    </tbody>
+</table>
+</div>

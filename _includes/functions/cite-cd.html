@@ -1,0 +1,5 @@
+{%- if include.cognom and include.nom -%}
+<span class="small-caps">{{include.cognom}}</span>, {{include.nom}}. ({{include.any}}). <i>{{include.titol}}</i>. {% if include.altres %} [{{include.altres}}]. {% endif %}{{include.productora}}
+{%- elsif include.noms -%}
+{{include.noms}}. ({{include.any}}). <i>{{include.titol}}</i>. {{include.productora}}
+{%- endif -%}

@@ -1,0 +1,26 @@
+<div>
+    {% for provincia in site.data.orgues.provincies %}
+    <p class="h4">{{provincia.nom}}</p>
+            {% assign comarques = site.data.orgues.comarques | where: "provincia",provincia.link %}
+            <ul>{% for comarca in comarques %}
+                <li>{{comarca.nom}}
+                    {% assign pobles = site.data.pobles | where: "comarca",comarca.link %}
+                    <ul>{% for poble in pobles %}
+                        <!-- TODO Majusculització del municipi? -->
+                        <li>{{poble.nom}}
+                            <ul>{% for edifici in poble.edificis %}
+                                <li>
+                                    <!-- TODO Majusculització de l'edifici? -->
+                                    {% if edifici.wip %}
+                                        {{edifici.nom}}
+                                    {% else %}
+                                        <a href="{% link orgues/{{poble.provincia}}/{{poble.comarca}}/{{poble.link}}/{{edifici.link}}.md %}">{{edifici.nom}}</a>
+                                    {% endif %}
+                                </li>
+                                {% endfor %}</ul>
+                        </li>
+                        {% endfor %}</ul>
+                </li>
+                {% endfor %}</ul>
+        {% endfor %}
+</div>

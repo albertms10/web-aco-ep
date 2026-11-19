@@ -1,0 +1,56 @@
+{% assign lloc = include.lloc | default: page.lloc %}
+{% assign data = include.data | default: page.data %}
+{% assign hora = include.hora | default: page.hora %}
+{% assign preu = include.preu | default: page.preu %}
+{% assign persona = include.persona | default: page.persona %}
+
+{% if lloc != NULL and hora != NULL %}
+<div class="py-2">
+<div class="vl" style="margin-left:0px;">
+    <table class="horatable">
+        <tbody>
+        <tr>
+            <td class="etiqueta">
+                <span>
+                    <i class="bi bi-person-fill text-secondary"></i>
+                </span>
+            </td>
+            <td>{{ persona }}</td>
+        </tr>
+        <tr>
+            <td class="etiqueta">
+                <span>
+                    <i class="bi bi-geo-alt-fill text-secondary"></i>
+                </span>
+            </td>
+            <td>{{ lloc }}</td>
+        </tr>
+        <tr>
+            <td class="etiqueta">
+                <span>
+                    <i class="bi bi-calendar-event text-secondary"></i>
+                </span>
+            </td>
+            <td class="data">{{ data | data_en_catala_llarg }}</td>
+        </tr>
+        <tr>
+            <td class="etiqueta">
+                <span>
+                    <i class="bi bi-clock-fill text-secondary"></i>
+                </span>
+            </td>
+            <td>{{ hora }}</td>
+        </tr>
+        <tr>
+            <td class="etiqueta">
+                <span>
+                    <i class="bi bi-currency-euro text-secondary"></i>
+                </span>
+            </td>
+            <td>{{ preu }}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+{% endif %}

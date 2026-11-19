@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-12 col-lg-5 pb-4">
+        <nav class="sticky-top" style="top: 1rem; z-index: 10;">
+            <div class="list-group" id="list-tab" role="tablist">
+                <a class="list-group-item list-group-item-action active" id="list-constructors-list" data-bs-toggle="list" href="#list-constructors" role="tab" aria-controls="list-constructors">Per constructor (orgue nou)</a>
+                <a class="list-group-item list-group-item-action" id="list-orgueners-list" data-bs-toggle="list" href="#list-orgueners" role="tab" aria-controls="list-orgueners">Per orguener (qualsevol actuació)</a>
+                <a class="list-group-item list-group-item-action" id="list-home-list" data-bs-toggle="list" href="#list-home" role="tab" aria-controls="list-home">Per població</a>
+                <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list" href="#list-profile" role="tab" aria-controls="list-profile">Per província i població</a>
+                <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages">Per comarca i població</a>
+                <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-settings" role="tab" aria-controls="list-settings">Per província, comarca i població</a>
+            </div>
+        </nav>
+    </div>
+    <div class="col-12 col-lg-7">
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="list-constructors" role="tabpanel" aria-labelledby="list-constructors-list">
+                {% include llista-orgues/orgues-per-constructor.html %}
+            </div>
+            <div class="tab-pane fade show active" id="list-orgueners" role="tabpanel" aria-labelledby="list-orgueners-list">
+                {% include llista-orgues/orgues-per-orguener.html %}
+            </div>
+            <div class="tab-pane fade" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+                {% include llista-orgues/orgues-per-poble.html %}
+            </div>
+            <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+                {% include llista-orgues/orgues-per-provincia-poble.html %}
+            </div>
+            <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+                {% include llista-orgues/orgues-per-comarca-poble.html %}
+            </div>
+            <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
+                {% include llista-orgues/orgues-per-provincia-comarca-poble.html %}
+            </div>
+        </div>
+    </div>
+</div>

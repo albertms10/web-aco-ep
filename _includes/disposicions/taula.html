@@ -1,0 +1,38 @@
+<table class="table registres-table">
+    <thead>
+    <tr>
+        <th colspan="2" class="">
+            <div class="row px-2 py-0 justify-content-between align-items-end">
+                <div class="col px-1" style="white-space: nowrap;">
+                    {{include.head}}
+                </div>
+                {% if include.extensio %}
+                <div class="col px-1 pe-0 small text-end" style="margin-bottom: 0.05rem; color: var(--bs-gray-500); white-space: nowrap;">
+                    {{include.extensio}}
+                </div>
+                {% endif %}
+            </div>
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for registre in include.registres %}
+            <tr>
+                {% include disposicions/registre.html %}
+            </tr>
+        {% endfor %}
+
+        {% for acoblament in include.acoblaments %}
+            <tr><td class="">
+                {% include disposicions/acoblament.html %}
+            </td></tr>
+        {% endfor %}
+
+        {% for efecte in include.efectes %}
+            <tr><td class="">
+                {% include disposicions/efecte.html %}
+            </td></tr>
+        {% endfor %}
+
+    </tbody>
+</table>

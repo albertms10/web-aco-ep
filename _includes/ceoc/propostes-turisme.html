@@ -1,0 +1,28 @@
+<div class="row row-cols-1 row-cols-xl-3 g-4">
+    {% for proposta in include.propostes %}
+    <div class="col">
+    <div class="card h-100">
+        <!--<a href="{{proposta.url}}"> TODO si poso l'enllaç, object-fit: cover no funciona -->
+            <img src="{{proposta.foto}}" class="card-img-top" alt=""
+                 style="width: auto; height: 200px; object-fit: cover;">
+        <!--</a>-->
+        <div class="card-body">
+            <a href="{{proposta.url}}">
+                <h5 class="card-title">{{proposta.titol}}</h5>
+            </a>
+            <p class="card-text no-justify">{{proposta.descripcio | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+        </div>
+        <div class="card-footer px-2">
+            <small class="text-body-secondary">
+                <a href="{{proposta.url}}" class="btn" rel="external nofollow noreferrer">
+                    <table><tbody><tr style="vertical-align: top;">
+                        <td><i class="bi bi-box-arrow-up-right pe-2"></i></td>
+                        <td style="text-align: left">{% if proposta.nom_url %}{{proposta.nom_url}}{% else %}Més detalls{% endif %}</td>
+                    </tr></tbody></table>
+                </a>
+            </small>
+        </div>
+    </div></div>
+    {% endfor %}
+</div>
+

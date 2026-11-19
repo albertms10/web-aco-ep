@@ -1,0 +1,34 @@
+{% assign edifici = site.data.edificis | where: 'pageID', page.url | first %}
+{% assign image = site.data.imatges | where: "page_id", page.url | first %}
+
+<!-- TODO documentar un o més exemples d'aquest tros de codi!
+     Hi ha involucrat codi de Python (genera _data/edificis.yml). Cal comprovar també que els articles i preposicions
+     es generin correctament
+-->
+{% if edifici.nomOrgue %}
+    {% assign common = " " | append: edifici.de | append: edifici.nomEdifici | append: " " | append: edifici.de_nomPoble %}
+    {% assign title = edifici.nomOrgue | append: common %}
+    {% assign description = "Història, característiques i fotografies " | append: edifici.de_nomOrgue | append: common %}
+{% else %}
+    {% assign common = edifici.de | append: edifici.nomEdifici | append: " " | append: edifici.de_nomPoble %}
+    {% assign title = "Orgue " | append: edifici.de | append: edifici.nomEdifici | append: " " | append: edifici.de_nomPoble %}
+    {% assign description = "Història, característiques i fotografies de l’orgue " | append: common %}
+{% endif %}
+<!--TODO eliminar-->
+{% assign page = site.pages | where: "url", page.url | first %}
+{% assign description_content = page.content | strip_html | strip_newlines | truncatewords: 20 %}
+<!--endtodo-->
+
+<title>{{title}}</title>
+<meta name="description" content="{{description}}">
+{% if image %}
+    {% assign link = image.thumbs[1024] %}
+    {% include head/open-graph.html title=title description=description image=link image-alt=image.alt %}
+{% else %}
+    {% include head/open-graph.html title=title description=description image="" image-alt="" %}
+{% endif %}
+
+<link rel="stylesheet" href="{% link assets/node_modules/justifiedGallery/dist/css/justifiedGallery.min.css %}">
+<link rel="stylesheet" href="{% link assets/node_modules/photoswipe/dist/photoswipe.css %}">
+<link rel="stylesheet" href="{% link assets/node_modules/photoswipe-dynamic-caption-plugin/photoswipe-dynamic-caption-plugin.css %}">
+<link rel="stylesheet" href="{% link assets/node_modules/leaflet/dist/leaflet.css %}">

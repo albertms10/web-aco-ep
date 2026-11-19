@@ -1,0 +1,34 @@
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2rem;
+  margin-top: 2rem;
+}
+.post-previous::before {
+  // copiat de la web antiga
+  content: " ";
+  border: solid #787878;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 4px;
+  margin-right: 8px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+.post-next::after {
+  // copiat de la web antiga
+  content: " ";
+  border: solid #787878;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 4px;
+  margin-left: 8px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+.post-related h3 {
+  margin-bottom: 0px;
+}
+.post-related ul {
+  padding-left: 1rem;
+}

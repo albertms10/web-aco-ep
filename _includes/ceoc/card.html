@@ -1,0 +1,72 @@
+<div class="col">
+    <div class="card h-100" style="width: 18rem;">
+        <a href="{% link {{concert.concert}} %}">
+            <img src="{{image_src}}"
+                 class="img-fluid card-img-top"
+                 style="width: 18rem; height: 200px; object-fit: cover;
+                    {% if concert.object-position %}
+                        object-position: {{concert.object-position}};
+                    {% endif %}
+                 "
+                 alt="Orgue">
+        </a>
+        <div class="card-body">
+            <a href="{% link {{concert.concert}} %}"><h5 class="card-title">{{concert.interpret}}</h5></a>
+            <table class="mb-2">
+                <tr style="vertical-align: top;">
+                    <td style="padding-bottom: 24px;">
+                        <p class="card-text ceoc-esglesia"><i class="me-1 bi bi-geo-alt-fill"></i></p>
+                    </td>
+                    <td>
+                        <p class="card-text ceoc-esglesia">{{edifici}} ({{municipi}})</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="card-text ceoc-dia"><i class="me-1 bi bi-calendar-event-fill"></i></p>
+                    </td>
+                    <td>
+                        <p class="card-text ceoc-dia">{{ concert.data | data_en_catala_llarg | capitalize }}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="card-text ceoc-hora"><i class="me-1 bi bi-clock-fill"></i></p>
+                    </td>
+                    <td>
+                        <p class="card-text ceoc-hora">{{concert.hora}}</p>
+                    </td>
+                </tr>
+            </table>
+
+            <div style="display: flex; justify-content: center;">
+                <!-- TODO Magí Puntí a Vilafranca del Penedès. Magí Puntí a la Pobla de Cérvoles. Magí Puntí *al* Pla de Santa Maria
+                     Caldrà modificar segurament els paràmetres que rep aquest fitxer des de _includes/ceoc/cards.html
+                -->
+                <add-to-calendar-button
+                        name="CEOC {{any}}: {{concert.interpret}} a {{municipi}}"
+                        description="Concert a càrrec de {{concert.interpret}} dins el cicle «Els Orgues de Catalunya». {{edifici}} ({{municipi}})"
+                        options="'Google', 'Apple', 'Microsoft365', 'Outlook.com', 'Yahoo', 'iCal'"
+                        location="{{adreca}}"
+                        startDate="{{concert.data}}"
+                        startTime="{{concert.hora}}"
+                        endTime="{{hora_final}}"
+                        timeZone="Europe/Madrid"
+
+                        label="Afegeix al calendari"
+                        buttonStyle="round"
+                        trigger="click"
+                        listStyle="dropdown"
+                        hideCheckmark
+                        hideRichData
+                        size="3|3|3"
+                        lightMode="light"
+                        styleLight="
+                --font: Avrile Sans;
+                --btn-shadow:       rgba(0 0 0 /  5%) 2px 5px 10px -1px, rgba(0 0 0 /  5%) 2px 2px 10px -3px;
+                --btn-shadow-hover: rgba(0 0 0 / 15%) 2px 5px 10px -1px, rgba(0 0 0 / 15%) 2px 2px 10px -3px;"
+                ></add-to-calendar-button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,90 @@
+# Fitxer YAML
+# Tot el que segueix un coixinet són comentaris i no es tenen en compte
+# La indentació de les línies és molt important! Cada nivell d'indentació són 2 espais
+# Hi ha parelles de clau i valor, separades amb dos punts.
+#   - La clau no pot tenir espais ni caràcters estranys
+#   - Els valors, en general, poden anar sense cometes ("). Ara bé, si han de contenir caràcters com guions (-),
+#     cometes dobles ("), dos punts (:), etc, millor posar-los entre cometes (").
+#     Per exemple:
+#       - si vull escriure:
+#           Orgue "major": 54 notes
+#         hauré de fer:
+#           "Orgue \"major\": 54 notes"
+#         Les cometes dobles van acompanyades de la contrabarra (\).
+
+constructor:
+  nom: Gaietà Estadella
+  any: 1942
+
+actuacions:
+  - nom: Grenzing, Gerhard
+    any: 1986
+    actuacio: RC
+  - nom: Un orguener antic
+    any: 1587
+    actuacio: RS
+  - nom: Un altre orguener menys antic
+    any: 1672
+    actuacio: RC
+
+temperament: mesotònic d'1/4 de coma
+
+diapaso:
+  nota: a'
+  frequencia: 415.2 # en hertz i sense anotar la unitat
+  temperatura: 22.1 # en graus centígrads i sense anotar la unitat
+
+estat:
+  - any: 2022
+    estat: En bon funcionament
+
+adreca: Baixada de la Seu, 1, 08242 Manresa, Barcelona
+
+geolocalitzacio:
+  latitud: 41.72214964322953
+  longitud: 1.8275013271535163
+
+teclats:
+  - nom: I. Orgue major
+    extensio: "61 notes: C-c''''"
+    registres: # ATENCIÓ! Registres, no tiradors.
+      # Registres partits.
+      #  - Molts tenen l'esquerra i la dreta que van casats. S'indica amb '/'. partit: c'/cs' o h/c'
+      #  - Molts tenen un sol tirador, com el bajoncillo y clarín. Es pot indicar on hi ha la partició amb '|'
+      #  - Si no es poden casar, compten com a registres independents. Mà esquerra: C-h. Mà dreta: c'-g'''
+      - nom: Bodró
+        peus: 8'
+      - nom: Flauta cònica retorçada
+        peus: 8'
+        falta: true # si aquest registre no és present, però hauria de ser-ho, afegeix aquest camp.
+      - nom: Tompeta
+        peus: 8'
+        llengueta: true # si és un registre de llengüeta, afegeix aquest camp
+  - nom: II. Cadireta
+    extensio: "53 notes: C,D-f'''"
+    registres:
+      - nom: Bordó
+        peus: 4'
+
+pedal:
+  extensio: "30 notes: C-f'"
+  registres:
+    - nom: Subbaix
+      peus: 16'
+      # Si està permanentment acoblat
+    - nom: Acoblat al segon manual
+
+acoblaments:
+  - nom: II/I # amb una barra
+  - nom: I/P
+    falta: true
+  - nom: I/I 16' # octaves greus
+  - nom: II/P
+    partit: permanent
+
+# miscel·lània
+efectes:
+  - nom: Dues combinacions lliures
+  - nom: Rossinyol
+    falta: true
+  - nom: Expressió II

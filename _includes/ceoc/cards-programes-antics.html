@@ -1,0 +1,22 @@
+<div class="container ps-0 pe-0 pb-4">
+    <div class="row row-cols-auto g-3  justify-content-xl-center justify-content-center">
+        {% for cicle in site.data.ceoc.cicles %}
+        <div class="col">
+            <div class="card" style="width: 176px;">
+                <a href="{% if cicle.web %}{% link {{cicle.web}} %}{% else %}{{cicle.programa}}{% endif %}">
+                    <img src="{{cicle.portada}}"
+                         class="img-fluid card-img-top"
+                         style="width: 176px; height: 250px; object-fit: cover;"
+                         alt="portada-programa">
+                </a>
+                <div class="card-body">
+                    <a href="{% if cicle.web %}{% link {{cicle.web}} %}{% else %}{{cicle.programa}}{% endif %}">
+                        <p class="h6 card-title">{{cicle.edicio}}a edició ({{cicle.edicio | plus: 1980}})</p>
+                    </a>
+                    {% if cicle.text %}<p class="mb-0 no-justify">{{cicle.text | markdownify | remove: '<p>' | remove: '</p>' }}</p>{% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

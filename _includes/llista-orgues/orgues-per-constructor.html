@@ -1,0 +1,19 @@
+<!-- .no-underline aquí i no al pare div -->
+<div>
+    <ul>
+        {% assign orgueners = site.data.orgueners %}
+        {% for orguener in orgueners %}
+        {% if orguener[1].num_orgues_nous > 0 %}
+            <li>{{orguener[1].nom}}
+            <ul>
+                {% for data in orguener[1].orgues %}
+                {% if data.actuacio == "N" %}
+                <li>{{data.any}}. {{data.poble}}. <a href="{% link {{data.link}}.md %}">{{data.edifici}}</a></li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+            </li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+</div>

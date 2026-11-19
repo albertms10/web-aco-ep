@@ -1,0 +1,20 @@
+<ul>
+{% for llibre in include.data %}
+    <li><div style="font-size:0;">
+        <span style="font-size:1rem;">{{llibre.autors[0].cognoms}}, {{llibre.autors[0].nom}}</span>
+        {% assign len = llibre.autors.size %}
+        {% assign limit = llibre.autors.size | minus: 1 %}
+        {% for autor in llibre.autors offset: 1 %}
+            {% if forloop.last %}
+            <span style="font-size:1rem; white-space: pre;"> i {{autor.cognoms}}, {{autor.nom}}</span>
+            {% else %}
+            <span style="font-size:1rem;">, {{autor.cognoms}}, {{autor.nom}}</span>
+            {% endif %}
+        {% endfor %}
+
+        <span style="font-size:1rem;">&nbsp;({{llibre.any}}). <i>{{llibre.titol}}</i></span>
+        {% if llibre.altres %} <span style="font-size:1rem;">. [{{llibre.altres}}]</span> {% endif %}
+        <span style="font-size:1rem;">. {{llibre.productora}}</span>
+    </div></li>
+{% endfor %}
+</ul>

@@ -1,0 +1,166 @@
+---
+layout: compress
+---
+
+<!doctype html>
+<html lang="{{ site.lang }}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="canonical" href="{{site.url}}{{page.url}}" />
+
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    {% if page.layout == "base/bc-comarca" %}
+        {% include head/bc-comarca.html %}
+    {% elsif page.layout == "base/bc-edifici" %}
+        {% include head/bc-edifici.html %}
+    {% elsif page.layout == "base/bc-municipi" %}
+        {% include head/bc-municipi.html %}
+    {% elsif page.layout == "base/bc-provincia" %}
+        {% include head/bc-provincia.html %}
+    {% elsif page.layout == "base/concert-ceoc" %}
+        {% include head/concert-ceoc.html %}
+    {% elsif page.layout == "base/orgue" %}
+        {% include head/orgue.html %}
+    {% elsif page.layout == "base/page/orgues" %}
+        {% include head/orgues.html %}
+    {% elsif page.layout == "base/home" or
+             page.layout == "base/404" or
+             page.layout == "base/page" or
+             page.layout == "base/page/categories" or
+             page.layout == "base/page/noticies" or
+             page.layout == "base/page/tags" or
+             page.layout == "base/noticia" or
+             page.layout == "base/innocentada" %}
+        {% include head/page.html %}
+    {% else %}
+        {{ "Layout sense head propi!" | raise_error }}
+    {% endif %}
+
+    <link rel="stylesheet" href="{% link assets/node_modules/tocbot/dist/tocbot.css %}">
+    <link rel="stylesheet" href="{% link assets/node_modules/bootstrap-icons/font/bootstrap-icons.css %}">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{% link assets/img/favicon-180x180.png %}">
+    <link rel="shortcut icon" type="image/png" sizes="32x32" href="{% link assets/img/favicon-32x32.png %}">
+    <link rel="shortcut icon" type="image/png" sizes="16x16" href="{% link assets/img/favicon-16x16.png %}">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+<header>
+    {%- include navbar.html -%}
+</header>
+
+<main class="content">
+    {{ content }}
+</main>
+
+{% include footer.html %}
+
+<!-- JQUERY and BOOTSTRAP ------------------------------------------------------------------------------------------ -->
+<script src="{% link assets/node_modules/jquery/dist/jquery.min.js %}"></script>
+<script src="{% link assets/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js %}"></script>
+
+<!-- OTHER UTILITIES ----------------------------------------------------------------------------------------------- -->
+<script src="{% link assets/node_modules/anchor-js/anchor.min.js %}"></script>
+
+<!-- setup bootstrap-table plugin ---------------------------------------------------------------------------------- -->
+{% if page.layout == "base/page/orgues" %}
+<script src="{% link assets/node_modules/bootstrap-table/dist/bootstrap-table.min.js %}"></script>
+<script src="{% link assets/node_modules/bootstrap-table/dist/locale/bootstrap-table-ca-ES.min.js %}"></script>
+{% endif %}
+
+<!------------------------------------------------------------------------------------------------------------------ -->
+<!-- ONLY FOR EVERY orgue: JUSTIFIED GALLERY AND PHOTOSWIPE -------------------------------------------------------- -->
+{% if page.layout == "base/orgue" %}
+
+<!-- http://miromannino.github.io/Justified-Gallery/ -->
+<script src="{% link assets/node_modules/justifiedGallery/dist/js/jquery.justifiedGallery.min.js %}"></script>
+<script>
+        $('.galeriaDeFotos').justifiedGallery({
+            rowHeight : 180,
+            lastRow : 'nojustify',
+            margins : 6
+        });
+    </script>
+
+<!-- PhotoSwipe -->
+<script src="{% link assets/node_modules/photoswipe/dist/umd/photoswipe.umd.min.js %}"></script>
+<script src="{% link assets/node_modules/photoswipe/dist/umd/photoswipe-lightbox.umd.min.js %}"></script>
+<script src="{% link assets/node_modules/photoswipe-dynamic-caption-plugin/dist/photoswipe-dynamic-caption-plugin.umd.min.js %}"></script>
+{% endif %}
+
+<!------------------------------------------------------------------------------------------------------------------ -->
+<!-- MAPS ---------------------------------------------------------------------------------------------------------- -->
+{% if page.layout == "base/orgue" or
+      page.layout == "base/page/orgues" or
+      page.layout == "base/bc-edifici" or
+      page.layout == "base/bc-provincia" or
+      page.layout == "base/bc-comarca" or
+      page.layout == "base/bc-municipi" %}
+
+<script src="{% link assets/node_modules/leaflet/dist/leaflet.js %}"></script>
+<!-- Enable and disable map scrolling.
+     Map scrolling enables itself when clicking (leaflet functionality).
+     This only shows a message to the user to let them know that -->
+<script>
+    $('.maps').click(function () {
+        $('.maps-click-text-container').fadeOut(200);
+    });
+    $( ".maps" ).mouseleave(function() {
+        $('.maps-click-text-container').fadeIn(400);
+    });
+</script>
+
+{% endif %}
+
+<!------------------------------------------------------------------------------------------------------------------ -->
+<!-- TocBot https://tscanlin.github.io/tocbot/ -->
+<script src="{% link assets/node_modules/tocbot/dist/tocbot.min.js %}"></script>
+<script>
+    tocbot.init({
+      tocSelector: '.js-toc',
+      contentSelector: '.js-toc-content',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      collapseDepth: 3,
+    });
+</script>
+
+<script>
+    $('.footnotes').before('<hr class="m-0 mt-5 mb-1">')
+</script>
+
+{% if page.anchors or page.toc %}
+<script>
+    anchors.add('h2');
+    anchors.add('h3');
+    anchors.add('h4');
+    anchors.add('h5');
+</script>
+{% endif %}
+
+{% if page.url contains "ceoc" %}
+<script src="https://cdn.jsdelivr.net/npm/add-to-calendar-button@2" async defer></script>
+{% endif %}
+
+
+<!------------------------------------------------------------------------------------------------------------------ -->
+<!-- EXTRA SCRIPTS SPECIFIC FOR EACH PAGE -------------------------------------------------------------------------- -->
+{% if page.scripts %}
+    {% for script in page.scripts %}
+    <script src="{% link assets/js/{{script}} %}"></script>
+    {% endfor %}
+{% endif %}
+{% if layout.scripts %}
+    {% for script in layout.scripts %}
+    <script src="{% link assets/js/{{script}} %}"></script>
+    {% endfor %}
+{% endif %}
+
+{% include cookie-consent.html %}
+
+</body>
+</html>

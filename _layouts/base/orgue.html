@@ -1,0 +1,95 @@
+---
+layout: base
+scripts:
+- leafletMap.js
+- photoswipe.js
+- share.js
+---
+
+<!-- TODO genèric i general. Majusculitzacions i textos autogenerats -->
+<!-- TODO faig notar que s'haurà de revisar el Python que crea edificis.yml -->
+
+<div class="container ps-3 pe-3 mt-3">
+
+    {% assign instrument = site.data.edificis | where: 'pageID', page.url %}
+    {% assign instrument = instrument[0] %}
+
+    {% if instrument.nomOrgue %}
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% link pages/orgues.md %}">Orgues</a></li>
+                <li class="breadcrumb-item"><a href="{% link orgues/{{instrument.linkProvincia}}.md %}">{{instrument.nomProvincia}}</a></li>
+                <li class="breadcrumb-item"><a href="{% link orgues/{{instrument.linkProvincia}}/{{instrument.linkComarca}}.md %}">{{instrument.nomComarca}}</a></li>
+                <li class="breadcrumb-item"><a href="{% link orgues/{{instrument.linkProvincia}}/{{instrument.linkComarca}}/{{instrument.linkPoble}}.md %}">{{instrument.nomPoble}}</a></li>
+                <li class="breadcrumb-item"><a href="{% link orgues/{{instrument.linkProvincia}}/{{instrument.linkComarca}}/{{instrument.linkPoble}}/{{instrument.linkEdifici}}.md %}">{{instrument.nomEdifici}}</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{instrument.nomOrgue}}</li>
+            </ol>
+        </nav>
+
+        {% assign orgue = edifici[0].orgues | where: 'link',orgue %}
+        <h1 class="pb-0 mb-0" style="margin-left: -0.1rem;">{{instrument.nomEdifici}}</h1>
+        <h2 class="h3 fw-normal pt-0 mb-0 pb-1">{{instrument.nomOrgue}}</h2>
+    {% else %}
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% link pages/orgues.md %}">Orgues</a></li>
+                <li class="breadcrumb-item"><a href="{% link orgues/{{instrument.linkProvincia}}.md %}">{{instrument.nomProvincia}}</a></li>
+                <li class="breadcrumb-item"><a href="{% link orgues/{{instrument.linkProvincia}}/{{instrument.linkComarca}}.md %}">{{instrument.nomComarca}}</a></li>
+                <li class="breadcrumb-item"><a href="{% link orgues/{{instrument.linkProvincia}}/{{instrument.linkComarca}}/{{instrument.linkPoble}}.md %}">{{instrument.nomPoble}}</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{instrument.nomEdifici}}</li>
+            </ol>
+        </nav>
+
+        <h1 class="mb-0 pb-1" style="margin-left: -0.1rem;">{{instrument.nomEdifici}}</h1>
+    {% endif %}
+
+    <div class="d-flex justify-content-between align-items-baseline">
+        <p class="titol-poble">{{instrument.nomPoble}} ({{instrument.nomComarca}})</p>
+        <button id="boto-compartir" class="btn share" type="button" title="Enllaç copiat"
+                data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="click"
+                data-enllac="{{site.url | append: "/" | append: page.redirect_from.last}}">
+            <i class="bi bi-share-fill"></i>
+        </button>
+    </div>
+
+    {% include orgues/top-image-banner.html %}
+
+    <!-- Mostrar o no el bàner indicador de que l'orgue participa al concert -->
+    {% assign current_any = "now" | date: "%Y" %}
+    {% assign edicio = "now" | date: "%y" | plus: 20 %}
+    <!-- es mostrarà el bàner a partir de la data indicada && quan s'afegeixi la informació a la base de dades -->
+    {% assign data_inici = current_any | append: "-06-01" | date: "%s" %}
+    <!-- s'eliminarà el bàner l'últim dia de setembre -->
+    {% assign data_fi = current_any | append: "-09-30" | date: "%s" %}
+    {% assign data_now = "now" | date: "%s" %}
+
+    {% assign orgue_id = page.url | pageID_to_md %}
+    {% assign concerts = site.data.ceoc.concerts | where: "orgue", orgue_id %}
+    {% for concert in concerts %}
+        {% assign concert_data = concert.data | date: "%s" %}
+        <!-- es mostren els concerts si:
+            - avui és entre data_inici i data_fi. Entre octubre i maig, no mostrarem res. A partir de maig, es mostrarà
+              si ja tenim la programació entrada.
+            - el concert es troba també entre data_inici i data_fi. De concerts entre les dates n'hi ha un cada any. Només
+              mostrarem el bàner si el concert es troba dins el cicle actual.
+        -->
+        {% if data_now > data_inici and data_now < data_fi and concert_data > data_inici and concert_data < data_fi %}
+            <div>
+                <a class="" style="text-decoration: none !important" href="{% link ceoc/{{edicio}}/{{instrument.linkPoble}}.md %}">
+                    <div class="alert alert-info" role="alert" markdown="1">
+                        <p class="mb-0" style="text-align: left;">
+                            Aquest orgue participa en el {{edicio}}è cicle «Els Orgues de Catalunya». <span style="text-decoration: underline;">Ves a la pàgina del concert</span>.
+                        </p>
+                    </div>
+                </a>
+            </div>
+            {% break %}
+        {% endif %}
+    {% endfor %}
+
+
+    {% include orgues/orgues-content.html lat=instrument.latitud long=instrument.longitud adreca=instrument.adreca bisbat=instrument.bisbat civil=instrument.civil %}
+
+    {% include orgues/navigate-orgues.html %}
+
+</div>

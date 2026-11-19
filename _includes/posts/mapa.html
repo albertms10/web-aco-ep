@@ -1,0 +1,30 @@
+<!-- Aquest mapa és el petit, per als posts -->
+
+<div id="map"
+     data-latitud="{{include.lat}}"
+     data-longitud="{{include.long}}"
+     data-adreca="{{include.adreca}}"
+></div>
+
+<table class="mt-4">
+    <tr>
+        <td style="vertical-align:top; padding-right: 0.5rem; padding-top: 0.1rem;">
+            <p class="mb-1"><i class="bi bi-geo-alt-fill text-primary"></i></p>
+        </td>
+        <td class="pb-3">
+            <p class="mb-0" style="text-align: left;">{{include.adreca}}<br>
+                <a href="https://www.openstreetmap.org/?mlat={{include.lat}}&mlon={{include.long}}">Open Street Maps</a><br>
+                <a href="https://www.google.cat/maps?q={{include.lat}},{{include.long}}">Google Maps</a><br>
+                <a href="https://maps.apple.com/?sll={{include.lat}},{{include.long}}&z=10&t=m">Apple Maps</a>
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td style="vertical-align:top; padding-right: 0.5rem;">
+            <p class="mb-1"><i class="bi-pin-map-fill text-primary"></i></p>
+        </td>
+        <td>
+            <p class="mb-1" style="text-align: left;">Coordenades: {{include.lat | round: 4}}, {{include.long | round: 4}}</p>
+        </td>
+    </tr>
+</table>

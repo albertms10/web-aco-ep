@@ -1,0 +1,49 @@
+<!-- Informació sobre el dia, temps de lectura i autor.
+        S'utilitza a la pàgina principal i en cadascun dels posts
+
+Paràmetres:
+    * date (string)
+    * content (string, post.content) (for reading time)
+    * author (string)
+-->
+<p class="pb-0 mb-0 text-secondary" style="text-justify:none;">
+    {% if include.date %}
+    <nobr>
+        <span>
+            <i class="bi bi-calendar-event text-secondary"></i>&nbsp;
+        </span>
+        <span>
+                {{ include.date | data_en_catala_mitja }}
+        </span>
+    </nobr>
+        {% if include.content or include.author %}
+            <span class="px-2"></span>
+        {% endif %}
+    {% endif %}
+
+    {% if include.content %}
+    <nobr>
+        <span>
+            <i class="bi bi-clock-fill text-secondary"></i>&nbsp;
+        </span>
+        <span>
+            {% include functions/get_reading_time.html content=include.content %}
+            {{ return }}
+        </span>
+    </nobr>
+        {% if include.author %}
+            <span class="px-2"></span>
+    {% endif %}
+    {% endif %}
+
+    {% if include.author %}
+    <nobr>
+        <span>
+            <i class="bi bi-person-fill text-secondary"></i>&nbsp;
+        </span>
+        <span>
+            {{ include.author }}
+        </span>
+    </nobr>
+    {% endif %}
+</p>

@@ -1,0 +1,57 @@
+<!-- For the footer to span all the screen and always in the bottom:
+     1. <body class="d-flex flex-column min-vh-100">
+     2. <div class="mt-auto">
+     3. <footer>
+     4. Then start the design
+-->
+<div class="mt-auto">
+    <footer class="pt-3 mt-5" style="background-color: #f2f2f2;">
+        <div class="container ps-3 pe-3">
+            <div class="row align-items-end">
+                <div class="col-12 col-sm-6 py-3">
+                    <p class="h6 fw-bold pb-0" style="font-variant: small-caps;">
+                        Contacta amb nosaltres
+                    </p>
+
+                    <ul class="nav pb-1">
+                        <li class="pe-3">
+                            <a href="mailto:aco@acorgue.cat" aria-label="Enllaç a l'adreça de correu electrònic">
+                                <i class="bi bi-envelope-at-fill text-primary" style="font-size: 2rem;"></i>
+                            </a>
+                        </li>
+                        <li class="pe-3">
+                            <a href="https://www.facebook.com/acorgue/" aria-label="Enllaç a la pàgina de Facebook" rel="external nofollow noreferrer">
+                                <i class="bi bi-facebook text-primary" style="font-size: 2rem;"></i>
+                            </a>
+                        </li>
+                        <li class="pe-3">
+                            <a href="https://twitter.com/acorgue" aria-label="Enllaç a la pàgina de Twitter" rel="external nofollow noreferrer">
+                                <i class="bi bi-twitter text-primary" style="font-size: 2rem;"></i>
+                            </a>
+                        </li>
+                        <li class="pe-3">
+                            <a href="https://www.instagram.com/acorgue/" aria-label="Enllaç a la pàgina d'Instagram" rel="external nofollow noreferrer">
+                                <i class="bi bi-instagram text-primary" style="font-size: 2rem;"></i>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <p class="mb-2">
+                        Rocafort, 242 bis, 08029 Barcelona
+                    </p>
+                    <p class="mb-0">
+                        <a href="https://forms.gle/Ub2LstvbtNxn9M7t5" class="btn btn-primary btn-sm" tabindex="-1" role="button" rel="external nofollow noreferrer">Fes-te'n soci</a>
+                    </p>
+                </div>
+            <div class="col-12 col-sm-6 py-3 text-sm-end small lh-sm">
+                <a href="{% link pages/avis-legal.md %}" class="pb-2 d-block" >Avís legal</a>
+                <a href="{% link pages/politica-de-privacitat.md %}" class="pb-2 d-block">Política de privacitat</a>
+                <a href="{% link pages/politica-privacitat-socis.md %}" class="pb-2 d-block">Política de privacitat en fer-se soci</a>
+            </div></div>
+        </div>
+
+        <div class="text-center p-2" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 1992–2025 Associació Catalana de l'Orgue
+        </div>
+    </footer>
+</div>

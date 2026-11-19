@@ -1,0 +1,45 @@
+{% comment %}
+<!-- Usage: {% include orgues/gallery-grid.html %}-->
+{% endcomment %}
+
+{% assign images = site.data.imatges | where: "page_id", page.url %}
+
+<div class="galeriaDeFotos">
+{% for image in images %}
+
+    {% if image.galeria == false %}
+        {% continue %}
+    {% endif %}
+
+    {% if image.portada != "" %}
+        {% continue %}
+    {% endif %}
+
+    <div class="pswp-gallery__item">
+        <a href="#gallery"
+                data-pswp-width="{{image.width}}"
+                data-pswp-height="{{image.height}}"
+                data-pswp-srcset="{{image.srcset}}"
+                target="_blank"
+                rel="nofollow">
+            <img src="{{image.thumbs[320]}}">
+        </a>
+
+        {% if image.caption != "" or image.autor != "" or image.date != "" %}
+        <div class="pswp-caption-content">
+            {% if image.caption != "" %}
+                {{image.caption | markdownify | remove: '<p>' | remove: '</p>'}}<br>
+            {% endif %}
+            {% if image.autor != "" %}
+                <span class="caption-photo-author">Fotografia — <b>{{image.autor | markdownify | remove: '<p>' | remove: '</p>'}}</b><br></span>
+            {% endif %}
+            {% if image.date != "" %}
+                {{ image.date | data_en_catala_mitja }}
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+
+<div><br></div>

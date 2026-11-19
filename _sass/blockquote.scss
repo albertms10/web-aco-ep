@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css?family=Special+Elite");
+@import url("https://fonts.cdnfonts.com/css/tex-gyre-chorus");
+
+blockquote {
+  position: relative;
+  margin: 0;
+  padding-top: 0rem;
+  padding-bottom: 1rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+.normal::before,
+.normal::after {
+  position: absolute;
+  color: #ebf7f9;
+  font-family: "Helvetica", cursive;
+  font-size: 8rem;
+  width: 4rem;
+  height: 4rem;
+}
+
+.normal::before {
+  content: "“";
+  left: 1rem;
+  top: -2.2rem;
+}
+
+.normal::after {
+  content: "”";
+  right: 1rem;
+  bottom: 1rem;
+}
+
+.pluma {
+  font-family: "TeX Gyre Chorus", sans-serif;
+  font-weight: 100;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.pluma::before,
+.pluma::after {
+  position: absolute;
+  color: #ebf7f9;
+  font-size: 8rem;
+  width: 4rem;
+  height: 4rem;
+}
+
+.pluma::before {
+  content: "“";
+  left: 0rem;
+  top: -2rem;
+}
+
+.pluma::after {
+  content: "”";
+  right: 3rem;
+  bottom: 1rem;
+}
+
+.typewriter {
+  font-family: "Special Elite", cursive;
+  font-weight: 100;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.typewriter::before,
+.typewriter::after {
+  position: absolute;
+  color: #ebf7f9;
+  font-size: 8rem;
+  width: 4rem;
+  height: 4rem;
+}
+
+.typewriter::before {
+  content: "“";
+  left: 0rem;
+  top: -1rem;
+}
+
+.typewriter::after {
+  content: "”";
+  right: 0rem;
+  bottom: 0rem;
+}

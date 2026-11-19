@@ -1,0 +1,20 @@
+{% comment %}
+<!-- Usage: {% include orgues/top-image-banner.html %}-->
+{% endcomment %}
+
+{% assign images = site.data.imatges | where: "page_id", page.url %}
+
+{% if images.size == 0 %}
+    <div class="mt-2"></div>
+{% else %}
+    {% for image in images %}
+        {% if image.portada != "" %}
+            <img class="position-relative overflow-hidden p-0 mb-4"
+                 style="width: 100%; border-radius: 10px; filter: opacity(50%);"
+                 srcset="{{image.srcset}}"
+                 src="{{image.link}}"
+                 alt="{{image.alt}}">
+            {% break %}
+        {% endif %}
+    {% endfor %}
+{% endif %}

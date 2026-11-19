@@ -1,0 +1,41 @@
+{% comment %}
+<!-- Usage:
+* source: mandatory. Nextcloud sharing resource (big and high quality)
+* alt-source: mandatory. Git super low resolution resource (when nextcloud fails)
+* alt: mandatory. Give a text description of the image for accessibility
+* img-width: optional (100% by default). Percentage of the width of text that the image must occupy.
+* side: optional (left by default). Left or right
+* padding-top: optional (0.3rem by default).
+* padding-bottom: optional (1rem by default). If one line of text get orphan below the image, increase the padding.
+
+Other non parameters
+* padding-left: 1.5rem by default if side = right.
+* padding-right: 1.5rem by default if side = left.
+-->
+{% endcomment %}
+
+<div align="center">
+  <figure class="m-0"
+          style="{% if include.side == "right" %}float: right;{% elsif include.side == "left" %}float: left;{% endif %}
+                 width: {% if include.img-width %}{{ include.img-width }}{% else %}100%{% endif %};
+                 padding-top: {% if include.padding-top %}{{include.padding-top}}{% else %}0.3rem{% endif %};
+                 padding-bottom: {% if include.padding-bottom %}{{ include.padding-bottom }}{% else %}1rem{% endif %};
+    ">
+    <img src="{{ include.source }}"
+           onerror="this.onerror=null; this.src='{{ include.alt-source | relative-url }}'"
+           alt="{{ include.alt }}"
+           style="width: 100%;
+                  height: auto;
+                  padding-left: {% if include.side == "right" %}1.5rem{% elsif include.side == "left" %}auto{% endif %};
+                  padding-right: {% if include.side == "right" %}auto{% elsif include.side == "left" %}1.5rem{% endif %};
+                  ">
+      {% if include.caption %}
+        <figcaption class="img-caption pb-2 pt-2 px-3 mt-2 mb-2"
+                    style="{% if include.side == "right" %}margin-left: 1.5rem;{% elsif include.side == "left" %}margin-left: auto;{% endif %}
+                           {% if include.side == "right" %}margin-right: auto;{% elsif include.side == "left" %}margin-right: 1.5rem;{% endif %}
+                    ">
+          {{ include.caption | markdownify | remove: '<p>' | remove: '</p>'  }}
+        </figcaption>
+      {% endif %}
+  </figure>
+</div>

@@ -1,0 +1,25 @@
+// https://stackoverflow.com/questions/17469483/how-to-increase-the-distance-between-table-columns-in-html
+// https://stackoverflow.com/questions/28548125/how-do-you-changing-default-padding-bootstrap-table-cells
+.registres-table > tbody > tr > td {
+  padding: 0.05rem 0.5rem;
+}
+.registres-table > thead > tr > th {
+  padding: 0.15rem 0.5rem;
+}
+.registres-table thead tr {
+  border-bottom: 2px solid $primary !important;
+}
+
+.registre-in-taula {
+  font-size: $font-size-base * 0.9;
+}
+.llengueta {
+  color: #b30000;
+}
+.no-present {
+  color: #939393;
+  font-style: italic;
+}
+.partit {
+  color: $gray-600;
+}

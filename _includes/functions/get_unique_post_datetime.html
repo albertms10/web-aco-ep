@@ -1,0 +1,19 @@
+{% if include.filter %}
+    {% assign filter = include.filter %}
+{% else %}
+    {% assign filter = '%Y' %}
+{% endif %}
+
+{% assign years = "" %}
+{% assign split_mark = "<|>" %}
+
+{% for post in site.posts %}
+    {% assign year = post.date | date: filter %}
+    {% assign years = years | append: split_mark | append: year %}
+{% endfor %}
+
+{% assign return = years
+    | remove_first: split_mark
+    | split: split_mark
+    | sort: self
+    | uniq %}

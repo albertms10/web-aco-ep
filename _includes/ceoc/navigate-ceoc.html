@@ -1,0 +1,74 @@
+{% assign concert_id = page.url | pageID_to_md %}
+{% assign current_concert = site.data.ceoc.concerts | where: "concert", concert_id | first %}
+{% assign data_concert = current_concert.data | append: " " | append: current_concert.hora | append: ":00" | date: "%s" %}
+{% assign any_concert = current_concert.data | date: "%Y" %}
+<!-- Limita la navegació al cicle al qual pertany el concert que es mostra -->
+{% assign inici = any_concert | append: "-01-01" | date: "%s" %}
+{% assign final = any_concert | append: "-09-30" | date: "%s" %}
+
+{% for concert in site.data.ceoc.concerts %}
+    {% assign cd = concert.data | append: " " | append: concert.hora | append: ":00" | date: "%s" %}
+    {% if cd > inici and cd < final %}
+        {% if cd < data_concert %}
+            {% assign previous = concert.concert %}
+            {% assign previous_text = concert.data | data_en_catala_mitja %}
+            {% if concert.orgue %}
+                {% assign url = concert.orgue | md_to_pageID %}
+                {% include functions/get-info-from-url.html url=url %}
+                {% assign poble = site.data.pobles | where: "link", poble | first %}
+                <!-- TODO 31 de juliol a Vilafranca del Penedès. 31 de juliol a la Pobla de Cérvoles. 31 de juliol *al* Pla de Santa Maria -->
+                {% assign previous_text = previous_text | append: " a " | append: poble.nom %}
+            {% else %}
+                <!-- TODO 31 de juliol a Vilafranca del Penedès. 31 de juliol a la Pobla de Cérvoles. 31 de juliol *al* Pla de Santa Maria
+                     Aquest cas és menys rellevant perquè representa un concert d'un orgue que no forma part de l'inventari, i el nom del municipi es pot
+                     adaptar segons les necessitats. És tot manual.
+                -->
+                {% assign previous_text = previous_text | append: " a " | append: concert.municipi %}
+            {%endif%}
+        {% endif %}
+        {% if cd > data_concert %}
+            {% unless next %}
+                {% assign next = concert.concert %}
+                {% assign next_text = concert.data | data_en_catala_mitja %}
+                {% if concert.orgue %}
+                    {% assign url = concert.orgue | md_to_pageID %}
+                    {% include functions/get-info-from-url.html url=url %}
+                    {% assign poble = site.data.pobles | where: "link", poble | first %}
+                    <!-- TODO 31 de juliol a Vilafranca del Penedès. 31 de juliol a la Pobla de Cérvoles. 31 de juliol *al* Pla de Santa Maria -->
+                    {% assign next_text = next_text | append: " a " | append: poble.nom %}
+                {% else %}
+                    <!-- TODO 31 de juliol a Vilafranca del Penedès. 31 de juliol a la Pobla de Cérvoles. 31 de juliol *al* Pla de Santa Maria
+                     Aquest cas és menys rellevant perquè representa un concert d'un orgue que no forma part de l'inventari, i el nom del municipi es pot
+                     adaptar segons les necessitats. És tot manual.
+                    -->
+                    {% assign next_text = next_text | append: " a " | append: concert.municipi %}
+                {%endif%}
+            {% endunless %}
+        {% endif %}
+    {% endif %}
+{% endfor %}
+
+<div class="mt-3 pt-2 d-flex justify-content-between">
+    {%- if previous -%}
+    <a class="post-previous pe-2"
+       href="{% link {{previous}} %}"
+       title="{{ previous_text | escape }}">{{ previous_text | escape }}</a>
+    {%- else -%}
+    <span></span>
+    {%- endif -%}
+
+    {% assign pagina_cicle = page.url | split: "/" %}
+    {% assign edicio = pagina_cicle | slice: 2 %}
+    {% assign count = pagina_cicle.size | minus: 1 %}
+    {% assign pagina_cicle = pagina_cicle | slice: 0, count | join: "/" | append: "/" | pageID_to_md %}
+<!--    No sé on posar-ho... francament. Crec que hi hauria de ser, però. -->
+<!--    <a class="" href="{% link {{pagina_cicle}} %}" title="{{edicio}}è cicle">{{edicio}}è cicle</a>-->
+
+    {%- if next -%}
+    <a class="post-next ps-2 text-end"
+       href="{% link {{next}} %}"
+       title="{{ next_text | escape }}">{{ next_text | escape }}</a>
+    {%- else -%}
+    <span></span>
+    {%- endif -%}
+</div>

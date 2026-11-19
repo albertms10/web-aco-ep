@@ -1,0 +1,12 @@
+{% include functions/get-info-from-url.html %}
+{% assign comarca = site.data.orgues.comarques | where: 'link',comarca | first %}
+
+<!-- TODO de l'Alt Penedès, del Bruc, de la Garriga, d'Osona. -->
+{% assign title = "Orgues de la comarca " | append: comarca.de | append: comarca.nom %}
+{% assign description = title | replace: "Orgues", "Llista dels orgues" %}
+
+<title>{{title}}</title>
+<meta name="description" content="{{description}}">
+{% include head/open-graph.html title=title description=description image="" image-alt="" %}
+
+<link rel="stylesheet" href="{% link assets/node_modules/leaflet/dist/leaflet.css %}">

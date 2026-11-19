@@ -1,0 +1,17 @@
+{% assign modifiers = "" %}
+{% if registre.llengueta %}
+    {% assign modifiers = modifiers | append: " llengueta " %}
+{% endif %}
+{% if registre.falta %}
+    {% assign modifiers = modifiers | append: " no-present " %}
+{% endif %}
+
+<td>
+    <span class="registre-in-taula {{ modifiers }}">{{registre.nom | markdownify | remove: '<p>' | remove: '</p>' }}</span>
+    {% if registre.partit %}
+        <span class="registre-in-taula partit">({{registre.partit}})</span>
+    {% endif %}
+</td>
+<td style="block; width:1%; white-space: nowrap; text-align: right;">
+    <span class="registre-in-taula {{ modifiers }}">{{registre.peus | replace: "'", "′"}}</span>
+</td>

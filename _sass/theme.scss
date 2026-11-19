@@ -1,0 +1,298 @@
+// bootstrap overrides
+// $font-family-sans-serif:    "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+// $font-family-sans-serif:    "D-DIN", sans-serif; // pocs weights
+// $font-family-sans-serif:    "Barlow", sans-serif; // no té suport per l·l
+$font-family-sans-serif: "Avrile Sans", sans-serif;
+// $font-family-sans-serif:    "Avrile Sans Condensed", sans-serif; // molt maca, però molt estreta per la web
+$font-weight-base: 300;
+
+// Create your own map
+$custom-spacers: (
+  6: $spacer * 5,
+  7: $spacer * 7.5,
+  8: $spacer * 10,
+  9: $spacer * 13,
+  10: $spacer * 17,
+  11: $spacer * 22,
+);
+// Merge the maps
+$spacers: map-merge($spacers, $custom-spacers);
+
+// Create your own map
+$custom-breakpoints: (
+  "xxxl": 1620px,
+);
+$custom-max-width: (
+  "xxxl": 1540px,
+);
+// Merge the maps
+// $grid-breakpoints: map-merge($grid-breakpoints, $custom-breakpoints);
+// $container-max-widths: map-merge($container-max-widths, $custom-max-width);
+
+// make global container smaller
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1080px !important;
+  }
+}
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1260px !important;
+  }
+}
+
+// create small container
+@media (min-width: 768px) {
+  .container-small {
+    max-width: 650px !important;
+  }
+}
+@media (min-width: 992px) {
+  .container-small {
+    max-width: 725px !important;
+  }
+}
+@media (min-width: 1200px) {
+  .container-small {
+    max-width: 800px !important;
+  }
+}
+
+.container-small {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $primary !important;
+}
+
+h1 {
+  font-weight: bold !important;
+  padding-bottom: 1rem !important;
+  padding-top: 2rem !important;
+}
+h2 {
+  padding-bottom: 0.5rem !important;
+  padding-top: 1.5rem !important;
+}
+h3 {
+  padding-bottom: 0.5rem !important;
+  padding-top: 1.5rem !important;
+}
+
+// notícia
+.subtitol {
+  font-size: $font-size-base * 1.3;
+  color: $primary;
+}
+
+.subtitol p {
+  text-align: left;
+}
+
+.no-justify {
+  text-align: left;
+}
+
+p {
+  text-align: justify;
+  ca-hyphens: auto;
+}
+
+@media (min-width: 768px) {
+  .columns {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    -webkit-column-gap: 3em;
+    -moz-column-gap: 3em;
+    column-gap: 3em;
+    column-gap: 2rem;
+    column-rule: 1px solid #bbb;
+    orphans: 2;
+    widows: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .columns {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+  }
+}
+
+a {
+  text-decoration: none !important;
+}
+a:hover {
+  text-decoration: underline !important;
+}
+
+a > strong {
+  color: $primary !important;
+}
+
+li a,
+p a {
+  text-decoration: underline !important;
+}
+
+.text-body p + ul {
+  margin-top: -1rem !important;
+}
+
+// per construccions directes: <a class="btn">
+a.btn {
+  text-decoration: none !important;
+}
+
+// per construccions indirectes: <div class="no_underline"><a href=""></a></div>
+.no_underline a {
+  text-decoration: none !important;
+}
+.no_underline a:hover {
+  text-decoration: underline !important;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a {
+  color: $primary;
+}
+
+.footnotes li {
+  line-height: normal;
+}
+
+.footnotes p {
+  margin-bottom: 0;
+}
+
+.footnotes ol {
+  padding-left: 1.5rem;
+}
+
+li[role="doc-endnote"] p {
+  text-align: left;
+}
+
+.titol-poble {
+  //     margin-top: -1.5rem;
+  color: $primary;
+  font-size: $font-size-base * 1.1;
+}
+
+.navbar {
+  background-color: shift-color($primary, -80%);
+}
+
+.social {
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+}
+
+.h1-404 {
+  margin: 30px 0;
+  font-size: 4em;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.content-404 {
+  margin: 10px auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+.inline-icon {
+  width: $font-size-base * 0.9;
+  height: $font-size-base * 0.9;
+  margin-bottom: 0.2rem;
+  margin-right: 0.2rem;
+}
+
+.post-list-item-date {
+  font-size: $font-size-base * 0.8;
+  padding-right: 0.5rem;
+}
+
+.post-list-counter {
+  color: #fff;
+  background-color: $primary;
+  border-radius: 6px;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+}
+
+.img-caption {
+  background-color: $gray-200;
+  color: black;
+  text-align: center;
+  font-size: $font-size-sm;
+}
+
+.taula-orgues tbody > tr {
+  cursor: pointer;
+}
+.taula-orgues-header {
+  background-color: $primary !important;
+  color: white !important;
+}
+.taula-orgues tr > *:nth-child(1) {
+  padding-left: 0.5rem !important;
+}
+.taula-orgues tr > *:last-child {
+  padding-right: 0.5rem !important;
+}
+
+.small-caps {
+  font-family: "Alegreya Sans SC";
+  font-size-adjust: cap-height 0.66;
+}
+
+span.autor {
+  font-style: oblique;
+  font-weight: bold;
+}
+hr.autor {
+  margin: 0.2rem 0 1rem 0;
+  //     width: 70%;
+}
+
+.btn.share {
+  background-color: shift-color($primary, -80%);
+  color: $primary;
+}
+.btn.share:hover {
+  background-color: shift-color($primary, -10%);
+  color: white;
+}
+
+@media (min-width: 1200px) {
+  .two-column {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    -webkit-column-gap: 3em;
+    -moz-column-gap: 3em;
+    column-gap: 3em;
+  }
+}
+@media (max-width: 1200px) {
+  .two-column {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+    -webkit-column-gap: 0em;
+    -moz-column-gap: 0em;
+    column-gap: 0em;
+  }
+}

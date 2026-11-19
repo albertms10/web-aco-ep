@@ -1,0 +1,16 @@
+<!-- .no-underline aquí i no al pare div -->
+<div>
+    <ul>
+        {% assign orgueners = site.data.orgueners %}
+        {% for orguener in orgueners %}
+            <li>{{orguener[1].nom}}
+            <ul>
+                {% for data in orguener[1].orgues %}
+                {% include functions/get-actuacio-from-code.html actuacio=data.actuacio %}
+                <li>({{act | join: ", "}}) {{data.any}}. {{data.poble}}. <a href="{% link {{data.link}}.md %}">{{data.edifici}}</a></li>
+                {% endfor %}
+            </ul>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

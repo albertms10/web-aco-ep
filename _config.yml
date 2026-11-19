@@ -1,0 +1,82 @@
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://www.acorgue.cat" # the base hostname & protocol for your site, e.g. http://example.com
+lang: "ca"
+
+# Build settings
+plugins:
+  - jekyll-sitemap
+  - jekyll-redirect-from
+
+redirect_from:
+  json: false
+
+defaults:
+  - scope:
+      path: "google*.html"
+    values:
+      sitemap: false
+  - scope:
+      path: "assets/node_modules"
+    values:
+      sitemap: false
+
+compress_html:
+  comments: ["<!--", "-->"]
+  ignore:
+    envs: ["devel"]
+
+# https://github.com/jekyll/jekyll-sass-converter#usage
+sass:
+  load_paths:
+    - _sass
+    - assets
+  style: compressed
+
+# how many articles to display in the home page
+home-articles: 10
+
+ceoc-content-separator: <!--separador-->
+
+google_analytics: "G-RMRQG9523W"
+
+# Global. És bo pels orgues
+permalink: /:path/
+
+# Pels articles. Fem que no surti cap data a l’URL (ni path ni el que Jekyll vol que surti)
+collections:
+  posts:
+    output: true
+    permalink: /noticies/:title/
+
+webrick:
+  headers:
+    Referrer-Policy: strict-origin
+    Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+    X-Content-Type-Options: nosniff
+    X-Frame-Options: SAMEORIGIN
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+exclude:
+  - .gitignore
+  - .gitlab-ci.yml
+  - .idea/
+  - .jekyll-cache/
+  - .sass-cache/
+  - assets/package.json
+  - assets/package-lock.json
+  - Gemfile
+  - Gemfile.lock
+  - public/
+  - README.md
+  - requirements.txt
+  - scripts/
+  - vendor/
+  - venv/
+  - .venv/

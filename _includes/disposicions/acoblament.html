@@ -1,0 +1,9 @@
+{% assign modifiers = "" %}
+    {% if acoblament.falta %}
+    {% assign modifiers = modifiers | append: " no-present " %}
+{% endif %}
+
+<span class="registre-in-taula {{ modifiers }}">{{acoblament.nom | replace: "'", "′"}}</span>
+{% if acoblament.partit %}
+    <span class="registre-in-taula partit">({{acoblament.partit}})</span>
+{% endif %}

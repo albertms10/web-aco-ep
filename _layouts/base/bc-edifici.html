@@ -1,0 +1,59 @@
+---
+layout: base
+scripts:
+- leafletMap.js
+---
+
+<div class="container ps-3 pe-3 mt-3">
+
+    {% include functions/get-info-from-url.html %}
+    {% assign nom_provincia = site.data.orgues.provincies | where: 'link',provincia | first | map: "nom" %}
+    {% assign nom_comarca = site.data.orgues.comarques | where: 'link',comarca | first | map: "nom" %}
+    {% assign d_poble = site.data.orgues.orgues | where: 'link',provincia | first | map: "comarques" | first | where: 'link',comarca | first | map: "poblacions" | first | where: 'link',poble | first %}
+    {% assign d_edifici = d_poble.edificis | where: 'link',edifici | first %}
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% link pages/orgues.md %}">Orgues</a></li>
+            <li class="breadcrumb-item"><a href="{% link orgues/{{provincia}}.md %}">{{nom_provincia}}</a></li>
+            <li class="breadcrumb-item"><a href="{% link orgues/{{provincia}}/{{comarca}}.md %}">{{nom_comarca}}</a></li>
+            <!-- TODO Majusculització del municipi? -->
+            <li class="breadcrumb-item"><a href="{% link orgues/{{provincia}}/{{comarca}}/{{poble}}.md %}">{{d_poble.nom}}</a></li>
+            <!-- TODO Majusculització de l'edifici? -->
+            <li class="breadcrumb-item active" aria-current="page">{{d_edifici.nom}}</li>
+        </ol>
+    </nav>
+
+    <!-- TODO candidat de text pre-generat. Que es podria millorar amb un llenguatge més potent com Python -->
+    <h1 class="pb-0 mb-0">{{d_edifici.nom}}</h1>
+    <p class="titol-poble">{{d_poble.nom}} ({{nom_comarca}})</p>
+
+    <div class="row gx-6">
+        <div class="col-12 col-lg-8 mt-2 js-toc-content text-body">
+            <h3 class="pt-0">Orgues</h3>
+            <section>
+                <ul>
+                {% for orgue in d_edifici.orgues %}
+                    <li>
+                        {% if orgue.wip %}
+                            {{orgue.nom}}
+                        {% else %}
+                            <a href="{% link orgues/{{provincia}}/{{comarca}}/{{poble}}/{{edifici}}/{{orgue.link}}.md %}">{{orgue.nom}}</a>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+                </ul>
+            </section>
+            {{ content }}
+        </div>
+
+        <div class="col-12 col-lg-4 mt-6 mt-lg-2">
+            <section>
+                {% include posts/mapa.html lat=d_edifici.geolocalitzacio.latitud long=d_edifici.geolocalitzacio.longitud adreca=d_edifici.adreca %}
+            </section>
+        </div>
+    </div>
+
+
+
+</div>

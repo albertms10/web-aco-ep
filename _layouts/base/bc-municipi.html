@@ -1,0 +1,87 @@
+---
+layout: base
+scripts:
+- leafletMapGeneric.js
+---
+
+<div class="container ps-3 pe-3 mt-3">
+
+    {% include functions/get-info-from-url.html %}
+    {% assign nom_provincia = site.data.orgues.provincies | where: 'link',provincia | first | map: "nom" %}
+    {% assign nom_comarca = site.data.orgues.comarques | where: 'link',comarca | first | map: "nom" %}
+    {% assign municipi = site.data.pobles | where: 'provincia', provincia | where: 'comarca', comarca | where: 'link', poble | first %}
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% link pages/orgues.md %}">Orgues</a></li>
+            <li class="breadcrumb-item"><a href="{% link orgues/{{provincia}}.md %}">{{nom_provincia}}</a></li>
+            <li class="breadcrumb-item"><a href="{% link orgues/{{provincia}}/{{comarca}}.md %}">{{nom_comarca}}</a></li>
+            <!-- TODO Majusculització del municipi? -->
+            <li class="breadcrumb-item active" aria-current="page">{{municipi.nom}}</li>
+        </ol>
+    </nav>
+
+    <h1 class="pb-0 mb-4">Orgues {{municipi.de}}</h1>
+
+    <div class="row gx-6">
+        <div class="col-12 col-lg-6 mt-2 js-toc-content text-body">
+
+            <div class="orgues-ul">
+            {% for edifici in municipi.edificis %}
+                    <p style="text-align: left;">
+                        <!-- TODO Majusculització de l'edifici? -->
+                        {% if edifici.wip %}
+                            <span
+                               data-latitud="{{edifici.geolocalitzacio.latitud}}"
+                               data-longitud="{{edifici.geolocalitzacio.longitud}}"
+                               data-adreca="{{edifici.adreca}}"
+                               data-html="<b>{{municipi.nom}}</b><br><span>{{edifici.nom}}</a>">
+                            {{edifici.nom}}
+                            </span><br><span class="ps-3">{{edifici.adreca}}</span>
+                        {% else %}
+                            <a href="{% link orgues/{{provincia}}/{{comarca}}/{{municipi.link}}/{{edifici.link}}.md %}"
+                               data-latitud="{{edifici.geolocalitzacio.latitud}}"
+                               data-longitud="{{edifici.geolocalitzacio.longitud}}"
+                               data-adreca="{{edifici.adreca}}"
+                               data-html="<b>{{municipi.nom}}</b><br><a href=&quot;{% link orgues/{{provincia}}/{{comarca}}/{{municipi.link}}/{{edifici.link}}.md %}&quot;>{{edifici.nom}}</a>">
+                            {{edifici.nom}}
+                            </a><br><span class="ps-3">{{edifici.adreca}}</span>
+                        {% endif %}
+
+                        {% if edifici.orgues %}
+                        <ul>
+                        {% for orgue in edifici.orgues %}
+                            <li>
+                                {% if orgue.wip %}
+                                    {{orgue.nom}}
+                                {% else %}
+                                    <a href="{% link orgues/{{provincia}}/{{comarca}}/{{municipi.link}}/{{edifici.link}}/{{orgue.link}}.md %}">{{orgue.nom}}</a>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+                    </p>
+            {% endfor %}
+<!--                </ul>-->
+            </div>
+
+        </div>
+
+
+        {% assign geojson = "/assets/geojson/municipis/" | append: municipi.link | append: ".geojson" %}
+        {% assign limits = site.data.limits-geografics.municipis | where: 'link', municipi.link | first | map: "limits" | first %}
+
+        <div class="col-12 col-lg-6 mt-6 mt-lg-2">
+            <section class="sticky-top pt-4">
+                <div id="map" class="mapa-generic"
+                     data-top-right-lat="{{limits[0]}}"
+                     data-top-right-long="{{limits[1]}}"
+                     data-bottom-left-lat="{{limits[2]}}"
+                     data-bottom-left-long="{{limits[3]}}"
+                     data-geojson="{{geojson | relative_url}}"
+                ></div>
+            </section>
+        </div>
+    </div>
+</div>

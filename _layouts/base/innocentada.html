@@ -1,0 +1,116 @@
+---
+layout: base
+scripts:
+  - innocentada.js
+---
+
+<!-- És una còpia de la notícia, amb una mica d'humor -->
+<div class="container ps-3 pe-3 mt-5">
+
+    <h1>{{page.title}}</h1>
+    {% if page.header %}
+        {% include image.html
+        source=page.header.src
+        alt-source=page.header.alt-src
+        alt=page.header.alt
+        img-width="100%"
+        caption=page.header.caption
+        %}
+    {% endif %}
+
+<style>
+  :root {
+      --mostra-llufa-en: 40s;
+      --animation-duration: 3s;
+      --animation-duration-fast: 500ms;
+      --llufa-width: 400px;
+    }
+
+    .amaga-article {
+      animation: article-animation var(--animation-duration) forwards;
+      animation-delay: var(--mostra-llufa-en);
+      animation-direction: reverse;
+      animation-timing-function: ease-in;
+    }
+    .mostra-article {
+      animation: article-animation var(--animation-duration-fast) forwards;
+      animation-timing-function: linear;
+    }
+    .mostra-llufa {
+      animation: llufa-animation var(--animation-duration) forwards;
+      animation-delay: var(--mostra-llufa-en);
+      animation-timing-function: linear;
+    }
+    .amaga-llufa {
+      animation: llufa-animation var(--animation-duration-fast) both;
+      animation-direction: reverse;
+      animation-timing-function: linear;
+    }
+
+    @keyframes llufa-animation {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+        cursor: pointer;
+      }
+    }
+    @keyframes article-animation {
+      0% {
+        opacity: 0.2;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    #llufa {
+      position: sticky;
+      top: 18%;
+      display: block;
+      opacity: 0;
+      text-align: center;
+      height: 0;
+      z-index: 1000;
+    }
+
+    #llufa img {
+      width: var(--llufa-width);
+      height: auto;
+    }
+</style>
+
+{% include posts/inline-information.html date=page.date content=page.content author=page.author %}
+{% include posts/tags.html %}
+{% include posts/activitat.html %}
+
+<hr>
+
+
+
+<div class="pt-2"></div>
+
+    {% if page.columnes %}
+    <div id="innocentada-container" style="position: relative">
+        <div id="llufa" class="mostra-llufa">
+            <img src="{% link assets/img/llufa.svg %}" alt="Llufa">
+        </div>
+        <div id="innocentada-article" class="columns amaga-article">
+        {% endif %}
+
+            {% if page.subtitle %}
+            <div class="p-0 mb-4 subtitol">{{page.subtitle | markdownify}}</div>
+            {% endif %}
+
+            {% include posts/content.html %}
+
+        {% if page.columnes %}
+        </div>
+    </div>
+    {% endif %}
+
+    {% include posts/navigate.html %}
+{% include posts/related.html %}
+
+</div>

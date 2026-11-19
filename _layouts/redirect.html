@@ -1,0 +1,74 @@
+---
+layout: compress
+---
+<!DOCTYPE html>
+<html lang="en-US">
+<meta charset="utf-8">
+<title>Redirigint&hellip;</title>
+<link rel="canonical" href="{{page.redirect.to}}">
+<script>location="{{page.redirect.to}}"</script>
+<meta http-equiv="refresh" content="0; url={{page.redirect.to}}">
+<meta name="robots" content="noindex">
+
+<!-- TODO genèric i general. Majusculitzacions i textos autogenerats -->
+<!-- TODO faig notar que s'haurà de revisar el Python que crea edificis.yml -->
+
+{% assign url = page.redirect.to | replace: site.url, "" %}
+{% include functions/get-info-from-url.html url=url %}
+
+{% if url_partida[1] == "about" or
+      url_partida[1] == "full" or
+      url_partida[1] == "noticies" or
+      url_partida[1] == "categories" or
+      url_partida[1] == "etiquetes" or
+      url_partida[1] == "bibliografia" or
+      url_partida[1] == "associacions" or
+      url_partida[1] == "formacio" or
+      url_partida[1] == "orgues" and url_partida[2] == nil or
+      url_partida[1] == "ceoc" and url_partida[2] == nil %}
+
+    {% assign search_url = "/" | append: url_partida[1] | append: "/" %}
+    {% assign page = site.pages | where: "url", search_url | first %}
+    {% include head/open-graph.html title=page.title description=page.description image="" image-alt="" %}
+
+{% elsif url_partida[1] == "orgues" and url_partida[2] != nil %}
+
+    {% assign edifici = site.data.edificis | where: 'pageID', url | first %}
+    {% if edifici != nil %}
+        <!-- És orgue; no és breadcrumb. Els breadcrumb, de moment, no tenen cap mena de redirecció -->
+        {% if edifici.nomOrgue %}
+            {% assign common = " " | append: edifici.de | append: edifici.nomEdifici | append: " " | append: edifici.de_nomPoble %}
+            {% assign title = edifici.nomOrgue | append: common %}
+            {% assign description = "Història, característiques i fotografies " | append: edifici.de_nomOrgue | append: common %}
+        {% else %}
+            {% assign common = edifici.de | append: edifici.nomEdifici | append: " " | append: edifici.de_nomPoble %}
+            {% assign title = "Orgue " | append: edifici.de | append: edifici.nomEdifici | append: " " | append: edifici.de_nomPoble %}
+            {% assign description = "Història, característiques i fotografies de l’orgue " | append: common %}
+        {% endif %}
+        {% assign image = site.data.imatges | where: "page_id", url | first %}
+        {% if image %}
+            {% assign link = image.thumbs[1024] %}
+            {% include head/open-graph.html title=title description=description image=link image-alt=image.alt %}
+        {% else %}
+            {% include head/open-graph.html title=title description=description image="" image-alt="" %}
+        {% endif %}
+    {% endif %}
+
+{% elsif url_partida[1] == "ceoc" and url_partida[3] != nil %}
+    <!-- /ceoc/44/ no té redirecció perquè és una pàgina nova -->
+    <!-- /ceoc/44/concert.../ tenen redirecció -->
+    {% assign page = site.pages | where: "url", url | first %}
+    {% assign title = page.title %}
+    {% assign title_downcase = title | downcase_first_letter %}
+    {% assign description = "Informació del " | append: title_downcase | append: " dins el " | append: url_partida[2] | append: "è cicle «Els Orgues de Catalunya»" %}
+    {% assign concert = site.data.ceoc.concerts | where: "concert", page.path | first %}
+    {% assign orgue_url = "/" | append: concert.orgue | replace: ".md", "/" %}
+    {% assign image = site.data.imatges | where: "page_id", orgue_url | where: "nom", concert.foto | first %}
+    {% assign link = image.thumbs[1024] %}
+    {% include head/open-graph.html title=page.title description=description image=concert.foto-interpret image-alt=concert.interpret %}
+
+{% endif %}
+
+<h1>Redirigint&hellip;</h1>
+<a href="{{page.redirect.to}}">Pitgi aquest enllaç si no és redirigit automàticament.</a>
+</html>

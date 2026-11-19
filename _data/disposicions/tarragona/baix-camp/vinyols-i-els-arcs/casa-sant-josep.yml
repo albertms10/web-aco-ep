@@ -1,0 +1,70 @@
+constructor:
+  nom: Debierre, Louis
+  sort-any: 1919
+  any: dècada de 1920
+
+actuacions:
+  - nom: Blancafort, Gabriel
+    any: dècada de 1980
+    sort-any: 1980
+    actuacio: RS
+    detalls: Addició d’un motor i caixa reguladora
+  - nom: Praet, Wilfried
+    any: 2009
+    actuacio: RS
+
+diapaso:
+  nota: a'
+  temperatura: 30
+  frequencia: 448.6
+  registre: Violoncelle
+
+temperament: igual
+
+estat:
+  - any: 2024
+    nota: 4
+
+emplacament: al fons de la nau, sobre un entarimat, al costat de l’epístola
+
+transmissio:
+  notes: mecànica
+  registres: mecànica
+
+composicio: 6 I
+
+teclats:
+  - nom: I. Manual
+    extensio: "56 notes: C-g'''"
+    registres:
+      - nom: Bourdon
+        peus: 16'
+        partit: h/c'
+      - nom: Bourdon
+        peus: 8'
+        partit: h/c'
+      - nom: Violoncelle
+        peus: 8'
+        partit: h/c'
+      - nom: Flûte harmonique
+        peus: 8'
+        partit: c'-g'''
+      - nom: Voix céleste
+        peus: 8'
+        partit: c'-g'''
+      - nom: Flûte harmonique
+        peus: 4'
+        partit: h/c'
+      - nom: Trompette
+        peus: 8'
+        partit: h/c'
+        llengueta: true
+
+acoblaments:
+  - nom: I/I 4'
+
+efectes:
+  - nom: Expressió general
+  - nom: Combinació lliure partida
+  - nom: Transpositor (−4+5)
+  - nom: Nivell indicador d’aire

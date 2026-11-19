@@ -1,0 +1,11 @@
+<!-- url_partida[0] està buit... Què hi farem. Comença a partir d'1-->
+{% if include.url %}
+    {% assign url_partida = include.url | split: "/" %}
+{% else %}
+    {% assign url_partida = page.url | split: "/" %}
+{% endif %}
+{% assign provincia = url_partida[2] %}
+{% assign comarca = url_partida[3] %}
+{% assign poble = url_partida[4] %}
+{% assign edifici = url_partida[5] | split: "." | first %}
+{% assign orgue = url_partida[6]  | split: "." | first%}

@@ -1,0 +1,8 @@
+---
+layout: base/page
+---
+
+{% include functions/get_unique_categories.html %}
+{% assign keys = return %}
+<!-- Ordenem per categories. No en seleccionem cap en concret -->
+{% include post-lists/list.html keys=keys field="categories" %}

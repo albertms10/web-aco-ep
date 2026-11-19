@@ -1,0 +1,179 @@
+{% include functions/get-info-from-url.html %}
+
+<div class="row gx-0 gx-lg-6">
+    <div class="col-12 col-lg-8 col-xl-8 order-2 order-lg-1 mt-6 mt-lg-0 js-toc-content text-body">
+        <section>
+            {{ content }}
+
+            <p class="mt-5 text-secondary"><small>Última actualització de la pàgina (descripció i fotografies):
+                {% assign date = page.path | file_date %}
+                {{ date | data_en_catala_mitja }}.<br>
+                Última actualització l'orgue (disposició i altres dades tècniques):
+                {% assign yml_file = "_data/disposicions/" | append: provincia | append: "/" | append: comarca | append: "/" | append: poble | append: "/" | append: edifici %}
+                {% if orgue %}
+                    {% assign yml_file = yml_file | append: "/" | append: orgue | append: ".yml" %}
+                {% else %}
+                    {% assign yml_file = yml_file | append: ".yml" %}
+                {% endif %}
+                {% assign date = yml_file | file_date %}
+                {{ date | data_en_catala_mitja }}.
+            </small></p>
+        </section>
+    </div>
+
+    <!-- quadre resum, bàner lateral -->
+    <div class="col-12 col-lg-4 col-xl-4 order-1 order-lg-2">
+
+        {% if orgue %}
+            {% assign data = site.data.disposicions.[provincia].[comarca].[poble].[edifici].[orgue] %}
+        {% else %}
+            {% assign data = site.data.disposicions.[provincia].[comarca].[poble].[edifici] %}
+        {% endif %}
+
+        <section>
+            <p class="h6 mb-1">Resum històric</p>
+            <ul class="mb-0" style="padding-left: 1rem;">
+
+            {% if data.constructor.sort-nom %}
+                <li>{{data.constructor.any}} (construcció). {{data.constructor.nom}}</li>
+            {% else %}
+                <li>{{data.constructor.any}} (construcció). {{data.constructor.nom | split: ", " | reverse | join: " " }}</li>
+            {% endif %}
+
+            {% if data.actuacions %}
+            {% for actuacio in data.actuacions %}
+                {% include functions/get-actuacio-from-code.html actuacio=actuacio.actuacio %}
+
+                {% if ma %}
+                    {% if actuacio.sort-nom %}
+                        <li>Manteniment ordinari: {{actuacio.nom}}</li>
+                    {% else %}
+                        <li>Manteniment ordinari: {{actuacio.nom | split: ", " | reverse | join: " " }}</li>
+                    {% endif %}
+                {% else %}
+                    {% if actuacio.sort-nom %}
+                        <li>{{actuacio.any}} ({{act | join: ", "}}). {{actuacio.nom}}</li>
+                    {% else %}
+                        <li>{{actuacio.any}} ({{act | join: ", "}}). {{actuacio.nom | split: ", " | reverse | join: " " }}</li>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+            </ul>
+            {% endif %}
+            <div class="mb-3"></div>
+        </section>
+
+        {% if data.emplacament %}
+        <section>
+            <p class="h6 mb-1">Emplaçament</p>
+            <p>{{data.emplacament | capitalize_first_word }}</p>
+        </section>
+        {% endif %}
+
+        <section>
+            <p class="h6 mb-1">Estat de l'instrument</p>
+            {% assign estat = data.estat | last %}
+
+            {% if estat and estat.nota %}
+                {% case estat.nota %}
+                {% when 0 %}
+            <p>Intocable ({{estat.any}})</p>
+                {% when 1 %}
+            <p>Molt precari ({{estat.any}})</p>
+                {% when 2 %}
+            <p>Precari ({{estat.any}})</p>
+                {% when 3 %}
+            <p>Funcionament limitat ({{estat.any}})</p>
+                {% when 4 %}
+            <p>En bon funcionament ({{estat.any}})</p>
+                {% else %}
+            <p>Estat desconegut.</p>
+                {% endcase %}
+            {% elsif estat and estat.estat %}
+            <p>{{estat.estat | capitalize_first_word}} ({{estat.any}})</p>
+            {% else %}
+            <p>Estat desconegut.</p>
+            {% endif %}
+        </section>
+
+        {% if data.composicio or data.transmissio %}
+        <hr>
+        {% endif%}
+
+        {% if data.composicio %}
+        <section>
+            <p class="h6 mb-1">Composició</p>
+            <p>{{data.composicio}}</p>
+        </section>
+        {% endif %}
+
+        {% if data.transmissio %}
+        <section>
+            <p class="h6 mb-1">Transmissió de notes</p>
+            <p>{{data.transmissio.notes | capitalize_first_word}}</p>
+        </section>
+        <section>
+            <p class="h6 mb-1">Transmissió de registres</p>
+            <p>{{data.transmissio.registres | capitalize_first_word}}</p>
+        </section>
+        {% endif %}
+
+        {% unless include.civil %}
+        <hr>
+        <section>
+            <p class="h6 mb-1">Bisbat</p>
+            <p>{{ include.bisbat }}</p>
+        </section>
+        {% endunless %}
+
+        {% if page.links %}
+        <hr>
+        <section>
+            <p class="h6 mb-1">Enllaços d’interès</p>
+            <ul>
+            {% for link in page.links %}
+                <li>
+                    <a target="_blank"
+                       {% unless link.link contains "acorgue.cat" %}rel="nofollow external"{% endunless %}
+                       href="{{link.link}}"
+                       style="text-decoration: none !important"
+                    >
+                        <span style="text-decoration: underline">{{link.nom | markdownify | remove: '<p>' | remove: '</p>'}}</span>&nbsp;&nbsp;<i class="bi bi-box-arrow-up-right"></i>
+                    </a>
+                </li>
+            {% endfor %}
+            </ul>
+        </section>
+        {% endif %}
+
+        {% if page.documents %}
+        <hr>
+        <section>
+            <p class="h6 mb-1">Documents relacionats</p>
+            <ul>
+                {% for document in page.documents %}
+                <li><a target="_blank" href="{{ document.link }}" style="text-decoration: none !important">
+                    <span style="text-decoration: underline">{{document.nom | markdownify | remove: '<p>' | remove: '</p>'}}</span>&nbsp;&nbsp;<i class="bi bi-filetype-{{document.type}}"></i><br>
+                    {% if document.autor %}({{document.autor}}){% endif %}
+                </a></li>
+                {% endfor %}
+            </ul>
+        </section>
+        {% endif %}
+
+        <hr>
+        <section>
+            {% include posts/mapa.html lat=include.lat long=include.long adreca=include.adreca %}
+        </section>
+
+        {% if page.toc %}
+        <hr>
+        <section class="pt-2 sticky-top">
+            <p class="h6 pb-2">Taula de continguts</p>
+            <div class="toc js-toc"></div>
+        </section>
+        {% endif %}
+
+        <!-- relacionats... -->
+    </div>
+</div>

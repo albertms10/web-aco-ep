@@ -1,0 +1,28 @@
+<!--
+Variables: 'act' and 'ma'
+'act': String. Actuacions en minúscula separades per coma
+'ma':  Boolean. Si és manteniment ordinari
+-->
+{% assign act = "" %}
+{% assign treball = include.actuacio | split: ", " %}
+{% for t in treball %}
+    {% case t %}
+    {% when "N" %}  {% assign act = act | append: "orgue nou, " %}
+    {% when "AC" %} {% assign act = act | append: "acabament, " %}
+    {% when "AM" %} {% assign act = act | append: "ampliació, " %}
+    {% when "RO" %} {% assign act = act | append: "reorganització, " %}
+    {% when "RC" %} {% assign act = act | append: "reconstrucció, " %}
+    {% when "RS" %} {% assign act = act | append: "restauració, " %}
+    {% when "RP" %} {% assign act = act | append: "reparació, " %}
+    {% when "AF" %} {% assign act = act | append: "afinació general, " %}
+    {% when "RH" %} {% assign act = act | append: "re-harmonització, " %}
+    {% when "TR" %} {% assign act = act | append: "trasllat, " %}
+    {% when "TF" %} {% assign act = act | append: "transformació, " %}
+    {% when "NE" %} {% assign act = act | append: "neteja, " %}
+    {% when "MO" %} {% assign act = act | append: "manteniment ordinari, " %} {% assign ma = true %}
+    {% else %}      {% assign act = act | append: t | append: ", " %}
+    {% endcase %}
+{% endfor %}
+
+<!-- split i join per eliminar l'última coma -->
+{% assign act = act | split: ", " %}

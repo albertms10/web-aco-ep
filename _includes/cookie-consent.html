@@ -1,0 +1,85 @@
+<!-- https://github.com/Kudos01/jekyll-cookie-compliance/blob/9d956aed920432d972e1b8ba4e6818322f9b25a7/cookie-consent.html -->
+<style>
+  #cookie-notice {
+    z-index: 11;
+    padding: 0.5rem 1rem;
+    display: none;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #222;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  #cookie-notice a {
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 0.5rem;
+  }
+  @media (max-width: 767px) {
+    #cookie-notice span {
+      display: block;
+      padding-top: 3px;
+      margin-bottom: 1rem;
+    }
+    #cookie-notice a {
+      position: relative;
+      bottom: 4px;
+    }
+  }
+</style>
+<div id="cookie-notice">
+  <span
+    >Aquesta pàgina utilitza galetes de tercers (Google Analytics). Vols
+    permetre'n l'ús?</span
+  >
+  <a id="cookie-notice-accept" class="btn btn-primary btn-sm">Accepto</a>
+  <a id="cookie-notice-deny" class="btn btn-danger btn-sm">Declino</a>
+  <a href="{% link pages/politica-de-privacitat.md %}" class="btn btn-secondary btn-sm"
+    >Més informació</a
+  >
+</div>
+<script>
+  function createCookie(name,value,days) {
+      var expires = "";
+      if (days) {
+          var date = new Date();
+          date.setTime(date.getTime() + (days*24*60*60*1000));
+          expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + value + expires + "; path=/";
+  }
+  function readCookie(name) {
+      var nameEQ = name + "=";
+      var ca = document.cookie.split(';');
+      for(var i=0;i < ca.length;i++) {
+          var c = ca[i];
+          while (c.charAt(0)==' ') c = c.substring(1,c.length);
+          if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+      }
+      return null;
+  }
+  function eraseCookie(name) {
+      createCookie(name,"",-1);
+  }
+
+  if(readCookie('cookie-notice-option')=='true') {
+      {% if jekyll.environment == "production" and site.google_analytics %}
+          {% include load_google_analytics.js %}
+      {% endif %}
+  } else if (readCookie('cookie-notice-option')!='false'){
+      document.getElementById('cookie-notice').style.display = 'block';
+  }
+
+  document.getElementById('cookie-notice-accept').addEventListener("click",function() {
+      createCookie('cookie-notice-option','true',31);
+      document.getElementById('cookie-notice').style.display = 'none';
+      location.reload();
+  });
+
+  document.getElementById('cookie-notice-deny').addEventListener("click",function() {
+      createCookie('cookie-notice-option','false',31);
+      document.getElementById('cookie-notice').style.display = 'none';
+      location.reload();
+  });
+</script>

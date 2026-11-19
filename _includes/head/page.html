@@ -1,0 +1,7 @@
+<title>{{page.title}}</title>
+<meta name="description" content="{{page.subtitle}}">
+{% if page.header %}
+    {% include head/open-graph.html title=page.title description=page.description image=page.header.src image-alt=page.header.alt %}
+{% else %}
+    {% include head/open-graph.html title=page.title description=page.description image="" image-alt="" %}
+{% endif %}

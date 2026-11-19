@@ -1,0 +1,8 @@
+{% if page.tags.size > 0 %}
+<p class="py-2 my-0">
+    {% for tag in page.tags %}
+    <a class="" href="{% link pages/tags.md %}#{{tag}}">#{{tag}}</a>
+    &nbsp;
+    {% endfor %}
+</p>
+{% endif %}

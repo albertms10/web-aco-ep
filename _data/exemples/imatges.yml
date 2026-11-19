@@ -1,0 +1,67 @@
+fotos:
+  - nom: barcelona
+    comarques:
+      - nom: barcelones
+        poblacions:
+          - nom: barcelona
+            edificis:
+              - nom: conservatori
+                orgues:
+                  - nom: aula-101
+                    fotos:
+                      - nom: santa-maria-1.jpg
+                        link: https://... @ auto
+                        alt: Façana de l'orgue de Santa Maria de Vilafranca
+                        caption: Fotografia de Berenguer Montserrat
+                        portada: 49%
+                      - nom: santa-maria-2.jpg
+                        link: https://... # auto
+                        alt: Consola de l'orgue de Santa Maria de Vilafranca
+                        caption: Fotografia de Berenguer Montserrat
+                  - nom: aula-102
+                    fotos:
+                      - nom: santa-maria-1.jpg
+                        link: https://nextcloud.orguesdevilafranca.cat/s/DXCPnoNt2eEz9Bk/downloa
+                        alt: Façana de l'orgue de Santa Maria de Vilafranca
+                        caption: Fotografia de Berenguer Montserrat
+                        portada: 49%
+                      - nom: santa-maria-2.jpg
+                        link: https://... # auto
+                        alt: Consola de l'orgue de Santa Maria de Vilafranca
+                        caption: Fotografia de Berenguer Montserrat
+
+      - nom: alt-penedes
+        poblacions:
+          - nom: vilafranca-del-penedes
+            edificis:
+              - nom: santa-maria # enllaç del lloc!
+                fotos:
+                  - nom: santa-maria-1.jpg
+                    link: https://nextcloud.orguesdevilafranca.cat/s/DXCPnoNt2eEz9Bk/downloa
+                    alt: Façana de l'orgue de Santa Maria de Vilafranca
+                    caption: Fotografia de Berenguer Montserrat
+                    portada: 49%
+                  - nom: santa-maria-2.jpg
+                    link: https://... # auto
+                    alt: Consola de l'orgue de Santa Maria de Vilafranca
+                    caption: Fotografia de Berenguer Montserrat
+              - nom: trinitat
+                fotos:
+                  - nom: santa-maria-1.jpg
+                    link: https://.... # auto
+                  - nom: santa-maria-2.jpg
+                    link: https://... # auto
+          - nom: santa-fe
+            edificis:
+              - nom: santa-maria-1.jpg
+                link: https://.... # auto
+      - nom: anoia
+        poblacions:
+          - nom: bruc
+            edificis:
+              - nom: santa-maria
+                fotos:
+                  - nom: santa-maria-1.jpg
+                    link: https://.... # auto
+                  - nom: santa-maria-2.jpg
+                    link: https://... # auto

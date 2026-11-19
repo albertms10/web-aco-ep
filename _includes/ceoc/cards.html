@@ -1,0 +1,73 @@
+<!-- NOTA IMPORTANT. LLEGEIX-ME!
+En liquid antic, el que fa servir Jekyll, les variables són globals, sempre; no cal passar-les per paràmetre quan
+es realitza un include.
+
+En aquest cas, 'card.html' només s'utilitza des d'aquest fitxer. Per tant, les variables que hi ha dins de 'card.html'
+que haurien d'estar definides i no ho estan, estan definides en el fitxer que inclou 'card.html', és a dir, aquest.
+
+En conseqüència, que hom no s'estranyi de veure variables no definides dins de 'card.html' perquè estaran definides aquí.
+-->
+<div class="container ps-0 pe-0 pb-4">
+    <div class="row row-cols-auto g-3  justify-content-xl-center justify-content-center">
+
+    {% for concert in site.data.ceoc.concerts %}
+        <!-- Decideix si afegir el concert o no segons la data -->
+        {% assign ceoc_begin = include.inici | date: "%s" %}
+        {% assign ceoc_end   = include.final   | date: "%s" %}
+        {% assign concert_data = concert.data | date: "%s" %}
+        {% assign any = concert.data | date: "%Y" %}
+        {% if concert_data < ceoc_begin %} {% continue %} {% endif %}
+        {% if concert_data > ceoc_end %} {% continue %} {% endif %}
+
+        {% if concert.orgue-fora-catalunya %}
+            <!-- no tenim informació d'aquest orgue; tot el que necessitem ens ha de venir dins a concert -->
+            {% assign image_src = concert.foto-src %}
+            {% assign adreca = concert.adreca %}
+            {% assign municipi = concert.municipi %}
+            {% assign edifici = concert.edifici %}
+
+        {% else %}
+            <!-- tota la informació necessària la podem aconseguir mirant la pseudo base de dades que tenim -->
+            <!-- aconsegueix la informació de l'URL -->
+            {% assign orgue_url = "/" | append: concert.orgue %}
+            {% include functions/get-info-from-url.html url=orgue_url %}
+            {% assign provincia = site.data.orgues.orgues | where: "link",provincia %}
+            {% assign comarca = provincia[0].comarques | where: "link",comarca %}
+            {% assign poblacio = comarca[0].poblacions | where: "link",poble %}
+            {% assign edifici = poblacio[0].edificis | where: "link",edifici %}
+            {% assign edifici = edifici[0].nom %}
+            {% assign municipi = poblacio[0].nom %}
+            {% assign adreca = esglesia[0].adreca %}
+
+            <!-- aconsegueix la imatge que es demana -->
+            {% assign url = orgue_url | replace: ".md", "/" %}
+
+            {% if concert.foto-src %}
+                {% assign image_src = concert.foto-src %}
+            {% else %}
+                {% assign images = site.data.imatges | where: "page_id", url | where: "nom", concert.foto | first %}
+                {% assign image_src = images.thumbs[320] %}  <!-- variable card.html -->
+            {% endif %}
+
+
+        {% endif %}
+
+        <!-- card.html espera aquestes variables (només es fan servir variables quan la informació no està a 'concert'
+        en els dos casos. Per què aquesta diferència? La majoria dels concerts són a orgues que estan a la web. Com
+        que estan a la web, posant només la url de la pàgina de l'orgue, es pot esbrinar tota la informació i no cal
+        picar-la manualment; per a orgues que no formen part de l'inventari, es pot afegir la informació manualment.
+        image_src (si us plau, versió 320px)
+        adreca
+        municipi
+        edifici
+        -->
+        {% assign hora_final = concert.hora | split: ':' | first %}
+        {% assign minuts = concert.hora | split: ':' | last %}
+        {% assign hora_final = hora_final | plus: 1 %}
+        {% assign hora_final = hora_final | append: ":" | append: minuts %}
+
+        {% include ceoc/card.html %}
+
+        {% endfor %}
+    </div>
+</div>

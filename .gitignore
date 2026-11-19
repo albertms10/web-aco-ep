@@ -1,0 +1,38 @@
+.idea
+.vscode
+.prettier*
+.jekyll-cache
+.jekyll-metadata
+.sass-cache
+
+_site
+./vendor
+
+Gemfile.lock
+
+assets/package-lock.json
+assets/node_modules
+
+# generate this file using the script 'scripts/create-pobles.py'
+_data/pobles.yml
+_data/edificis.yml
+# generate this file using the script 'scripts/create-imatges.py'
+_data/imatges.yml
+# generate this file using the script 'scripts/create-comptadors.py'
+_data/comptadors.yml
+# generate this file using the script 'scripts/sort-bibliografia.py'
+_data/bibliografia.yml
+# generate this file using the script 'scripts/create-orgues-per-orgueners.py'
+_data/orgueners.yml
+# generate this file using the script 'scripts/get-geojson.py'. It may take several minutes
+#  or
+# get those files from my cloud using 'scripts/get-geo-limits.py'. Remember setting user credentials!
+assets/geojson/
+# generate this file using the script 'scripts/get-geo-limits.py'.
+_data/limits-geografics.yml
+
+# 2 file line with nextcloud credentials for the stored photos (user and password)
+#cloud-credentials
+venv
+
+cache/
